@@ -1,0 +1,88 @@
+article {
+    width: 100%;
+}
+
+article > h2 {
+    font-size: 3rem;
+    margin-bottom: .25em;
+    margin-top: 1em;
+    padding-inline: 1rem;
+}
+
+article > header {
+    padding-inline: 1rem;
+    padding-block: .5rem;
+}
+
+article p, article ul {
+    font-size: 1.2rem;
+}
+
+hr {
+    margin-top: 2em;
+    border: 1px solid grey;
+    margin-inline: auto;
+}
+
+#spaceship-survival-article {
+    container-type: inline-size;
+}
+
+#draw-article > header {
+    text-align: left;
+}
+
+.icon {
+    width: 1rem;
+}
+
+iframe, .iframe-replacement {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 3/4;
+}
+
+.page-not-responsive {
+    display: none;
+}
+
+.iframe-replacement {
+    display: block;
+    outline: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.game-header {
+    text-align: right;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 800px) {
+    iframe, .iframe-replacement {
+        aspect-ratio: 16/9;
+    }
+}
+
+@container (width >= 800px) {
+    .iframe-replacement {
+        display: none;
+    }
+
+    .page-not-responsive {
+        display: block;
+    }
+}
+
+footer {
+    margin-top: 2em;
+}
+
