@@ -7,7 +7,7 @@ let is_menu_closed = true;
 function toggle_ul() {
     if (is_menu_closed) {
         ul.style.display = 'block';
-        website_nav.style.boxShadow = '0 0 5px rgb(237, 237, 237)';
+        website_nav.style.boxShadow = '-1px -1px 5px rgb(237, 237, 237)';
         website_nav.style.backgroundColor = 'rgb(18, 18, 18)';
     } else {
         ul.style.display = 'none';

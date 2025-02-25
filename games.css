@@ -2,25 +2,14 @@ article {
     width: 100%;
 }
 
-article > h2 {
-    font-size: 3rem;
-    margin-bottom: .25em;
-    margin-top: 1em;
-    padding-inline: 1rem;
-}
-
 article > header {
     padding-inline: 1rem;
     padding-block: .5rem;
 }
 
-article p, article ul {
-    font-size: 1.2rem;
-}
-
 hr {
     margin-top: 2em;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     margin-inline: auto;
 }
 
@@ -82,7 +71,8 @@ footer {
     }
 }
 
-footer {
+footer > p {
     margin-top: 2em;
+    font-size: 1rem;
 }
 
