@@ -51,9 +51,8 @@ time {
 }
 
 a {
-    /* color: rgb(90, 215, 215); */
     color: var(--link-color);
-    /* line-break: anywhere; */
+    overflow-wrap: break-word;
 }
 
 q {
