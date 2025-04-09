@@ -107,6 +107,7 @@ main {
     list-style: none;
     font-size: 3rem;
     line-height: 1.2;
+    margin-top: 0;
 }
 
 #website-nav-btn {
