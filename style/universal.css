@@ -155,9 +155,9 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-top: 2em; 
 }
 
 footer p {
-    margin-top: 2em;
     font-size: 1rem;
 }

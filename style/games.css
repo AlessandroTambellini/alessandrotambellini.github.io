@@ -48,13 +48,6 @@ iframe, .iframe-replacement {
     text-align: right;
 }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
 @media (min-width: 800px) {
     iframe, .iframe-replacement {
         aspect-ratio: 16/9;
