@@ -86,7 +86,8 @@ main {
     /* This padding is to let the text at the bottom of the page not be covered by the #website-nav-btn */
     padding-bottom: calc(var(--website-nav-btn-size) + var(--website-nav-btn-margin));
     width: 100%;
-    max-width: 800px;
+    padding-inline: .5em;
+    max-width: calc(800px + 2*.5em);
 }
 
 #website-nav {
