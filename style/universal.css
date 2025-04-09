@@ -149,3 +149,15 @@ main {
         display: none;
     }
 }  
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 2em;
+    font-size: 1rem;
+}
