@@ -27,14 +27,6 @@ h1 {
     line-height: 3rem;
 }
 
-h2 {
-    font-size: 3rem;
-    line-height: 1.4;
-    padding-inline: .25em;
-    margin-bottom: .25em;
-    margin-top: 1em;
-}
-
 code, time {
     font-family: fantasy;
     color: var(--time-color);
@@ -152,12 +144,13 @@ main {
 
 footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     margin-top: 2em; 
 }
 
 footer p {
+    text-align: center;
     font-size: 1rem;
 }

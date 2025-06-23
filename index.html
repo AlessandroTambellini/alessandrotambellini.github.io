@@ -6,47 +6,91 @@
     <title>index</title>
     <link rel="stylesheet" href="./style/universal.css">
     <script defer src="./script/website-nav.js"></script>
+
+    <style>
+        h1 {
+            padding-inline: .25em;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            padding-inline: .25em;
+            margin-top: 1em; 
+        }
+
+        .social-icon {
+            width: 1.5rem;
+        }
+
+        #twitter-text {
+            color: rgb(14, 77, 117);
+        }
+
+        #twitter-text:hover {
+            color: rgb(29, 161, 242);
+        }
+
+        #reddit-text {
+            color: #551701;
+        }
+
+        #reddit-text:hover {
+            color: #D93900;
+        }
+
+        hr {
+            margin-top: 2em;
+            margin-inline: .25em;
+        }
+    </style>
 </head>
 <body>
     <main>
+        <h1>Alessandro Tambellini</h1>
+
+        <h2>Menu entries:</h2>
         <ul>
             <li>
-                <strong>games</strong>: even though I'm not interested in game development per se,
-                I think games are one of the best ways to 
-                use algorithms & data structures and are a type of app where there is no
-                default style or behaviour given by the browser.
-                This gives me the freedom to experiment with the browser API.
+                <strong>about</strong>: description of my interests over time.
             </li>
             <li>
-                <strong>log</strong>: a way to keep track of what I do in a point in time. 
-                It's a personal record.
+                <strong>visual</strong>: visual stuff. Miscellaneous little programs to explore the browser API.
             </li>
             <li>
-                <strong>network</strong>: people I follow, content I consume.
-                Be aware that it continuosly evolve based on my interests
+                <strong>log</strong>: personal record to keep track of what I do in a point in time. 
             </li>
             <li>
-                <strong>archive</strong>: links that are there just for reference
+                <strong>network</strong>: list of software programmers I regularly follow.
+            </li>
+            <li>
+                <strong>archive</strong>: links to sites where I am no longer active.
             </li>
         </ul>
 
+        <h2>External Links:</h2>
+        <ul>
+            <li>
+                <a id="twitter-text" href="https://x.com/ale_tambellini"><img class="social-icon" src="./icons/twitter-logo.svg" alt="Twitter social-icon"> https://x.com/ale_tambellini</a>
+            </li>
+            <li>
+                <a id="reddit-text" href="https://www.reddit.com/user/memLeak67/"><img class="social-icon" src="./icons/reddit-logo.svg" alt="Reddit icon"> https://www.reddit.com/user/memLeak67/</a>
+            </li>
+            <li>
+                My capsule in the Geminispace: <a href="gemini://gemlog.blue/users/alessandro/">gemini://gemlog.blue/users/alessandro/</a>
+            </li>
+        </ul>
+
+        <hr>
+                
         <footer>
-            <address>
-                <p>
-                    alessandrotambellini03 &lt;the_Google_email_service&gt;
-                </p>
-                <p>
-                    My capsule in the Geminispace:
-                    <a href="gemini://gemlog.blue/users/alessandro/">alessandro</a>
-                </p>
-                <p>
-                    <a href="https://jigsaw.w3.org/css-validator/">
-                        <img style="border:0;width:88px;height:31px"
-                            src="https://jigsaw.w3.org/css-validator/images/vcss"
-                            alt="Valid CSS!">
-                    </a>
-                </p>
-            </address>        
+            <p>alessandrotambellini03 &lt;the_Google_email_service&gt;</p>
+            <p>
+                <a href="https://jigsaw.w3.org/css-validator/">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="Valid CSS!">
+                </a>
+            </p>
         </footer>
     </main>
     
@@ -59,7 +103,7 @@
                 <a href="about.html">about</a>
             </li>
             <li>
-                <a href="games.html">games</a>
+                <a href="visual.html">visual</a>
             </li>
             <li>
                 <a href="log.html">log</a>
