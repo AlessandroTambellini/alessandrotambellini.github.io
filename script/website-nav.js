@@ -6,7 +6,7 @@ const menu_entries = website_nav.querySelector('#website-nav ul');
 let f_menu_is_open = false;
 
 hamburger_btn.addEventListener('click', e => 
-{
+{    
     f_menu_is_open = !f_menu_is_open;
 
     if (f_menu_is_open) 
@@ -20,20 +20,15 @@ hamburger_btn.addEventListener('click', e =>
         website_nav.style.boxShadow = 'unset';
         website_nav.style.backgroundColor = 'unset';
     }
-
-    e.stopPropagation();
 });
 
 website_nav.addEventListener('click', e => e.stopPropagation());
 
-// can i revert the bubbling order
-// stopPropagation() vs stopImmediatePropagation()
-
 document.addEventListener('click', () => 
-{
+{    
     f_menu_is_open = false;
 
     menu_entries.style.display = 'none';
     website_nav.style.boxShadow = 'unset';
-    website_nav.style.backgroundColor = 'unset'; 
+    website_nav.style.backgroundColor = 'unset';
 });
