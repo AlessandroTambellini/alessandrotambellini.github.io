@@ -1,19 +1,39 @@
 const website_nav = document.querySelector('#website-nav');
-const button = document.querySelector('#website-nav button');
-const ul = document.querySelector('#website-nav ul');
-button.addEventListener('click', toggle_ul);
+const hamburger_btn = website_nav.querySelector('#website-nav-btn');
+const menu_entries = website_nav.querySelector('#website-nav ul');
 
-let is_menu_closed = true;
-function toggle_ul() {
-    if (is_menu_closed) {
-        ul.style.display = 'block';
+// 'f' stands for flag.
+let f_menu_is_open = false;
+
+hamburger_btn.addEventListener('click', e => 
+{
+    f_menu_is_open = !f_menu_is_open;
+
+    if (f_menu_is_open) 
+    {
+        menu_entries.style.display = 'block';
         website_nav.style.boxShadow = '-1px -1px 5px rgb(237, 237, 237)';
         website_nav.style.backgroundColor = 'rgb(18, 18, 18)';
-    } else {
-        ul.style.display = 'none';
+    } 
+    else {
+        menu_entries.style.display = 'none';
         website_nav.style.boxShadow = 'unset';
         website_nav.style.backgroundColor = 'unset';
     }
 
-    is_menu_closed = !is_menu_closed;
-}
+    e.stopPropagation();
+});
+
+website_nav.addEventListener('click', e => e.stopPropagation());
+
+// can i revert the bubbling order
+// stopPropagation() vs stopImmediatePropagation()
+
+document.addEventListener('click', () => 
+{
+    f_menu_is_open = false;
+
+    menu_entries.style.display = 'none';
+    website_nav.style.boxShadow = 'unset';
+    website_nav.style.backgroundColor = 'unset'; 
+});
