@@ -42,6 +42,16 @@
             margin-top: 2em;
             margin-inline: .25em;
         }
+
+        @media (max-width: 495px) {
+            #menu-entries, #external-links-list {
+                padding-left: 1.5em;
+            }
+
+            #external-links-list a {
+                word-break: break-all;
+            }
+        }
     </style>
 </head>
 <body>
@@ -49,7 +59,7 @@
         <h1>Alessandro Tambellini</h1>
 
         <h2>Menu entries:</h2>
-        <ul>
+        <ul id="menu-entries">
             <li>
                 <strong>about</strong>: description of my interests over time.
             </li>
@@ -68,7 +78,7 @@
         </ul>
 
         <h2>External Links:</h2>
-        <ul>
+        <ul id="external-links-list">
             <li>
                 <a id="twitter-text" href="https://x.com/ale_tambellini"><img class="social-icon" src="./icons/twitter-logo.svg" alt="Twitter social-icon"> https://x.com/ale_tambellini</a>
             </li>
