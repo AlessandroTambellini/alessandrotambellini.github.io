@@ -12,8 +12,8 @@ hamburger_btn.addEventListener('click', e =>
     if (f_menu_is_open) 
     {
         menu_entries.style.display = 'block';
-        website_nav.style.boxShadow = '-1px -1px 5px rgb(237, 237, 237)';
-        website_nav.style.backgroundColor = 'rgb(18, 18, 18)';
+        website_nav.style.boxShadow = '-1px -1px 2px rgb(237, 237, 237)';
+        website_nav.style.backgroundColor = 'rgb(26, 28, 32)';
     } 
     else {
         menu_entries.style.display = 'none';
