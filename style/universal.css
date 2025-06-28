@@ -55,7 +55,7 @@ hr {
     border: 1px solid var(--delimiter-color);
 }
 
-p, ul {
+p, ul, ol {
     max-width: 80ch;
     font-size: 1.25rem;
 }
@@ -66,7 +66,7 @@ p {
     margin-block: .5rem;
 }
 
-ul {
+ul, ol {
     line-height: 1.5;
 }
 
