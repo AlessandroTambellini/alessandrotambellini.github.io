@@ -43,16 +43,12 @@ a {
     overflow-wrap: break-word;
 }
 
-q {
-    color: var(--quote-color);
-}
-
 a:hover {
     color: rgb(88, 95, 222);
 }
 
-hr {
-    border: 1px solid var(--delimiter-color);
+q {
+    color: var(--quote-color);
 }
 
 p, ul, ol {
@@ -68,6 +64,10 @@ p {
 
 ul, ol {
     line-height: 1.5;
+}
+
+hr {
+    border: 1px solid var(--delimiter-color);
 }
 
 iframe {
