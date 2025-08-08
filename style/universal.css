@@ -74,6 +74,11 @@ iframe {
     border: none;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 main {
     /* This padding is to let the text at the bottom of the page not be covered by the #website-nav-btn */
     padding-bottom: calc(var(--website-nav-btn-size) + var(--website-nav-btn-margin));

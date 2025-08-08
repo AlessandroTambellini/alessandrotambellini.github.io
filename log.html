@@ -13,7 +13,9 @@
     <style>
         img {
             padding-inline: 1rem;
+            margin-block: .5rem;
         }
+
         ul {
             margin-top: .5em;
         }
@@ -24,6 +26,13 @@
 <body>
     <main>
         <article>
+            <time datetime="2025-08-03">8 August 2025</time>
+            <p>
+                Today I took a look at Facebook: the Dev Tools where lagging so much I wasn't even able to navigate the source code.
+                Btw, the nested <code>&lt;div&gt;</code>s test is passed: 11 divs to reach a button on the front page.
+            </p>
+        </article>
+        <article>
             <time datetime="2025-08-03">3 August 2025</time>
             <p>
                 Sometimes I like to right click web pages to take a look at the source code. 
@@ -33,14 +42,14 @@
                 In the conference, they basically said: 
                 "Well, crawlers and agents are not able to scan our websites and so we thought about creating the text-based representation 
                 of the content of a page in parallel to the page itself, specific for the crawlers"... 
-                I think they missed the problem. 
+                Instead of questioning their JS Blob on the frontend, they come out with this solution. 
                 Are they really that blind or is it just a question of interests? Or am I just naive?<br> 
                 Now, my follow-up question is, 
                 is it possible for a complex website to be semantic? 
                 And perhaps without uploading and downloading gigabytes of JS blob?
                 And perhaps without all the crazy, high-end, ultra-powerfull, magic, astonishing frameworks and libraries?<br>
-                This is my answer: <a href="https://github.com/AlessandroTambellini/Post-Stream">https://github.com/AlessandroTambellini/Post-Stream</a>.
-                It's a try.<br>
+                This is my modest try: 
+                <a href="https://github.com/AlessandroTambellini/Post-Stream">https://github.com/AlessandroTambellini/Post-Stream</a>.<br>
                 Also, a website, more precisely a website of the Web 2.0, performs 4 main actions:
             </p>
             <ul>
@@ -49,21 +58,29 @@
                 <li>Store/Retrieve the data into/from a database</li>
                 <li>Show the data</li>
             </ul>
-            <img src="assets/website-scheme.png" alt="Website Scheme">
+            <img src="assets/log/website-scheme.avif" alt="Website Scheme">
             <p>
                 If these actions are performed by using what the web offers (URL, HTTP, HTML), 
                 it's pretty straightforward to implement such a system.<br>
                 But, to make a bit easier to control some UI state, 
-                some people/company decided to adopt a model called Single Page Application.
+                some people decided to adopt a model called Single Page Application.
                 A model where the easiness of manipulating data by exploiting the change of page is lost 
                 at the cost of what I already said before.
             </p>
+            <p>
+                Just to give a bit of context, this is the readability and easiness of analysis of a page of my project in the browser:
+            </p>
+            <img src="assets/log/sources-tree.avif" alt="Source Tree">
+            <img src="assets/log/html-code.avif" alt="HTML Code">
+            <img src="assets/log/network-request-analysis.avif" alt="Network Request Analysis">
+            <p>Can you do the same in React.js?</p>
         </article>
 
         <article>
             <time datetime="2025-07-21">21 July 2025</time>
             <p>
-                Not a Sublime user, but I find its development interesting, also considering that isn't built with Electron: 
+                Not a Sublime user, but I find its development interesting, 
+                also considering that isn't built with Electron: 
                 <a href="https://www.sublimetext.com/blog/articles/2007/11">https://www.sublimetext.com/blog/articles/2007/11</a>            
             </p>
         </article>
