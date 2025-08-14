@@ -7,18 +7,18 @@
     
     <title>index</title>
     
-    <link rel="icon" type="image/png+xml" href="assets/logo.png">
-    <link rel="stylesheet" href="./style/universal.css">
+    <link rel="icon" type="image/webp" href="assets/logo.webp">
+    <link rel="stylesheet" href="./stylesheets/universal.css">
     
     <style>
-        h1 {
-            padding-inline: .25em;
-        }
-
         h2 {
             font-size: 1.5rem;
-            padding-inline: .25em;
-            margin-top: 1em; 
+            margin-top: .75em; 
+        }
+
+        main ul {
+            margin-block: .25em;
+            padding-left: 1.25em;
         }
 
         #twitter-link {
@@ -29,24 +29,20 @@
             color: #D93900;
         }
 
-        #twitter-link img,
-        #reddit-link img {
-            width: 1.5rem;
-        }
-
         hr {
             margin-top: 2em;
-            margin-inline: .25em;
         }
 
         @media (max-width: 495px) {
-            #menu-entries, #external-links-list {
-                padding-left: 1.5em;
-            }
-
             #external-links-list a {
                 word-break: break-all;
             }
+        }
+
+        footer p {
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 2em;
         }
     </style>
 
@@ -56,7 +52,7 @@
     <main>
         <h1>Alessandro Tambellini</h1>
 
-        <h2>Menu entries:</h2>
+        <h2>Menu entries</h2>
         <ul id="menu-entries">
             <li>
                 <strong>about</strong>: description of my interests over time.
@@ -75,16 +71,30 @@
             </li>
         </ul>
 
-        <h2>External Links:</h2>
+        <h2>External Links</h2>
         <ul id="external-links-list">
             <li>
-                <a id="twitter-link" href="https://x.com/ale_tambellini"><img src="./assets/twitter-logo.svg" alt="Twitter icon"> https://x.com/ale_tambellini</a>
+                <a id="twitter-link" href="https://x.com/ale_tambellini">https://x.com/ale_tambellini</a>
             </li>
             <li>
-                <a id="reddit-link" href="https://www.reddit.com/user/memLeak67/"><img src="./assets/reddit-logo.svg" alt="Reddit icon"> https://www.reddit.com/user/memLeak67/</a>
+                <a id="reddit-link" href="https://www.reddit.com/user/memLeak67/">https://www.reddit.com/user/memLeak67/</a>
             </li>
             <li>
                 My capsule in the Geminispace: <a href="gemini://gemlog.blue/users/alessandro/">gemini://gemlog.blue/users/alessandro/</a>
+            </li>
+            <li>Archive:
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/in/alessandro-tambellini">
+                            https://www.linkedin.com/in/alessandro-tambellini
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://medium.com/@alessandrotambellini03">
+                            https://medium.com/@alessandrotambellini03
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
 
@@ -102,37 +112,31 @@
         </footer>
     </main>
     
-    <nav id="website-nav">
+    <nav id="website-nav" class="display-none">
         <ul>
             <li>
-                <a aria-label="index" href="index.html">.</a>
-            </li>
-            <li>
-                <a href="about.html">about</a>
-            </li>
-            <li>
-                <a href="visual.html">visual</a>
+                <a href="index.html">index</a>
             </li>
             <li>
                 <a href="log.html">log</a>
             </li>
             <li>
-                <a href="network.html">network</a>
+                <a href="visual.html">visual</a>
             </li>
             <li>
-                <a href="archive.html">archive</a>
+                <a href="about.html">about</a>
             </li>
+            <li>
+                <a href="network.html">network</a>
+            </li>
+
         </ul>
-        <button id="website-nav-btn">
-            <img src="./assets/menu.svg" alt="menu icon">
-        </button>
     </nav>
 
-    <!-- <footer>
-        <address>
-            <a href="mailto:jim@example.com">jim@example.com</a><br />
-            <a href="tel:+14155550132">+1 (415) 555-0132</a>
-        </address>        
-    </footer> -->
+    <button id="open-website-nav-btn" class="display-block">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
 </body>
 </html>

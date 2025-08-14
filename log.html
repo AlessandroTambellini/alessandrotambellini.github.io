@@ -7,18 +7,35 @@
 
     <title>log</title>
     
-    <link rel="icon" type="image/png+xml" href="assets/logo.png">
-    <link rel="stylesheet" href="./style/universal.css">
+    <link rel="icon" type="image/webp" href="assets/logo.webp">
+    <link rel="stylesheet" href="./stylesheets/universal.css">  
 
     <style>
-        img {
-            padding-inline: 1rem;
+        .log-date:not(article:first-child .log-date) { 
+            display: inline-block;
+            margin-top: 1.5em;
+        }
+
+        article ul {
+            margin-top: .5em;
+        }
+
+        article img {
             margin-block: .5rem;
         }
 
-        ul {
-            margin-top: .5em;
+        @media (min-width: 950px) {
+            /* On small screens, the indentation of the content isn't handy and it's actually noisy. */
+            article > *:not(.log-date) {
+                --margin-left: .25rem;
+                margin-left: var(--margin-left);
+            }
+
+            .inner-section > *:not(time) {
+                padding-left: calc(var(--margin-left)*2);
+            }
         }
+
     </style>
     
     <script defer src="./scripts/website-nav.js"></script>
@@ -26,14 +43,26 @@
 <body>
     <main>
         <article>
-            <time datetime="2025-08-03">8 August 2025</time>
+            <time class='log-date' datetime="2025-08-08">8 August 2025</time>
             <p>
                 Today I took a look at Facebook: the Dev Tools where lagging so much I wasn't even able to navigate the source code.
                 Btw, the nested <code>&lt;div&gt;</code>s test is passed: 11 divs to reach a button on the front page.
             </p>
+        
+            <section class="inner-section">
+                <time datetime="2025-08-10"><i>Edit of 10 August 2025</i></time>:
+                <img src="assets/log/code-snippet.png" alt="Code Snippet">
+                <p>
+                    Today I took a look at Claude.ai and just this little code snippet generated in the chat is more than 6KB of HTML.
+                    Moreover, it has 17 opening <code>&lt;span&gt;</code> tags but 27 closing <code>&lt;/span&gt;</code> tags. Go figure.
+                    And of course I also had the same laggish experience as with the Facebook code.
+                </p>
+            </section>
+        
         </article>
+
         <article>
-            <time datetime="2025-08-03">3 August 2025</time>
+            <time class='log-date' datetime="2025-08-03">3 August 2025</time>
             <p>
                 Sometimes I like to right click web pages to take a look at the source code. 
                 In most cases it's a miserable blob of nested <code>&lt;div&gt;</code>s without any sense.<br>
@@ -77,7 +106,7 @@
         </article>
 
         <article>
-            <time datetime="2025-07-21">21 July 2025</time>
+            <time class='log-date' datetime="2025-07-21">21 July 2025</time>
             <p>
                 Not a Sublime user, but I find its development interesting, 
                 also considering that isn't built with Electron: 
@@ -86,7 +115,7 @@
         </article>
 
         <article>
-            <time datetime="2025-06-28">28 June 2025</time>
+            <time class='log-date' datetime="2025-06-28">28 June 2025</time>
 
             <p>
                 Matthew Prince, CEO of Cloudflare, 
@@ -139,7 +168,7 @@
         </article>
 
         <article>
-            <time datetime="2025-06-24">24 June 2025</time>
+            <time class='log-date' datetime="2025-06-24">24 June 2025</time>
             <p>
                 Read <cite><em>A Programmable Web: An Unfinished Work</em></cite>, by Aaron Swartz.<br>
                 It makes a bunch of interesting points related to: openess of data, API design, structure of URLs, 
@@ -147,7 +176,7 @@
             </p>
         </article>
         <article>
-            <time datetime="2025-06-19">19 June 2025</time>
+            <time class='log-date' datetime="2025-06-19">19 June 2025</time>
             <p>
                 I wouldn't write this today: 
                 <a href="https://medium.com/@alessandrotambellini03/my-view-of-a-browser-5e7b6122832c">
@@ -156,7 +185,7 @@
             </p>
         </article>
         <article>
-            <time datetime="2025-05-01">1 May 2025</time>
+            <time class='log-date' datetime="2025-05-01">1 May 2025</time>
             <p>
                 Yesterday I started building a browser. 
                 I'll see where it goes.
@@ -164,14 +193,14 @@
             </p>
         </article>
         <article>
-            <time datetime="2025-04-17">17 April 2025</time>
+            <time class='log-date' datetime="2025-04-17">17 April 2025</time>
             <p>
                 Converted the Primes Spiral repo to a Gist:
                 <a href="https://gist.github.com/AlessandroTambellini/6687997bce2c5471a0be37060b1930d0">primes-spiral.html</a>
             </p>
         </article>
         <article>
-            <time datetime="2025-04-07">7 April 2025</time>
+            <time class='log-date' datetime="2025-04-07">7 April 2025</time>
             <p>
                 About the 
                 <a href="#idiosyncrasies-of-the-html-parser">
@@ -183,7 +212,7 @@
             </p>
         </article>
         <article>
-            <time datetime="2025-04-05">5 April 2025</time>
+            <time class='log-date' datetime="2025-04-05">5 April 2025</time>
             <p>
                 In these days I played with ray-tracing and has been the opportunity
                 to use the <code>&lt;canvas&gt;</code>:
@@ -193,7 +222,7 @@
             </p>
         </article>
         <article>
-            <time datetime="2025-03-29">29 March 2025</time>
+            <time class='log-date' datetime="2025-03-29">29 March 2025</time>
             <p>
                 I discovered an interesting CSS property: 
                 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens">
@@ -203,7 +232,7 @@
             </p>
         </article>
 	  	<article>
-            <time datetime="2025-03-14">14 March 2025</time>
+            <time class='log-date' datetime="2025-03-14">14 March 2025</time>
             <p>
                 I released on GitHub ReqLoop: 
                 <a href="https://github.com/AlessandroTambellini/ReqLoop/">https://github.com/AlessandroTambellini/ReqLoop/</a>.
@@ -214,20 +243,20 @@
             </p>
         </article>
 	  	<article>
-            <time datetime="2025-03-07">7 March 2025</time>
+            <time class='log-date' datetime="2025-03-07">7 March 2025</time>
             <p>
                 <a href="http://herpolhode.com/rob/">http://herpolhode.com/rob/</a>
             </p>
         </article>
         <article>
-            <time datetime="2025-02-25">25 February 2025</time>
+            <time class='log-date' datetime="2025-02-25">25 February 2025</time>
             <p>
                 I revisited and reshaped a little article about the NAND gate that I wrote 3 years ago:<br>
                 <a href="https://alessandrotambellini.github.io/Just-a-NAND-gate/">Just a NAND gate</a>
             </p>
         </article>   	
        <article id="idiosyncrasies-of-the-html-parser">
-            <time datetime="2025-02-19">19 February 2025</time>
+            <time class='log-date' datetime="2025-02-19">19 February 2025</time>
             <p>
                 Today I read 
                 <a href="https://htmlparser.info/#table-of-contents">Idiosyncrasies of the HTML parser</a>.<br>
@@ -246,14 +275,14 @@
             </p>
         </article>
         <article>
-            <time datetime="2025-02-16">16 February 2025</time>
+            <time class='log-date' datetime="2025-02-16">16 February 2025</time>
             <p>
                 Gemini protocol, browser, Voronoi:<br>
                 <a href="https://www.youtube.com/watch?v=sVG-Werqjlw">Making UI in Jai</a>
             </p>
         </article>
         <article>
-            <time datetime="2025-02-15">15 February 2025</time>
+            <time class='log-date' datetime="2025-02-15">15 February 2025</time>
             <p>
                 While reading the emscripten docs,
                 I came across this interesting article: 
@@ -263,7 +292,7 @@
             </p>
         </article>
         <article>
-            <time datetime="2025-02-05">5 February 2025</time>
+            <time class='log-date' datetime="2025-02-05">5 February 2025</time>
             <p>
                 Salvatore Sanfilippo mentioned <strong>VisiCalc</strong> in a video
                 and so I wanted to delve deeper into it:<br>
@@ -274,30 +303,31 @@
         </article>
     </main>
 
-    <nav id="website-nav">
+    <nav id="website-nav" class="display-none">
         <ul>
             <li>
-                <a href="index.html">.</a>
-            </li>
-            <li>
-                <a href="about.html">about</a>
-            </li>
-            <li>
-                <a href="visual.html">visual</a>
+                <a href="index.html">index</a>
             </li>
             <li>
                 <a href="log.html">log</a>
             </li>
             <li>
-                <a href="network.html">network</a>
+                <a href="visual.html">visual</a>
             </li>
             <li>
-                <a href="archive.html">archive</a>
+                <a href="about.html">about</a>
             </li>
+            <li>
+                <a href="network.html">network</a>
+            </li>
+
         </ul>
-        <button id="website-nav-btn">
-            <img src="./assets/menu.svg" alt="menu icon">
-        </button>
     </nav>
+
+    <button id="open-website-nav-btn" class="display-block">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
 </body>
 </html>

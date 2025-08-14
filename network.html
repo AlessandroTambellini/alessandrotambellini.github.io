@@ -7,8 +7,8 @@
 
     <title>network</title>
     
-    <link rel="icon" type="image/png+xml" href="assets/logo.png">
-    <link rel="stylesheet" href="./style/universal.css">
+    <link rel="icon" type="image/webp" href="assets/logo.webp">
+    <link rel="stylesheet" href="./stylesheets/universal.css">
     
     <script defer src="./scripts/website-nav.js"></script>
 </head>
@@ -48,30 +48,31 @@
         </ul>        
     </main>
 
-    <nav id="website-nav">
+    <nav id="website-nav" class="display-none">
         <ul>
             <li>
-                <a href="index.html">.</a>
-            </li>
-            <li>
-                <a href="about.html">about</a>
-            </li>
-            <li>
-                <a href="visual.html">visual</a>
+                <a href="index.html">index</a>
             </li>
             <li>
                 <a href="log.html">log</a>
             </li>
             <li>
-                <a href="network.html">network</a>
+                <a href="visual.html">visual</a>
             </li>
             <li>
-                <a href="archive.html">archive</a>
+                <a href="about.html">about</a>
             </li>
+            <li>
+                <a href="network.html">network</a>
+            </li>
+
         </ul>
-        <button id="website-nav-btn">
-            <img src="./assets/menu.svg" alt="menu icon">
-        </button>
     </nav>
+
+    <button id="open-website-nav-btn" class="display-block">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
 </body>
 </html>

@@ -1,13 +1,11 @@
-article {
-    width: 100%;
+article > h2:not(article:first-child h2) {
+    margin-top: .75em;
 }
 
 article > h2 {
     font-size: 3rem;
     line-height: 1.4;
-    padding-inline: .25em;
     margin-bottom: .25em;
-    margin-top: 1em;
 }
 
 article > header {
@@ -17,15 +15,10 @@ article > header {
 
 hr {
     margin-top: 2em;
-    margin-inline: auto;
 }
 
 #spaceship-survival-article {
     container-type: inline-size;
-}
-
-#draw-article > header {
-    text-align: left;
 }
 
 .icon {
@@ -71,4 +64,8 @@ iframe, .iframe-replacement {
     }
 }
 
-
+footer p {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 2em;
+}
