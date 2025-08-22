@@ -16,8 +16,13 @@
             margin-top: 1.5em;
         }
 
-        article ul {
-            margin-top: .5em;
+        article > ul {
+            margin-block: .5em;
+        }
+
+        li > ul {
+            margin-bottom: .5em;
+            margin-left: 1em;
         }
 
         article img {
@@ -43,9 +48,14 @@
 <body>
     <main>
         <article>
+            <time class='log-date' datetime="2025-08-21">21 August 2025</time>
+            <p>The Overrides feature of the 'Sources' tab of the DevTools drove me crazy.</p>
+        </article>
+
+        <article>
             <time class='log-date' datetime="2025-08-08">8 August 2025</time>
             <p>
-                Today I took a look at Facebook: the Dev Tools where lagging so much I wasn't even able to navigate the source code.
+                Today I took a look at Facebook: the DevTools where lagging so much I wasn't even able to navigate the source code.
                 Btw, the nested <code>&lt;div&gt;</code>s test is passed: 11 divs to reach a button on the front page.
             </p>
         
@@ -132,7 +142,7 @@
             </p>
             <ul>
                 <li>
-                    <p>AI bots consequences for publishers:</p>
+                    AI bots consequences for publishers:
                     <ul>
                         <li>Subs aren't sold</li>
                         <li>Ads aren't seen</li>
@@ -140,7 +150,7 @@
                     </ul>
                 </li>
                 <li>
-                    <p>People create content to:</p>
+                    People create content to:
                     <ul>
                         <li>Make money</li>
                         <li>Get fame</li>
