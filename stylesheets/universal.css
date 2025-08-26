@@ -1,3 +1,10 @@
+@font-face { 
+    src:
+        local('Source Code Pro'), 
+        url('../assets/Source_Code_Pro/SourceCodePro-Regular.ttf') format('truetype');
+    font-family: 'Source Code Pro';
+}
+
 :root {
     --open-website-nav-btn_size: 3rem;
     --open-website-nav-btn_margin: 2rem;
@@ -19,16 +26,27 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
+}
+
+code,
+.code {
+    font-family: "Source Code Pro", monospace;
+}
+
+time {
+    font-family: cursive;
 }
 
 main {
+    --padding-inline: .5em;
+
     margin: .75rem;
-    padding-inline: .5em;
-    padding-top: .5em;
+    padding: var(--padding-inline);
+    
     /* This padding is to let the text at the bottom of the page not be covered by #open-website-nav-btn */
     padding-bottom: calc(var(--open-website-nav-btn_size) + 2*var(--open-website-nav-btn_margin));
-    max-width: calc(800px + 2*.5em);
+    max-width: calc(800px + 2*var(--padding-inline));
     flex-grow: 2;
 }
 
@@ -37,7 +55,6 @@ h1 {
 }
 
 code, time {
-    font-family: fantasy;
     color: var(--time-color);
 }
 
@@ -48,6 +65,10 @@ a {
 
 a:hover {
     color: rgb(88, 95, 222);
+}
+
+a, button {
+    cursor: pointer;
 }
 
 q {
@@ -67,6 +88,11 @@ p {
 ul, ol {
     line-height: 1.5;
     list-style-position: inside;
+}
+
+li > ul {
+    margin-bottom: .5em;
+    margin-left: 1em;
 }
 
 hr {
@@ -90,7 +116,7 @@ img {
     /* I specify the font-size in the parent because of the padding in em */
     font-size: var(--open-website-nav-btn_fs);
     padding: 1em;
-    box-shadow: -2px 0px 8px rgb(133, 133, 133);
+    box-shadow: -1px 0px 7px rgb(133, 133, 133);
     background-color: rgb(26, 28, 32);
 }
 
@@ -98,11 +124,35 @@ img {
     font-size: inherit;
     line-height: 1.2;
     list-style: none;
+    white-space: nowrap;
 }
 
-#open-website-nav-btn {
-    cursor: pointer;
-    background-color: var(--link-color);
+#website-nav > button {
+    /* only for desktop */
+    display: none;
+    margin-top: 5vh;
+    background: unset;
+    border: unset;
+    font-size: 2rem;
+    color: rgb(164, 164, 164);
+    margin-left: auto;
+    border-radius: 8px;
+} 
+
+#website-nav > button[title='minify nav'] {
+    padding-right: .5em;
+}
+#website-nav > button[title='expand nav'] {
+    padding-left: .5em;
+}
+
+#website-nav > button:hover {
+    background-color: rgb(76, 76, 76);
+}
+
+#open-website-nav-btn 
+{
+    background-color: var(--background-color);
     position: fixed;
     border-radius: 8px;
     bottom: var(--open-website-nav-btn_margin);
@@ -110,31 +160,32 @@ img {
 
     padding: .85rem .65rem;
 
-    border: 1px solid #ababab;
+    border: 1px solid var(--delimiter-color);
     transition: all 0.035s ease;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(46, 48, 57, 0.05);
 }
 
 #open-website-nav-btn:hover {
     border-color: #999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px rgba(46, 48, 57, 0.08);
 }
 
 #open-website-nav-btn:active {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(46, 48, 57, 0.1);
     transform: translateY(1px);
 }
 
-#open-website-nav-btn div {
+#open-website-nav-btn span[role=img] {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+}
+
+#open-website-nav-btn span[role=img] span {
     width: 2.5rem;
     height: 4px;
     border-radius: 8px;
-    background-color: black;
-    margin-bottom: .65rem;
-}
-
-#open-website-nav-btn div:last-child {
-    margin-bottom: 0;
+    background-color: var(--link-color);
 }
 
 @media (min-width: 1050px) {    
@@ -142,24 +193,29 @@ img {
         display: flex;
         align-items: start;
     }
-    
-    main {
-        margin-right: var(--open-website-nav-btn_fs);
-    }
 
     #website-nav {
         display: block;
         position: unset;
+        min-width: unset;
         border-left: 1px solid var(--delimiter-color);
         box-shadow: unset;
         background-color: unset;
+    }
+
+    #website-nav > button.display-block {
+        display: block;
+    }
+
+    .minified-list li a {
+        visibility: hidden;
+        font-size: 0;
     }
 
     #open-website-nav-btn {
         display: none;
     }
 }  
-
 
 /*
  * States */
@@ -174,4 +230,8 @@ img {
 
 .display-opaque {
     opacity: .5;
+}
+.display-opaque a,
+.display-opaque button {
+    pointer-events: none;
 }

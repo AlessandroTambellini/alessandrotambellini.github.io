@@ -7,6 +7,10 @@
 
     <title>log</title>
     
+    <!-- <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+    </style> -->
+
     <link rel="icon" type="image/webp" href="assets/logo.webp">
     <link rel="stylesheet" href="./stylesheets/universal.css">  
 
@@ -18,11 +22,6 @@
 
         article > ul {
             margin-block: .5em;
-        }
-
-        li > ul {
-            margin-bottom: .5em;
-            margin-left: 1em;
         }
 
         article img {
@@ -48,6 +47,35 @@
 <body>
     <main>
         <article>
+            <time class='log-date' datetime="2025-08-24">24 August 2025</time>
+            <p>
+                <code>position: sticky;</code> isn't just about making a good visual effect for a navbar.
+                It allows to save on containers, allowing the HTML to be more semantic.
+            </p>
+            <p>Snippet from my project 'Post Stream':</p>
+            <p>Before:</p>
+            <pre class="code">
+    &lt;main&gt;                
+        &lt;h2&gt;Posts&lt;/h2&gt;
+        &lt;div id='replies-container'&gt;
+            {{ post-cards }}
+        &lt;/div&gt;
+    &lt;/main&gt;
+            </pre>
+            <p>After:</p>
+            <pre class="code">
+    &lt;main&gt;
+        &lt;h2&gt;Posts&lt;/h2&gt;
+        {{ post-cards }}
+    &lt;/main&gt;
+            </pre>
+            <p>
+                In this specific case the goal is to scroll the posts while manteining the title visible.
+                Thanks to <code>sticky</code> I can do it without relying on a container with scrolling properties.
+            </p>
+        </article>
+
+        <article>
             <time class='log-date' datetime="2025-08-21">21 August 2025</time>
             <p>The Overrides feature of the 'Sources' tab of the DevTools drove me crazy.</p>
         </article>
@@ -55,7 +83,7 @@
         <article>
             <time class='log-date' datetime="2025-08-08">8 August 2025</time>
             <p>
-                Today I took a look at Facebook: the DevTools where lagging so much I wasn't even able to navigate the source code.
+                Today I took a look at Facebook: the DevTools was lagging so much I wasn't even able to navigate the source code.
                 Btw, the nested <code>&lt;div&gt;</code>s test is passed: 11 divs to reach a button on the front page.
             </p>
         
@@ -67,7 +95,7 @@
                 <p>
                     Today I took a look at Claude.ai and just this little code snippet generated in the chat is more than 6KB of HTML.
                     Moreover, it has 17 opening <code>&lt;span&gt;</code> tags but 27 closing <code>&lt;/span&gt;</code> tags. Go figure.
-                    And of course I also had the same laggish experience as with the Facebook code.
+                    And of course, I had the same laggish experience as with the Facebook code.
                 </p>
             </section>
         
@@ -79,11 +107,11 @@
                 Sometimes I like to right click web pages to take a look at the source code. 
                 In most cases it's a miserable blob of nested <code>&lt;div&gt;</code>s without any sense.<br>
                 I remember one month ago taking a look at the Porsche website made in Next.js and, 
-                immediately after, watching the 2025 Vercel Conference (The company behind Next.js).
-                In the conference, they basically said: 
+                immediately after, watching the 2025 Vercel Conference (The company behind Next.js)
+                where they basically said: 
                 "Well, crawlers and agents are not able to scan our websites and so we thought about creating the text-based representation 
                 of the content of a page in parallel to the page itself, specific for the crawlers"... 
-                Instead of questioning their JS Blob on the frontend, they come out with this solution. 
+                Instead of questioning their JS blob on the frontend, they come up with this solution. 
                 Are they really that blind or is it just a question of interests? Or am I just naive?<br> 
                 Now, my follow-up question is, 
                 is it possible for a complex website to be semantic? 
@@ -109,7 +137,7 @@
                 at the cost of what I already said before.
             </p>
             <p>
-                Just to give a bit of context, this is the readability and easiness of analysis of a page of my project in the browser:
+                Just to make an example, this is the readability and easiness of analysis of a page of my project in the browser:
             </p>
             <a href="assets/log/sources-tree.avif">
                 <img src="assets/log/sources-tree.avif" alt="Source Tree">
@@ -120,7 +148,7 @@
             <a href="assets/log/network-request-analysis.avif">
                 <img src="assets/log/network-request-analysis.avif" alt="Network Request Analysis">
             </a>
-            <p>Can you do the same in React.js?</p>
+            <p>Can you have the same clarity in React.js?</p>
         </article>
 
         <article>
@@ -338,14 +366,22 @@
             <li>
                 <a href="network.html">network</a>
             </li>
-
         </ul>
+        
+        <button title='minify nav' class='display-block'>
+            <span role='img'>〈</span>
+        </button>
+        <button title='expand nav' class='display-none'>
+            <span role='img'>〉</span>
+        </button>
     </nav>
 
     <button id="open-website-nav-btn" class="display-block">
-        <div></div>
-        <div></div>
-        <div></div>
+        <span role="img">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
     </button>
 </body>
 </html>
