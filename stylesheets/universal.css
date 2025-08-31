@@ -5,10 +5,12 @@
     font-family: 'Source Code Pro';
 }
 
-:root {
+:root 
+{
     --open-website-nav-btn_size: 3rem;
     --open-website-nav-btn_margin: 2rem;
     --open-website-nav-btn_fs: 3rem;
+
     --background-color: rgb(26, 28, 32);
     --text-color: rgb(236, 239, 242);
     --delimiter-color: rgb(46, 48, 57);
@@ -31,6 +33,7 @@ body {
 
 code,
 .code {
+    white-space-collapse: preserve;    
     font-family: "Source Code Pro", monospace;
 }
 
@@ -147,7 +150,7 @@ img {
 }
 
 #website-nav > button:hover {
-    background-color: rgb(76, 76, 76);
+    background-color: rgb(73 73 73 / 36%);
 }
 
 #open-website-nav-btn 

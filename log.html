@@ -54,21 +54,25 @@
             </p>
             <p>Snippet from my project 'Post Stream':</p>
             <p>Before:</p>
-            <pre class="code">
+            <!-- <pre class="code"> -->
+            <code>
     &lt;main&gt;                
         &lt;h2&gt;Posts&lt;/h2&gt;
         &lt;div id='replies-container'&gt;
             {{ post-cards }}
         &lt;/div&gt;
     &lt;/main&gt;
-            </pre>
-            <p>After:</p>
-            <pre class="code">
+            </code>
+            <!-- </pre> -->
+            <p>After:</p></code>
+            <!-- <pre class="code"> -->
+            <code>
     &lt;main&gt;
         &lt;h2&gt;Posts&lt;/h2&gt;
         {{ post-cards }}
     &lt;/main&gt;
-            </pre>
+            </code>
+            <!-- </pre> -->
             <p>
                 In this specific case the goal is to scroll the posts while manteining the title visible.
                 Thanks to <code>sticky</code> I can do it without relying on a container with scrolling properties.
