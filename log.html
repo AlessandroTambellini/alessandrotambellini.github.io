@@ -40,12 +40,40 @@
             }
         }
 
+        .static-link {
+            font-weight: 600;
+            color: #8fa8ff;
+        }
+
     </style>
     
     <script defer src="./scripts/website-nav.js"></script>
 </head>
 <body>
     <main>
+        <article>
+            <time class='log-date' datetime="2025-09-02">2 September 2025</time>
+            <p>
+                Who needs package managers, build tools, and YAML files?
+                Just copy-pasted the code I needed and deployed directly from the main branch: 
+                <span class="static-link">https://github.com/AlessandroTambellini/3d-matrix-visualizer</span>.
+                <br>
+                Consequences?
+            </p>
+            <ul>
+                <li>It saves a lot of developer's time (at least mine)</li>
+                <li>The codebase is cleaner</li>
+                <li>
+                    The website is easily debuggable from the DevTools: no hashing of filenames, bundles and minifications. 
+                    And no, the website isn't slower because the problem isn't my little scripts of hundreds of lines of code.
+                </li>
+            </ul>
+            <p>
+                See the difference with the previous approach: 
+                <span class="static-link">https://github.com/AlessandroTambellini/matrix-visualizer</span>.
+            </p>
+        </article>
+
         <article>
             <time class='log-date' datetime="2025-08-24">24 August 2025</time>
             <p>
@@ -131,7 +159,7 @@
                 <li>Store/Retrieve the data into/from a database</li>
                 <li>Show the data</li>
             </ul>
-            <img src="assets/log/website-scheme.avif" alt="Website Scheme">
+            <img src="assets/log/website-scheme.webp" alt="Website Scheme">
             <p>
                 If these actions are performed by using what the web offers (URL, HTTP, HTML), 
                 it's pretty straightforward to implement such a system.<br>
@@ -143,14 +171,14 @@
             <p>
                 Just to make an example, this is the readability and easiness of analysis of a page of my project in the browser:
             </p>
-            <a href="assets/log/sources-tree.avif">
-                <img src="assets/log/sources-tree.avif" alt="Source Tree">
+            <a href="assets/log/sources-tree.webp">
+                <img src="assets/log/sources-tree.webp" alt="Source Tree">
             </a>
-            <a href="assets/log/html-code.avif">
-                <img src="assets/log/html-code.avif" alt="HTML Code">
+            <a href="assets/log/html-code.webp">
+                <img src="assets/log/html-code.webp" alt="HTML Code">
             </a>
-            <a href="assets/log/network-request-analysis.avif">
-                <img src="assets/log/network-request-analysis.avif" alt="Network Request Analysis">
+            <a href="assets/log/network-request-analysis.webp">
+                <img src="assets/log/network-request-analysis.webp" alt="Network Request Analysis">
             </a>
             <p>Can you have the same clarity in React.js?</p>
         </article>
@@ -159,7 +187,7 @@
             <time class='log-date' datetime="2025-07-21">21 July 2025</time>
             <p>
                 Not a Sublime user, but I find its development interesting, 
-                also considering that isn't built with Electron: 
+                also considering that isn't built using Electron: 
                 <a href="https://www.sublimetext.com/blog/articles/2007/11">https://www.sublimetext.com/blog/articles/2007/11</a>            
             </p>
         </article>
@@ -252,20 +280,20 @@
         <article>
             <time class='log-date' datetime="2025-04-07">7 April 2025</time>
             <p>
-                About the 
+                Related to
                 <a href="#idiosyncrasies-of-the-html-parser">
                     idiosyncrasies of the HTML parser
-                </a>, Take a look at this Gist: 
+                </a>: 
                 <a href="https://gist.github.com/AlessandroTambellini/b11d6ac91115d3a0d485f1fa78865f19">
-                    Idiosyncrasy of the HTML parser
+                    https://gist.github.com/AlessandroTambellini/b11d6ac91115d3a0d485f1fa78865f19
                 </a>
             </p>
         </article>
         <article>
             <time class='log-date' datetime="2025-04-05">5 April 2025</time>
             <p>
-                In these days I played with ray-tracing and has been the opportunity
-                to use the <code>&lt;canvas&gt;</code>:
+                Played with ray-tracing. An opportunity
+                to use <code>&lt;canvas&gt;</code>:
                 <a href="https://github.com/AlessandroTambellini/rt">
                     rt
                 </a>.
@@ -274,22 +302,16 @@
         <article>
             <time class='log-date' datetime="2025-03-29">29 March 2025</time>
             <p>
-                I discovered an interesting CSS property: 
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens">
-                    hyphens
-                </a>
-                .
+                Discovered an interesting CSS property: <code>hyphens</code>.
             </p>
         </article>
 	  	<article>
             <time class='log-date' datetime="2025-03-14">14 March 2025</time>
             <p>
-                I released on GitHub ReqLoop: 
+                Released ReqLoop: 
                 <a href="https://github.com/AlessandroTambellini/ReqLoop/">https://github.com/AlessandroTambellini/ReqLoop/</a>.
-                This project was also an occasion to play with <code>&lt;template&gt;</code> and
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver">
-                    ResizeObserver
-                </a>.
+                Also an occasion to play with <code>&lt;template&gt;</code> and
+                <code>ResizeObserver()</code>.
             </p>
         </article>
 	  	<article>
@@ -351,6 +373,7 @@
                 </a>
             </p>
         </article>
+
     </main>
 
     <nav id="website-nav" class="display-none">
