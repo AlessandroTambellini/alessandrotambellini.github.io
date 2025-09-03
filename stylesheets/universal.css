@@ -203,11 +203,13 @@ img {
     body {
         display: flex;
         align-items: start;
+        justify-content: center;
     }
 
     #website-nav {
         display: block;
-        position: unset;
+        position: sticky;
+        top: 0;
         min-width: unset;
         border-left: 1px solid var(--delimiter-color);
         box-shadow: unset;
@@ -218,6 +220,10 @@ img {
         display: block;
     }
 
+    #website-nav:has(.minified-list) {
+        border-left: unset;
+        padding-inline: 0;
+    }
     .minified-list li a {
         visibility: hidden;
         font-size: 0;
@@ -255,7 +261,11 @@ img {
     cursor: pointer;
 }
 
+body:has(.fullsize) * {
+    pointer-events: none;
+}
 .fullsize {
+    pointer-events: all !important;
     cursor: pointer;
     position: fixed;
     top: 0;
