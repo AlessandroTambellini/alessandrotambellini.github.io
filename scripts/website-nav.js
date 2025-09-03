@@ -46,3 +46,16 @@ function switch_class(old, _new) {
     this.classList.remove(old);
     this.classList.add(_new)
 }
+
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', e => {
+        e.stopPropagation();
+        img.parentElement.classList.add('fullsize');
+    });
+});
+
+document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
+    img_wrapper.addEventListener('click', () => {
+        img_wrapper.classList.remove('fullsize');
+    });
+});
