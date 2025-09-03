@@ -35,6 +35,7 @@ code,
 .code {
     white-space-collapse: preserve;    
     font-family: "Source Code Pro", monospace;
+    font-size: 1.25rem;
 }
 
 time {
@@ -63,6 +64,9 @@ code, time {
 
 a {
     color: var(--link-color);
+    overflow-wrap: break-word;
+}
+.static-link {
     overflow-wrap: break-word;
 }
 
@@ -121,6 +125,9 @@ img {
     padding: 1em;
     box-shadow: -1px 0px 7px rgb(133, 133, 133);
     background-color: rgb(26, 28, 32);
+    
+    flex-direction: column;
+    justify-content: end;
 }
 
 #website-nav ul {
@@ -222,6 +229,10 @@ img {
 
 /*
  * States */
+
+.flex {
+    display: flex;
+}
 
 .display-block {
     display: block;

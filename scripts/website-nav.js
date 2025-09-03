@@ -17,7 +17,7 @@ const main = document.querySelector('main');
 
 open_website_nav_btn.addEventListener('click', () => 
 {    
-    website_nav.switch_class('display-none', 'display-block');
+    website_nav.switch_class('display-none', 'flex');
     open_website_nav_btn.switch_class('display-block', 'display-none');
     main.classList.add('display-opaque');
 });
@@ -37,7 +37,7 @@ expand_nav_btn.addEventListener('click', () =>
 });
 
 document.addEventListener('click', () => {
-    website_nav.switch_class('display-block', 'display-none'); 
+    website_nav.switch_class('flex', 'display-none'); 
     open_website_nav_btn.switch_class('display-none', 'display-block');
     main.classList.remove('display-opaque');
 });
