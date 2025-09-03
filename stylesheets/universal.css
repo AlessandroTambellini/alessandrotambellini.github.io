@@ -39,7 +39,8 @@ code,
 }
 
 time {
-    font-family: cursive;
+    font-family: serif;
+    font-size: 1.25rem;
 }
 
 main {
@@ -269,5 +270,5 @@ img {
 
 .fullsize img {
     cursor: default;
-    max-width: 90%;
+    max-width: 85%;
 }
