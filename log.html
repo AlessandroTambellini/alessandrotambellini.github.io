@@ -27,6 +27,9 @@
         article img {
             margin-block: .5rem;
         }
+        article .img-placeholder {
+            margin-block: .5rem;
+        }
 
         @media (min-width: 950px) {
             /* On small screens, the indentation of the content isn't handy and it's actually noisy. */
@@ -36,7 +39,7 @@
             }
 
             .inner-section > *:not(time) {
-                padding-left: calc(var(--margin-left)*2);
+                margin-left: calc(var(--margin-left)*2);
             }
         }
 
@@ -121,6 +124,7 @@
         
             <section class="inner-section">
                 <time datetime="2025-08-10"><i>Edit of 10 August 2025</i></time>:
+                <div class="img-placeholder display-none"></div>
                 <div class="img-wrapper">
                     <img src="assets/log/code-snippet.png" alt="Code Snippet">
                 </div>
@@ -159,6 +163,7 @@
                 <li>Store/Retrieve the data into/from a database</li>
                 <li>Show the data</li>
             </ul>
+            <div class="img-placeholder display-none"></div>
             <div class="img-wrapper">
                 <img src="assets/log/website-scheme.webp" alt="Website Scheme">
             </div>
@@ -176,12 +181,15 @@
             <!-- <a href="assets/log/sources-tree.webp">
                 <img src="assets/log/sources-tree.webp" alt="Source Tree">
             </a> -->
+            <div class="img-placeholder display-none"></div>
             <div class="img-wrapper">
                 <img src="assets/log/sources-tree.webp" alt="Source Tree">
             </div>
+            <div class="img-placeholder display-none"></div>
             <div class="img-wrapper">
                 <img src="assets/log/html-code.webp" alt="HTML Code">
             </div>
+            <div class="img-placeholder display-none"></div>
             <div class="img-wrapper">
                 <img src="assets/log/network-request-analysis.webp" alt="Network Request Analysis">
             </div>

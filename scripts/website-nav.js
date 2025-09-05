@@ -4,58 +4,79 @@ const minify_nav_btn = website_nav.querySelector('button[title="minify nav"]');
 const expand_nav_btn = website_nav.querySelector('button[title="expand nav"]');
 const main = document.querySelector('main');
 
-(function main()
-{
-    website_nav.switch_class          = 
-    open_website_nav_btn.switch_class = 
-    minify_nav_btn.switch_class       = 
-    expand_nav_btn.switch_class       = switch_class;
-    
-    website_nav.addEventListener('click', e => e.stopPropagation());
-    open_website_nav_btn.addEventListener('click', e => e.stopPropagation());
-})();
+function switch_class(element, old_class, new_class) {
+    element.classList.remove(old_class);
+    element.classList.add(new_class);
+}
 
-open_website_nav_btn.addEventListener('click', () => 
-{    
-    website_nav.switch_class('display-none', 'flex');
-    open_website_nav_btn.switch_class('display-block', 'display-none');
+open_website_nav_btn.addEventListener('click', e => 
+{
+    switch_class(website_nav, 'display-none', 'flex');
+    switch_class(open_website_nav_btn, 'display-block', 'display-none');
     main.classList.add('display-opaque');
 });
 
 minify_nav_btn.addEventListener('click', () => 
 {
     website_nav.querySelector('ul').classList.add('minified-list');
-    minify_nav_btn.switch_class('display-block', 'display-none');
-    expand_nav_btn.switch_class('display-none', 'display-block');
+    switch_class(minify_nav_btn, 'display-block', 'display-none');
+    switch_class(expand_nav_btn, 'display-none', 'display-block');
 });
 
 expand_nav_btn.addEventListener('click', () => 
 {
     website_nav.querySelector('ul').classList.remove('minified-list');
-    expand_nav_btn.switch_class('display-block', 'display-none');
-    minify_nav_btn.switch_class('display-none', 'display-block');
+    switch_class(expand_nav_btn, 'display-block', 'display-none');
+    switch_class(minify_nav_btn, 'display-none', 'display-block');
 });
 
-document.addEventListener('click', () => {
-    website_nav.switch_class('flex', 'display-none'); 
-    open_website_nav_btn.switch_class('display-none', 'display-block');
-    main.classList.remove('display-opaque');
+main.addEventListener('click', e => 
+{
+    if (e.target === main) 
+    {
+        switch_class(website_nav, 'flex', 'display-none'); 
+        switch_class(open_website_nav_btn, 'display-none', 'display-block');
+        main.classList.remove('display-opaque');
+    }
 });
-
-function switch_class(old, _new) {
-    this.classList.remove(old);
-    this.classList.add(_new)
-}
 
 document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('click', e => {
-        e.stopPropagation();
-        img.parentElement.classList.add('fullsize');
+    img.addEventListener('click', e => 
+    {
+        const img_wrapper = img.parentElement;
+
+        const img_placeholder = img_wrapper.previousElementSibling;
+        img_placeholder.style.height = `${img.clientHeight}px`;
+        img_placeholder.style.width = `${img.clientWidth}px`;
+        switch_class(img_placeholder, 'display-none', 'display-inline-block');
+
+        img_wrapper.classList.add('fullscreen');
+
+        switch_class(img, 'zooming_out', 'zooming_in');
+
+        // document.body.style.overflow = 'hidden';
     });
 });
 
 document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
-    img_wrapper.addEventListener('click', () => {
-        img_wrapper.classList.remove('fullsize');
+    img_wrapper.addEventListener('click', e => 
+    {
+        if (e.target === img_wrapper)
+        {
+            const img = img_wrapper.querySelector('img');
+            switch_class(img, 'zooming_in', 'zooming_out');
+
+            const img_placeholder = img_wrapper.previousElementSibling;
+            
+            setTimeout(() => {
+                img_wrapper.classList.remove('fullscreen');
+                switch_class(img_placeholder, 'display-inline-block', 'display-none');
+                img_placeholder.style.height = '';
+                img_placeholder.style.width = '';
+                // document.body.style.overflow = '';
+            }, 300);
+        }
     });
 });
+
+
