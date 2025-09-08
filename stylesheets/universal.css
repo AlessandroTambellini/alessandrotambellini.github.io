@@ -31,11 +31,13 @@ body {
     font-family: sans-serif;
 }
 
-code,
-.code {
-    white-space-collapse: preserve;    
+code {
     font-family: "Source Code Pro", monospace;
     font-size: 1.25rem;
+}
+
+.code-block {
+    white-space-collapse: preserve;    
 }
 
 time {
@@ -144,6 +146,7 @@ body:has(#website-nav.flex) main > * {
     line-height: 1.2;
     list-style: none;
     white-space: nowrap;
+    /* text-align: right; */
 }
 
 #website-nav > button {
@@ -179,9 +182,9 @@ body:has(#website-nav.flex) main > * {
 
     padding: .85rem .65rem;
 
-    border: 1px solid var(--delimiter-color);
+    border: 1px solid var(--link-color);
     transition: all 0.035s ease;
-    box-shadow: 0 1px 2px rgba(46, 48, 57, 0.05);
+    /* box-shadow: 0 1px 2px rgba(46, 48, 57, 0.05); */
 }
 
 #open-website-nav-btn:hover {
@@ -287,7 +290,7 @@ body:has(#website-nav.flex) main > * {
     z-index: 1;
 
     background-color: rgba(0, 0, 0, 0.528);
-    /* backdrop-filter: blur(3px); */
+    backdrop-filter: blur(3px);
 }
 
 .img-placeholder {

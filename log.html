@@ -53,9 +53,11 @@
     <script defer src="./scripts/website-nav.js"></script>
 </head>
 <body>
+    <!-- <h1>Log</h1> -->
+
     <main>
         <article>
-            <time class='log-date' datetime="2025-09-02">2 September 2025</time>
+            <time class='log-date' datetime="2025-09-02">2 Sep 2025</time>
             <p>
                 Who needs package managers, build tools, and YAML files?
                 Just copy-pasted the code I needed and deployed directly from the main branch: 
@@ -78,7 +80,7 @@
         </article>
 
         <article>
-            <time class='log-date' datetime="2025-08-24">24 August 2025</time>
+            <time class='log-date' datetime="2025-08-24">24 Aug 2025</time>
             <p>
                 <code>position: sticky;</code> isn't just about making a good visual effect for a navbar.
                 It allows to save on containers, allowing the HTML to be more semantic.
@@ -86,22 +88,22 @@
             <p>Snippet from my project 'Post Stream':</p>
             <p>Before:</p>
             <!-- <pre class="code"> -->
-            <code>
-    &lt;main&gt;                
-        &lt;h2&gt;Posts&lt;/h2&gt;
-        &lt;div id='replies-container'&gt;
-            {{ post-cards }}
-        &lt;/div&gt;
-    &lt;/main&gt;
+            <code class="code-block">
+&lt;main&gt;                
+    &lt;h2&gt;Posts&lt;/h2&gt;
+    &lt;div id='replies-container'&gt;
+        {{ post-cards }}
+    &lt;/div&gt;
+&lt;/main&gt;
             </code>
             <!-- </pre> -->
             <p>After:</p></code>
             <!-- <pre class="code"> -->
-            <code>
-    &lt;main&gt;
-        &lt;h2&gt;Posts&lt;/h2&gt;
-        {{ post-cards }}
-    &lt;/main&gt;
+            <code class="code-block">
+&lt;main&gt;
+    &lt;h2&gt;Posts&lt;/h2&gt;
+    {{ post-cards }}
+&lt;/main&gt;
             </code>
             <!-- </pre> -->
             <p>
@@ -111,19 +113,19 @@
         </article>
 
         <article>
-            <time class='log-date' datetime="2025-08-21">21 August 2025</time>
+            <time class='log-date' datetime="2025-08-21">21 Aug 2025</time>
             <p>The Overrides feature of the 'Sources' tab of the DevTools drove me crazy.</p>
         </article>
 
         <article>
-            <time class='log-date' datetime="2025-08-08">8 August 2025</time>
+            <time class='log-date' datetime="2025-08-08">8 Aug 2025</time>
             <p>
                 Today I took a look at Facebook: the DevTools was lagging so much I wasn't even able to navigate the source code.
                 Btw, the nested <code>&lt;div&gt;</code>s test is passed: 11 divs to reach a button on the front page.
             </p>
         
             <section class="inner-section">
-                <time datetime="2025-08-10"><i>Edit of 10 August 2025</i></time>:
+                <time datetime="2025-08-10">Edit of 10 Aug 2025</time>:
                 <div class="img-placeholder display-none"></div>
                 <div class="img-wrapper">
                     <img src="assets/log/code-snippet.png" alt="Code Snippet">
@@ -138,7 +140,7 @@
         </article>
 
         <article>
-            <time class='log-date' datetime="2025-08-03">3 August 2025</time>
+            <time class='log-date' datetime="2025-08-03">3 Aug 2025</time>
             <p>
                 Sometimes I like to right click web pages to take a look at the source code. 
                 In most cases it's a miserable blob of nested <code>&lt;div&gt;</code>s without any sense.<br>
@@ -197,7 +199,7 @@
         </article>
 
         <article>
-            <time class='log-date' datetime="2025-07-21">21 July 2025</time>
+            <time class='log-date' datetime="2025-07-21">21 Jul 2025</time>
             <p>
                 Not a Sublime user, but I find its development interesting, 
                 also considering that isn't built using Electron: 
@@ -206,7 +208,7 @@
         </article>
 
         <article>
-            <time class='log-date' datetime="2025-06-28">28 June 2025</time>
+            <time class='log-date' datetime="2025-06-28">28 Jun 2025</time>
 
             <p>
                 Matthew Prince, CEO of Cloudflare, 
@@ -234,8 +236,8 @@
             <p>And here are my considerations:</p>
             <ol>
                 <li>
-                    The more a page has "fame", the more it's crawled by the bots.<br>
-                    The more a page is linked and cited, the more it's crawled by the bots.<br>
+                    The more a page has "fame", the more it's crawled by the bots.
+                    The more a page is linked and cited, the more it's crawled by the bots.
                     The more a page has fame, the more its content has a chance to be in an LLM answer.
                     And I think sharing the message/opinion/point-of-view
                     is more important than fame per se.
@@ -259,7 +261,7 @@
         </article>
 
         <article>
-            <time class='log-date' datetime="2025-06-24">24 June 2025</time>
+            <time class='log-date' datetime="2025-06-24">24 Jun 2025</time>
             <p>
                 Read <cite><em>A Programmable Web: An Unfinished Work</em></cite>, by Aaron Swartz.<br>
                 It makes a bunch of interesting points related to: openess of data, API design, structure of URLs, 
@@ -267,7 +269,7 @@
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-06-19">19 June 2025</time>
+            <time class='log-date' datetime="2025-06-19">19 Jun 2025</time>
             <p>
                 I wouldn't write this today: 
                 <a href="https://medium.com/@alessandrotambellini03/my-view-of-a-browser-5e7b6122832c">
@@ -284,14 +286,14 @@
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-04-17">17 April 2025</time>
+            <time class='log-date' datetime="2025-04-17">17 Apr 2025</time>
             <p>
                 Converted the Primes Spiral repo to a Gist:
                 <a href="https://gist.github.com/AlessandroTambellini/6687997bce2c5471a0be37060b1930d0">primes-spiral.html</a>
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-04-07">7 April 2025</time>
+            <time class='log-date' datetime="2025-04-07">7 Apr 2025</time>
             <p>
                 Related to
                 <a href="#idiosyncrasies-of-the-html-parser">
@@ -303,7 +305,7 @@
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-04-05">5 April 2025</time>
+            <time class='log-date' datetime="2025-04-05">5 Apr 2025</time>
             <p>
                 Played with ray-tracing. An opportunity
                 to use <code>&lt;canvas&gt;</code>:
@@ -313,35 +315,34 @@
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-03-29">29 March 2025</time>
+            <time class='log-date' datetime="2025-03-29">29 Mar 2025</time>
             <p>
                 Discovered an interesting CSS property: <code>hyphens</code>.
             </p>
         </article>
 	  	<article>
-            <time class='log-date' datetime="2025-03-14">14 March 2025</time>
+            <time class='log-date' datetime="2025-03-14">14 Mar 2025</time>
             <p>
-                Released ReqLoop: 
-                <a href="https://github.com/AlessandroTambellini/ReqLoop/">https://github.com/AlessandroTambellini/ReqLoop/</a>.
-                Also an occasion to play with <code>&lt;template&gt;</code> and
+                Worked a couple of weeks on ReqLoop. A networking project, but 
+                also an occasion to play with <code>&lt;template&gt;</code> and
                 <code>ResizeObserver()</code>.
             </p>
         </article>
 	  	<article>
-            <time class='log-date' datetime="2025-03-07">7 March 2025</time>
+            <time class='log-date' datetime="2025-03-07">7 Mar 2025</time>
             <p>
                 <a href="http://herpolhode.com/rob/">http://herpolhode.com/rob/</a>
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-02-25">25 February 2025</time>
+            <time class='log-date' datetime="2025-02-25">25 Feb 2025</time>
             <p>
-                I revisited and reshaped a little article about the NAND gate that I wrote 3 years ago:<br>
+                Revisited and reshaped a little article about the NAND gate that I wrote 3 years ago:
                 <a href="https://alessandrotambellini.github.io/Just-a-NAND-gate/">Just a NAND gate</a>
             </p>
         </article>   	
        <article id="idiosyncrasies-of-the-html-parser">
-            <time class='log-date' datetime="2025-02-19">19 February 2025</time>
+            <time class='log-date' datetime="2025-02-19">19 Feb 2025</time>
             <p>
                 Today I read 
                 <a href="https://htmlparser.info/#table-of-contents">Idiosyncrasies of the HTML parser</a>.<br>
@@ -360,14 +361,14 @@
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-02-16">16 February 2025</time>
+            <time class='log-date' datetime="2025-02-16">16 Feb 2025</time>
             <p>
-                Gemini protocol, browser, Voronoi:<br>
+                Gemini protocol, browser, Voronoi:
                 <a href="https://www.youtube.com/watch?v=sVG-Werqjlw">Making UI in Jai</a>
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-02-15">15 February 2025</time>
+            <time class='log-date' datetime="2025-02-15">15 Feb 2025</time>
             <p>
                 While reading the emscripten docs,
                 I came across this interesting article: 
@@ -377,10 +378,10 @@
             </p>
         </article>
         <article>
-            <time class='log-date' datetime="2025-02-05">5 February 2025</time>
+            <time class='log-date' datetime="2025-02-05">5 Feb 2025</time>
             <p>
                 Salvatore Sanfilippo mentioned <strong>VisiCalc</strong> in a video
-                and so I wanted to delve deeper into it:<br>
+                and so I wanted to delve deeper into it:
                 <a href="http://www.bricklin.com/firstspreadsheetquestion.htm">
                     Was VisiCalc the "first" spreadsheet?
                 </a>
