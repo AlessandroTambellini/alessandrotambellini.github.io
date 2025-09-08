@@ -53,8 +53,6 @@ document.querySelectorAll('img').forEach(img => {
         img_wrapper.classList.add('fullscreen');
 
         switch_class(img, 'zooming_out', 'zooming_in');
-
-        // document.body.style.overflow = 'hidden';
     });
 });
 
@@ -73,7 +71,6 @@ document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
                 switch_class(img_placeholder, 'display-inline-block', 'display-none');
                 img_placeholder.style.height = '';
                 img_placeholder.style.width = '';
-                // document.body.style.overflow = '';
             }, 300);
         }
     });
