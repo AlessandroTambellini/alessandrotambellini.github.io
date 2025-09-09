@@ -33,7 +33,6 @@ body {
 
 code {
     font-family: "Source Code Pro", monospace;
-    font-size: 1.25rem;
 }
 
 .code-block {
@@ -42,19 +41,36 @@ code {
 
 time {
     font-family: serif;
-    font-size: 1.25rem;
 }
 
 main {
-    --padding-inline: .5em;
+    /* --padding-inline: .5em;
 
-    margin: .75rem;
-    padding: var(--padding-inline);
+    margin: .75rem; */
     
-    /* This padding is to let the text at the bottom of the page not be covered by #open-website-nav-btn */
-    padding-bottom: calc(var(--open-website-nav-btn_size) + 2*var(--open-website-nav-btn_margin));
-    max-width: calc(800px + 2*var(--padding-inline));
+    margin: .75em;
+    /* This margin is to let the text at the bottom of the page not be covered by #open-website-nav-btn */
+    margin-bottom: calc(var(--open-website-nav-btn_size) + 2*var(--open-website-nav-btn_margin));
+
+    /* padding-bottom: calc(var(--open-website-nav-btn_size) + 2*var(--open-website-nav-btn_margin)); */
+    
     flex-grow: 2;
+    max-width: calc(800px + 2*var(--padding-inline));
+    font-size: 1.25rem;
+    max-width: 72ch;
+}
+
+@media (min-width: 850px) {
+    main {
+        margin-top: 1em;
+        margin-inline: 1em;
+    }
+}
+
+@media (min-width: 1050px) {  
+    main {
+        margin-bottom: 1em;
+    }
 }
 
 h1 {
@@ -90,7 +106,6 @@ q {
 
 p, ul, ol {
     max-width: 80ch;
-    font-size: 1.25rem;
 }
 
 p {
