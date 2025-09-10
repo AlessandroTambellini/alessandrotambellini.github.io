@@ -11,6 +11,7 @@ function switch_class(element, old_class, new_class) {
 
 open_website_nav_btn.addEventListener('click', e => 
 {
+    e.stopPropagation();
     switch_class(website_nav, 'display-none', 'flex');
     switch_class(open_website_nav_btn, 'display-block', 'display-none');
     main.classList.add('display-opaque');
@@ -30,36 +31,37 @@ expand_nav_btn.addEventListener('click', () =>
     switch_class(minify_nav_btn, 'display-none', 'display-block');
 });
 
-main.addEventListener('click', e => 
+document.addEventListener('click', () => 
 {
-    if (e.target === main) 
-    {
-        switch_class(website_nav, 'flex', 'display-none'); 
-        switch_class(open_website_nav_btn, 'display-none', 'display-block');
-        main.classList.remove('display-opaque');
-    }
+    switch_class(website_nav, 'flex', 'display-none'); 
+    switch_class(open_website_nav_btn, 'display-none', 'display-block');
+    main.classList.remove('display-opaque');
 });
+
 
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', e => 
     {
-        const img_wrapper = img.parentElement;
-
-        const img_placeholder = img_wrapper.previousElementSibling;
-        img_placeholder.style.height = `${img.clientHeight}px`;
-        img_placeholder.style.width = `${img.clientWidth}px`;
-        switch_class(img_placeholder, 'display-none', 'display-inline-block');
-
-        img_wrapper.classList.add('fullscreen');
-
-        switch_class(img, 'zooming_out', 'zooming_in');
+        if (window.innerWidth >= 1050)
+        {
+            const img_wrapper = img.parentElement;
+    
+            const img_placeholder = img_wrapper.previousElementSibling;
+            img_placeholder.style.height = `${img.clientHeight}px`;
+            img_placeholder.style.width = `${img.clientWidth}px`;
+            switch_class(img_placeholder, 'display-none', 'display-inline-block');
+    
+            img_wrapper.classList.add('fullscreen');
+    
+            switch_class(img, 'zooming_out', 'zooming_in');
+        }
     });
 });
 
 document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
     img_wrapper.addEventListener('click', e => 
     {
-        if (e.target === img_wrapper)
+        if (e.target === img_wrapper && window.innerWidth >= 1050)
         {
             const img = img_wrapper.querySelector('img');
             switch_class(img, 'zooming_in', 'zooming_out');
@@ -74,6 +76,6 @@ document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
             }, 300);
         }
     });
-});
+});    
 
 
