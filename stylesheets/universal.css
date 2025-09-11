@@ -99,9 +99,9 @@ q {
     color: var(--quote-color);
 }
 
-p, ul, ol {
+/* p, ul, ol {
     max-width: 80ch;
-}
+} */
 
 p {
     line-height: 1.6;
