@@ -47,6 +47,8 @@ document.querySelectorAll('img').forEach(img => {
             const img_wrapper = img.parentElement;
     
             const img_placeholder = img_wrapper.previousElementSibling;
+            if (!img_placeholder || !img_placeholder.classList.contains('img-placeholder')) return;
+
             img_placeholder.style.height = `${img.clientHeight}px`;
             img_placeholder.style.width = `${img.clientWidth}px`;
             switch_class(img_placeholder, 'display-none', 'display-inline-block');
