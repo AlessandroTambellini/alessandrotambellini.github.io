@@ -38,7 +38,6 @@ document.addEventListener('click', () =>
     main.classList.remove('display-opaque');
 });
 
-
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', e => 
     {
