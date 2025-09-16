@@ -80,15 +80,32 @@ time {
 }
 
 a {
+    overflow-wrap: break-word;
     color: var(--link-color);
-    overflow-wrap: break-word;
 }
+.internal-link {
+    color: var(--link-color);
+}
+.my-external-link {
+    color: #8fa8ff;
+}
+.external-link {
+    color: orange;
+}
+/* 
 .static-link {
+    font-weight: 600;
     overflow-wrap: break-word;
-}
+} */
 
 a:hover {
     color: rgb(88, 95, 222);
+}
+.my-external-link:hover {
+    color: #7291ff;
+}
+.external-link:hover {
+    color: rgb(255, 136, 0);
 }
 
 a, button {
