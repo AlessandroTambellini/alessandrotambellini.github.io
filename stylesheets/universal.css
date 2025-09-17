@@ -87,7 +87,7 @@ a {
     color: var(--link-color);
 }
 .my-external-link {
-    color: #8fa8ff;
+    color: #86bbff;
 }
 .external-link {
     color: orange;
@@ -102,10 +102,10 @@ a:hover {
     color: rgb(88, 95, 222);
 }
 .my-external-link:hover {
-    color: #7291ff;
+    color: #6893c9;
 }
 .external-link:hover {
-    color: rgb(255, 136, 0);
+    color: #c68000;
 }
 
 a, button {
