@@ -9,8 +9,7 @@ article > h2 {
 }
 
 .game-header {
-    padding-inline: .25em;
-    padding-block: .5em;
+    padding: .25em;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -20,6 +19,7 @@ article > h2 {
     color: green;
     margin-left: .1em;
     rotate: 90deg;
+    margin-right: 1em;
 }
 
 .game-header .source-code-icon {
@@ -27,15 +27,15 @@ article > h2 {
     margin-left: .25em;
 }
 
-.game-header .first-new-tab-icon {
+/* .game-header .first-new-tab-icon {
     margin-right: 1em;
-}
+} */
 
-.game-header .new-tab-icon {
+/* .game-header .new-tab-icon {
     padding-top: .5em;
     padding-right: .5em;
     rotate: 135deg;
-}
+} */
 
 hr {
     margin-top: 2em;
