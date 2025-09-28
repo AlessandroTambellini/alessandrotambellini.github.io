@@ -1,7 +1,7 @@
 const website_nav = document.querySelector('#website-nav');
 const open_website_nav_btn = document.querySelector('#open-website-nav-btn');
-const minify_nav_btn = website_nav.querySelector('button[title="minify nav"]');
-const expand_nav_btn = website_nav.querySelector('button[title="expand nav"]');
+const minify_nav_btn = website_nav.querySelector('#minify-nav-btn');
+const expand_nav_btn = website_nav.querySelector('#expand-nav-btn');
 const main = document.querySelector('main');
 
 function switch_class(element, old_class, new_class) {

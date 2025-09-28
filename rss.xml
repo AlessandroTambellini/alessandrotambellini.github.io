@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Log | Alessandro Tambellini</title>
+        <link>https://alessandrotambellini.github.io/log/</link>
+        <atom:link href="https://alessandrotambellini.github.io/rss.xml" rel="self" type="application/rss+xml" />
+        <description>My log</description>
+        <language>en</language>
+        <lastBuildDate>Wed, 18 Oct 2023 16:00:00 +0100</lastBuildDate>
+        
+        <item>
+            <title>Splitting code on the client is expensive</title>
+            <link>https://alessandrotambellini.github.io/log/#splitting-code-on-the-client-is-expensive</link>
+            <description>Splitting code on the client is expensive</description>
+            <pubDate>Sun, 28 Sep 2025 16:00:00 +0100</pubDate>
+            <guid>https://alessandrotambellini.github.io/log/#splitting-code-on-the-client-is-expensive</guid>
+        </item>
+        
+        <!-- Add more <item> entries for each blog post -->
+    </channel>
+</rss>

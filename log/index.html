@@ -10,9 +10,11 @@
     <!-- <style>
     @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
     </style> -->
-
+    <link rel="alternate" type="application/rss+xml" title="My Log RSS Feed" href="/rss.xml">
     <link rel="icon" type="image/webp" href="../assets/logo.webp">
     <link rel="stylesheet" href="../stylesheets/universal.css">  
+    
+    <script defer src="../scripts/universal.js"></script>
 
     <style>
         .log-date:not(article:first-child .log-date) { 
@@ -111,12 +113,41 @@
             }
         }
 
+        #rss-feed {
+            display: block;
+            margin-left: auto;
+            text-align: right;
+            /* padding-inline: 1em; */
+        }
     </style>
-    
-    <script defer src="../scripts/universal.js"></script>
 </head>
 <body>
     <main>
+        <a id="rss-feed" href="/rss.xml">RSS</a>
+        <!-- https://gist.github.com/AlessandroTambellini/9428070f40437660fcece3b639b1ab07: An interesting browser interpreter design choice. I know it's not a bug because while writing an html interpreter I run into the same dilemma -->
+        <!-- Another one: a goal of react was to unify html, css and js in a single file. apparently i did it! -->
+        <!-- TODO aaron swartz 2006, django, file location in vite and react. Also, before this, implement RSS feed -->
+        <article id="splitting-code-on-the-client-is-expensive">
+            <time datetime="2025-09-28">28 Sep 2025</time>
+            <p>
+                In Postream, I had a separate CSS file per type of component: <code>buttons.css</code>, <code>cards.css</code> and <code>forms.css</code>.
+                I splitted these components styling into different files to just import a styling if needed, 
+                given not all three of these components are used in all the pages.<br>
+                First, my consideration wasn't really meaningful because in any page at least two of these components are used
+                (so, not a lot of difference) and secondly (and most importantly!) the browser has to do a different request for each file!
+                So, I decided to pile them toghether inside <code>_universal.css</code> where I already had the 'universal' styling about
+                colors, layout, etc. In this way, for each page loaded of the website, there are on avg 3 less requests to the server.<br>
+                Another thing I did, was removing the page-specific css file where unnecessary: many pages have a page-specific styling
+                that is really tiny, so I just embedded it in the document <code>&lt;head&gt;</code>. There are just a couple of pages for which I prefer to
+                have a separate css file.<br>
+                This is for the CSS, but a similar story happened for the <code>scripts</code>.<br>
+                So, basically, by cutting out all the unnecessary code splittings I cutted in half the requests to the server.
+                An argumentation might be: "Is the code still readable?" Yes it is, they are all pretty small files.
+                The biggest one is _universal.css with <b>~700 loc</b> and in any case I search for whatever I need without
+                scrolling back and forth.<br>
+                Takeaway: splitting code in different files on the client is expensive!
+            </p>
+        </article>
         <article>
             <time class='log-date' datetime="2025-09-23">23 Sep 2025</time>
             <p>
@@ -422,16 +453,16 @@
             </li>
         </ul>
         
-        <button title='minify nav' class='display-block'>
-            <span role='img'>〈</span>
+        <button id="minify-nav-btn" class='display-block'>
+            <span role='img' alt='minify nav'>〈</span>
         </button>
-        <button title='expand nav' class='display-none'>
-            <span role='img'>〉</span>
+        <button id="expand-nav-btn" class='display-none'>
+            <span role='img' alt='expand nav'>〉</span>
         </button>
     </nav>
 
     <button id="open-website-nav-btn" class="display-block" aria-label="menu">
-        <span role="img">
+        <span role="img" alt='open website-nav icon'>
             <span></span>
             <span></span>
             <span></span>
