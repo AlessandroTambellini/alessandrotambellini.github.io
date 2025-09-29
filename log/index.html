@@ -126,9 +126,18 @@
         <a id="rss-feed" href="/rss.xml">RSS</a>
         <!-- https://gist.github.com/AlessandroTambellini/9428070f40437660fcece3b639b1ab07: An interesting browser interpreter design choice. I know it's not a bug because while writing an html interpreter I run into the same dilemma -->
         <!-- Another one: a goal of react was to unify html, css and js in a single file. apparently i did it! -->
-        <!-- TODO aaron swartz 2006, django, file location in vite and react. Also, before this, implement RSS feed -->
+        <article id="asset-location">
+            <time class='log-date' datetime="2025-09-29">29 Sep 2025</time>
+            <p>
+                I remember reading a post of Aaron Swartz of around 2005/6 where he said something on the line of: "Well, Django isn't really well architectured because 
+                forces you to put files in specific folders". Almost 20 years later, while using Vite.js I had problems putting assets
+                in whatever folder I wanted. Apparently, in <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/handlers.mjs#L927">get_asset</a> 
+                I solved un unsolved Computer Science problem!
+            </p>
+        </article>
+        
         <article id="splitting-code-on-the-client-is-expensive">
-            <time datetime="2025-09-28">28 Sep 2025</time>
+            <time class='log-date' datetime="2025-09-28">28 Sep 2025</time>
             <p>
                 In Postream, I had a separate CSS file per type of component: <code>buttons.css</code>, <code>cards.css</code> and <code>forms.css</code>.
                 I splitted these components styling into different files to just import a styling if needed, 
