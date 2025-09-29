@@ -19,14 +19,14 @@ open_website_nav_btn.addEventListener('click', e =>
 
 minify_nav_btn.addEventListener('click', () => 
 {
-    website_nav.querySelector('ul').classList.add('minified-list');
+    website_nav.querySelector('menu').classList.add('minified-list');
     switch_class(minify_nav_btn, 'display-block', 'display-none');
     switch_class(expand_nav_btn, 'display-none', 'display-block');
 });
 
 expand_nav_btn.addEventListener('click', () => 
 {
-    website_nav.querySelector('ul').classList.remove('minified-list');
+    website_nav.querySelector('menu').classList.remove('minified-list');
     switch_class(expand_nav_btn, 'display-block', 'display-none');
     switch_class(minify_nav_btn, 'display-none', 'display-block');
 });

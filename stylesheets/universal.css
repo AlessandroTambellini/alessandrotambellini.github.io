@@ -168,7 +168,7 @@ body:has(#website-nav.flex) main > * {
     pointer-events: none;
 }
 
-#website-nav ul {
+#website-nav menu {
     font-size: inherit;
     line-height: 1.2;
     list-style: none;

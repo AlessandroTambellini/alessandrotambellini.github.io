@@ -1,4 +1,4 @@
-article > h2:not(article:first-child h2) {
+article > h2:not(article:nth-of-type(1) h2) {
     margin-top: .75em;
 }
 
