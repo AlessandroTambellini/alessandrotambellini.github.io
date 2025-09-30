@@ -129,14 +129,24 @@
 <body>
     <main>
         <a id="rss-feed" href="/rss.xml">RSS</a>
-        <!-- https://gist.github.com/AlessandroTambellini/9428070f40437660fcece3b639b1ab07: An interesting browser interpreter design choice. I know it's not a bug because while writing an html interpreter I run into the same dilemma -->
         <!-- Another one: a goal of react was to unify html, css and js in a single file. apparently i did it! -->
+        <!-- https://gist.github.com/AlessandroTambellini/9428070f40437660fcece3b639b1ab07: An interesting browser interpreter design choice. I know it's not a bug because while writing an html interpreter I run into the same dilemma -->
+        <article id="interpreter-design-choice">
+            <time class='log-date' datetime="2025-09-30">30 Sep 2025</time>
+            <p>
+                An interesting interpreter design choice: 
+                <a href="https://gist.github.com/AlessandroTambellini/9428070f40437660fcece3b639b1ab07">test.html</a>.
+                Try to open <code>test.html</code> in a browser.
+            </p>
+        </article>
+        
         <article id="asset-location">
             <time class='log-date' datetime="2025-09-29">29 Sep 2025</time>
             <p>
                 I remember reading a post of Aaron Swartz of around 2005/6 where he said something on the line of: "Well, Django isn't really well architectured because 
                 forces you to put files in specific folders". Almost 20 years later, while using Vite.js I had problems putting assets
-                in whatever folder I wanted. Apparently, in <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/handlers.mjs#L927">get_asset</a> 
+                in whatever folder I wanted. Apparently, in 
+                <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/handlers.mjs">get_asset()</a> 
                 I solved un unsolved Computer Science problem!
             </p>
         </article>

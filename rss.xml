@@ -6,8 +6,24 @@
         <atom:link href="https://alessandrotambellini.github.io/rss.xml" rel="self" type="application/rss+xml" />
         <description>My log</description>
         <language>en</language>
-        <lastBuildDate>Wed, 29 Sep 2025 10:00:00 CEST</lastBuildDate>
+        <lastBuildDate>Sun, 30 Sep 2025 15:00:00 CEST</lastBuildDate>
         
+        <item>
+            <title>Interpreter Design Choice</title>
+            <link>https://alessandrotambellini.github.io/log/#interpreter-design-choice</link>
+            <description>Interpreter design choice</description>
+            <pubDate>Sun, 30 Sep 2025 15:00:00 CEST</pubDate>
+            <guid>https://alessandrotambellini.github.io/log/#interpreter-design-choice</guid>
+        </item>
+        
+        <item>
+            <title>Asset Location</title>
+            <link>https://alessandrotambellini.github.io/log/#asset-location</link>
+            <description>Placing an asset in whatever location you want</description>
+            <pubDate>Sun, 29 Sep 2025 10:00:00 CEST</pubDate>
+            <guid>https://alessandrotambellini.github.io/log/#asset-location</guid>
+        </item>
+
         <item>
             <title>Splitting code on the client is expensive</title>
             <link>https://alessandrotambellini.github.io/log/#splitting-code-on-the-client-is-expensive</link>
@@ -16,13 +32,6 @@
             <guid>https://alessandrotambellini.github.io/log/#splitting-code-on-the-client-is-expensive</guid>
         </item>
 
-        <item>
-            <title>Asset Location</title>
-            <link>https://alessandrotambellini.github.io/log/#asset-location</link>
-            <description>Placing an asset in whatever location you want</description>
-            <pubDate>Sun, 29 Sep 2025 10:00:00 CEST</pubDate>
-            <guid>https://alessandrotambellini.github.io/log/#asset-location</guid>
-        </item>
         
     </channel>
 </rss>
