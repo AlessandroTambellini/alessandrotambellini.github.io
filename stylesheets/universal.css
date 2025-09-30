@@ -7,9 +7,9 @@
 
 :root 
 {
-    --open-website-nav-btn_size: 3rem;
-    --open-website-nav-btn_margin: 2rem;
-    --open-website-nav-btn_fs: 3rem;
+    --open-side-nav-btn_size: 3rem;
+    --open-side-nav-btn_margin: 2rem;
+    --open-side-nav-btn_fs: 3rem;
 
     --background-color: rgb(26, 28, 32);
     --text-color: rgb(236, 239, 242);
@@ -45,8 +45,8 @@ time {
 
 main {    
     margin: .75em;
-    /* This margin is to let the text at the bottom of the page not be covered by #open-website-nav-btn */
-    margin-bottom: calc(var(--open-website-nav-btn_size) + 2*var(--open-website-nav-btn_margin));
+    /* This margin is to let the text at the bottom of the page not be covered by #open-side-nav-btn */
+    margin-bottom: calc(var(--open-side-nav-btn_size) + 2*var(--open-side-nav-btn_margin));
     font-size: 1.15rem;
 
     max-width: 72ch;
@@ -147,14 +147,14 @@ img {
     max-width: 100%;
 }
 
-#website-nav {
+#side-nav {
     position: fixed;
     bottom: 0;
     right: 0;
     height: 100vh;
     min-width: 30vw;
     /* I specify the font-size in the parent because of the padding in em */
-    font-size: var(--open-website-nav-btn_fs);
+    font-size: var(--open-side-nav-btn_fs);
     padding: 1em;
     box-shadow: -1px 0px 7px rgb(133, 133, 133);
     background-color: rgb(26, 28, 32);
@@ -164,11 +164,11 @@ img {
 }
 
 /* E.g. while the nav is open, it isn't allowed to see an image fullscreen. */
-body:has(#website-nav.flex) main > * {
+body:has(#side-nav.flex) main > * {
     pointer-events: none;
 }
 
-#website-nav menu {
+#side-nav menu {
     font-size: inherit;
     line-height: 1.2;
     list-style: none;
@@ -176,7 +176,7 @@ body:has(#website-nav.flex) main > * {
     /* text-align: right; */
 }
 
-#website-nav > button {
+#side-nav > button {
     /* only for desktop */
     display: none;
     margin-top: 5vh;
@@ -195,17 +195,17 @@ body:has(#website-nav.flex) main > * {
     padding-left: .5em;
 }
 
-#website-nav > button:hover {
+#side-nav > button:hover {
     background-color: rgb(73 73 73 / 36%);
 }
 
-#open-website-nav-btn 
+#open-side-nav-btn 
 {
     background-color: var(--background-color);
     position: fixed;
     border-radius: 8px;
-    bottom: var(--open-website-nav-btn_margin);
-    right: var(--open-website-nav-btn_margin);
+    bottom: var(--open-side-nav-btn_margin);
+    right: var(--open-side-nav-btn_margin);
 
     padding: .85rem .65rem;
 
@@ -214,23 +214,23 @@ body:has(#website-nav.flex) main > * {
     /* box-shadow: 0 1px 2px rgba(46, 48, 57, 0.05); */
 }
 
-#open-website-nav-btn:hover {
+#open-side-nav-btn:hover {
     border-color: #999;
     box-shadow: 0 2px 4px rgba(46, 48, 57, 0.08);
 }
 
-#open-website-nav-btn:active {
+#open-side-nav-btn:active {
     box-shadow: 0 1px 2px rgba(46, 48, 57, 0.1);
     transform: translateY(1px);
 }
 
-#open-website-nav-btn span[role=img] {
+#open-side-nav-btn span[role=img] {
     display: flex;
     flex-direction: column;
     gap: .65rem;
 }
 
-#open-website-nav-btn span[role=img] span {
+#open-side-nav-btn span[role=img] span {
     width: 2.5rem;
     height: 4px;
     border-radius: 8px;
@@ -247,7 +247,7 @@ body:has(#website-nav.flex) main > * {
         justify-content: center;
     }
 
-    #website-nav {
+    #side-nav {
         display: block;
         position: sticky;
         top: 0;
@@ -257,11 +257,11 @@ body:has(#website-nav.flex) main > * {
         background-color: unset;
     }
 
-    #website-nav > button.display-block {
+    #side-nav > button.display-block {
         display: block;
     }
 
-    #website-nav:has(.minified-list) {
+    #side-nav:has(.minified-list) {
         border-left: unset;
         padding-inline: 0;
     }
@@ -270,7 +270,7 @@ body:has(#website-nav.flex) main > * {
         font-size: 0;
     }
 
-    #open-website-nav-btn {
+    #open-side-nav-btn {
         display: none;
     }
 }  
