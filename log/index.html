@@ -19,7 +19,7 @@
     <style>
         .log-date:not(article:nth-of-type(1) .log-date) { 
             display: inline-block;
-            margin-top: 1.5em;
+            margin-top: 2em;
         }
 
         article > ul {
@@ -45,7 +45,6 @@
             }
         }
 
-
         @media (min-width: 1050px) {    
             .fullscreen {
                 /* pointer-events: all !important; */
@@ -70,7 +69,7 @@
             }
 
             img {
-                cursor: pointer;
+                /* cursor: pointer; */
             }
 
             .fullscreen img {
@@ -83,10 +82,10 @@
                 opacity: 0;
             }
 
-            .fullscreen img.zooming_in {
+            .fullscreen img.zooming-in {
                 animation: zoom_in 0.4s cubic-bezier(0.34, 1.3, 0.64, 1) forwards;
             }
-            .fullscreen img.zooming_out {
+            .fullscreen img.zooming-out {
                 animation: zoom_out 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
             }
 
@@ -124,6 +123,11 @@
             content-visibility: auto;
             /* contain-intrinsic-size: auto 500px; */
         }
+
+        main > article *:last-child {
+            margin-bottom: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -131,6 +135,29 @@
         <a id="rss-feed" href="/rss.xml">RSS</a>
         <!-- Another one: a goal of react was to unify html, css and js in a single file. apparently i did it! -->
         <!-- https://gist.github.com/AlessandroTambellini/9428070f40437660fcece3b639b1ab07: An interesting browser interpreter design choice. I know it's not a bug because while writing an html interpreter I run into the same dilemma -->
+        
+        <article>
+            <time class='log-date' datetime="2025-10-07">10 Oct 2025</time>
+            <p>
+                Just to make an example on the concept of <a href="#spa">SPA</a>,
+                in Postream you can switch between dark and light mode and once toggled, the UI keeps the choosen "state" while navigating the pages
+                and you don't see any flickering of mode change (e.g. from light to dark) while loading a new page.
+                The important thing is to know when to check the mode (with a tiny script) before the browsers starts the styling:
+            </p>
+            <code class="code-block">
+&lt;body&gt;
+    &lt;script&gt;
+        const light_mode = localStorage.getItem('light-mode');
+        if (light_mode === 'moon-mode')
+        {
+            document.querySelector('html').classList.add('moon-mode');
+        }
+    &lt;/script&gt;
+
+    ...
+            </code>
+        </article>
+        
         <article id="interpreter-design-choice">
             <time class='log-date' datetime="2025-09-30">30 Sep 2025</time>
             <p>
@@ -147,7 +174,7 @@
                 forces you to put files in specific folders". Almost 20 years later, while using Vite.js I had problems putting assets
                 in whatever folder I wanted. Apparently, in 
                 <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/handlers.mjs">get_asset()</a> 
-                I solved un unsolved Computer Science problem!
+                I solved an unsolved Computer Science problem!
             </p>
         </article>
         
@@ -155,7 +182,7 @@
             <time class='log-date' datetime="2025-09-28">28 Sep 2025</time>
             <p>
                 In Postream, I had a separate CSS file per type of component: <code>buttons.css</code>, <code>cards.css</code> and <code>forms.css</code>.
-                I splitted these components styling into different files to just import a styling if needed, 
+                I splitted these component stylings in different files to just import a styling if needed, 
                 given not all three of these components are used in all the pages.<br>
                 First, my consideration wasn't really meaningful because in any page at least two of these components are used
                 (so, not a lot of difference) and secondly (and most importantly!) the browser has to do a different request for each file!
@@ -165,18 +192,32 @@
                 that is really tiny, so I just embedded it in the document <code>&lt;head&gt;</code>. There are just a couple of pages for which I prefer to
                 have a separate css file.<br>
                 This is for the CSS, but a similar story happened for the <code>scripts</code>.<br>
-                So, basically, by cutting out all the unnecessary code splittings I cutted in half the requests to the server.
+                So, basically,  <strong>by cutting out all the unnecessary code splittings I cutted in half the requests to the server.</strong>
                 An argumentation might be: "Is the code still readable?" Yes it is, they are all pretty small files.
-                The biggest one is _universal.css with <b>~700 loc</b> and in any case I search for whatever I need without
+                The biggest one is _universal.css with <b>~700 loc</b> and, in any case, my approach is to search for whatever I need without
                 scrolling back and forth.<br>
                 Takeaway: splitting code in different files on the client is expensive!
             </p>
+            <section class="inner-section">
+                <time datetime="2025-10-07">Edit of 7 Oct 2025</time>:
+                <p>
+                    Another area where you can save server requests is icons.
+                    It's pretty easy to make icons in HTML and CSS. In Postream I made a sun, a moon and some other minor stuff. 
+                    I also made "dynamic" hamburger menu that changes the color and the number of rows based on the page, but removed it because
+                    was just a "shiny object". The important thing is to make clear they are icons: 
+                </p>
+                <code class="code-block">&lt;span role='img' alt='&lt;Icon Description&gt;'&gt;...&lt;/span&gt;</code>
+            </section>
         </article>
         <article>
             <time class='log-date' datetime="2025-09-23">23 Sep 2025</time>
             <p>
-                Template literals are probably my favourite ES6 feature: 
-                <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/templates.mjs">templates.js</a>
+                Template literals are one of my favourite ES6 features, but with a caveat: all the whitespaces and newlines are kept
+                and, while constructing the HTML templates, many extra bytes are piled in the final file sent to the client. 
+                Therefore, I have 2 options: using <code>replaceAll()</code> or concatenating single lines with the '<code>+</code>' sign.
+                I opted for the 2nd option because the performance is a bit better and it's not a problem for me to automatically add a plus sign at the end of
+                each line.
+                See <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/templates.mjs">templates.mjs</a>
             </p>
         </article>
         <article id='packages'>
@@ -285,11 +326,11 @@
             <div class="img-wrapper">
                 <img src="../assets/log/website-scheme.webp" alt="Website Scheme">
             </div>
-            <p>
+            <p id="spa">
                 If these actions are performed by using what the web offers (HTTP, URL, HTML), 
                 it's pretty straightforward to implement such a system.<br>
                 But, to make a bit easier to control some UI state, 
-                some people decided to adopt a model called Single Page Application.
+                some people decided to adopt a model called <strong>Single Page Application</strong>.
                 A model where the easiness of manipulating data by exploiting the change of page is lost 
                 at the cost of what I already said before.
             </p>

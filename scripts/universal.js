@@ -44,45 +44,50 @@ expand_nav_btn.addEventListener('click', () =>
  *  Image Zooming
  */
 
-document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('click', e => 
-    {
-        if (window.innerWidth >= 1050)
-        {
-            const img_wrapper = img.parentElement;
+// document.querySelectorAll('img').forEach(img => {
+//     img.addEventListener('click', () => 
+//     {
+//         if (window.innerWidth >= 1050)
+//         {
+//             const img_wrapper = img.parentElement;
     
-            const img_placeholder = img_wrapper.previousElementSibling;
-            if (!img_placeholder || !img_placeholder.classList.contains('img-placeholder')) return;
+//             const img_placeholder = img_wrapper.previousElementSibling;
+//             if (!img_placeholder || !img_placeholder.classList.contains('img-placeholder')) return;
 
-            img_placeholder.style.height = `${img.clientHeight}px`;
-            img_placeholder.style.width = `${img.clientWidth}px`;
-            switch_class(img_placeholder, 'display-none', 'display-inline-block');
+//             img_placeholder.style.height = `${img.clientHeight}px`;
+//             img_placeholder.style.width = `${img.clientWidth}px`;
+//             img_placeholder.classList.replace('display-none', 'display-inline-block');
     
-            img_wrapper.classList.add('fullscreen');
-    
-            switch_class(img, 'zooming_out', 'zooming_in');
-        }
-    });
-});
-
-document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
-    img_wrapper.addEventListener('click', e => 
-    {
-        if (e.target === img_wrapper && window.innerWidth >= 1050)
-        {
-            const img = img_wrapper.querySelector('img');
-            img.classList.replace('zooming_in', 'zooming_out');
-
-            const img_placeholder = img_wrapper.previousElementSibling;
+//             img_wrapper.classList.add('fullscreen');
             
-            setTimeout(() => {
-                img_wrapper.classList.remove('fullscreen');
-                img_placeholder.classList.replace('display-inline-block', 'display-none');
-                img_placeholder.style.height = '';
-                img_placeholder.style.width = '';
-            }, 300);
-        }
-    });
-});    
+//             img.classList.remove('zooming-out');
+//             img.classList.add('zooming-in');
+    
+//             // img.classList.replace('zooming-out', 'zooming-in');
+//         }
+//     });
+// });
+
+// document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
+//     img_wrapper.addEventListener('click', e => 
+//     {
+//         if (e.target === img_wrapper && window.innerWidth >= 1050)
+//         {
+//             const img = img_wrapper.querySelector('img');
+//             img.classList.remove('zooming-in');
+//             img.classList.add('zooming-out');
+//             // img.classList.replace('zooming-in', 'zooming-out');
+
+//             const img_placeholder = img_wrapper.previousElementSibling;
+            
+//             setTimeout(() => {
+//                 img_wrapper.classList.remove('fullscreen');
+//                 img_placeholder.classList.replace('display-inline-block', 'display-none');
+//                 img_placeholder.style.height = '';
+//                 img_placeholder.style.width = '';
+//             }, 300);
+//         }
+//     });
+// });    
 
 
