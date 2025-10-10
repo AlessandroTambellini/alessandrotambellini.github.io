@@ -34,14 +34,22 @@ body {
 
 code {
     font-family: "Source Code Pro", monospace;
+    color: rgb(255, 132, 132);
 }
 
 .code-block {
-    white-space-collapse: preserve;    
+    font-size: 1rem;
+    white-space-collapse: preserve;   
+    display: inline-block; 
+    background-color: #272727;
+    padding: 1em;
+    width: 100%;
+    border-radius: 8px;
 }
 
 time {
     font-family: serif;
+    color: rgb(177, 182, 201);
 }
 
 main {    
@@ -71,13 +79,6 @@ main {
 
 h1 {
     line-height: 3rem;
-}
-
-code {
-    color: rgb(255, 132, 132);
-}
-time {
-    color: rgb(177, 182, 201);
 }
 
 a {

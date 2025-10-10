@@ -144,8 +144,7 @@
                 and you don't see any flickering of mode change (e.g. from light to dark) while loading a new page.
                 The important thing is to know when to check the mode (with a tiny script) before the browsers starts the styling:
             </p>
-            <code class="code-block">
-&lt;body&gt;
+            <code class="code-block">&lt;body&gt;
     &lt;script&gt;
         const light_mode = localStorage.getItem('light-mode');
         if (light_mode === 'moon-mode')
@@ -154,8 +153,7 @@
         }
     &lt;/script&gt;
 
-    ...
-            </code>
+    ...</code>
         </article>
         
         <article id="interpreter-design-choice">
@@ -250,23 +248,19 @@
             <p>Snippet from my project 'Post Stream':</p>
             <p>Before:</p>
             <!-- <pre class="code"> -->
-            <code class="code-block">
-&lt;main&gt;                
+            <code class="code-block">&lt;main&gt;                
     &lt;h2&gt;Posts&lt;/h2&gt;
     &lt;div id='replies-container'&gt;
         {{ post-cards }}
     &lt;/div&gt;
-&lt;/main&gt;
-            </code>
+&lt;/main&gt;</code>
             <!-- </pre> -->
             <p>After:</p></code>
             <!-- <pre class="code"> -->
-            <code class="code-block">
-&lt;main&gt;
+            <code class="code-block">&lt;main&gt;
     &lt;h2&gt;Posts&lt;/h2&gt;
     {{ post-cards }}
-&lt;/main&gt;
-            </code>
+&lt;/main&gt;</code>
             <!-- </pre> -->
             <p>
                 In this specific case the goal is to scroll the posts while manteining the title visible.
