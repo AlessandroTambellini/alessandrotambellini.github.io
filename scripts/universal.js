@@ -44,50 +44,52 @@ expand_nav_btn.addEventListener('click', () =>
  *  Image Zooming
  */
 
-// document.querySelectorAll('img').forEach(img => {
-//     img.addEventListener('click', () => 
-//     {
-//         if (window.innerWidth >= 1050)
-//         {
-//             const img_wrapper = img.parentElement;
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => 
+    {
+        if (window.innerWidth >= 1050)
+        {
+            const img_wrapper = img.parentElement;
     
-//             const img_placeholder = img_wrapper.previousElementSibling;
-//             if (!img_placeholder || !img_placeholder.classList.contains('img-placeholder')) return;
+            const img_placeholder = img_wrapper.previousElementSibling;
 
-//             img_placeholder.style.height = `${img.clientHeight}px`;
-//             img_placeholder.style.width = `${img.clientWidth}px`;
-//             img_placeholder.classList.replace('display-none', 'display-inline-block');
+            // If there isn't a placeholder, simply don't do anything to the image.
+            if (!img_placeholder || !img_placeholder.classList.contains('img-placeholder')) return;
+
+            img_placeholder.style.height = `${img.clientHeight}px`;
+            img_placeholder.style.width = `${img.clientWidth}px`;
+            switch_class(img_placeholder, 'display-none', 'display-inline-block');
     
-//             img_wrapper.classList.add('fullscreen');
+            img_wrapper.classList.add('fullscreen');
             
-//             img.classList.remove('zooming-out');
-//             img.classList.add('zooming-in');
-    
-//             // img.classList.replace('zooming-out', 'zooming-in');
-//         }
-//     });
-// });
+            switch_class(img, 'zooming-out', 'zooming-in');
+        }
+    });
+});
 
-// document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
-//     img_wrapper.addEventListener('click', e => 
-//     {
-//         if (e.target === img_wrapper && window.innerWidth >= 1050)
-//         {
-//             const img = img_wrapper.querySelector('img');
-//             img.classList.remove('zooming-in');
-//             img.classList.add('zooming-out');
-//             // img.classList.replace('zooming-in', 'zooming-out');
+document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
+    img_wrapper.addEventListener('click', e => 
+    {
+        if (e.target === img_wrapper && window.innerWidth >= 1050)
+        {
+            const img = img_wrapper.querySelector('img');
+            switch_class(img, 'zooming-in', 'zooming-out');
 
-//             const img_placeholder = img_wrapper.previousElementSibling;
-            
-//             setTimeout(() => {
-//                 img_wrapper.classList.remove('fullscreen');
-//                 img_placeholder.classList.replace('display-inline-block', 'display-none');
-//                 img_placeholder.style.height = '';
-//                 img_placeholder.style.width = '';
-//             }, 300);
-//         }
-//     });
-// });    
+            const img_placeholder = img_wrapper.previousElementSibling;
+            setTimeout(() => {
+                img_wrapper.classList.remove('fullscreen');
+                switch_class(img_placeholder, 'display-inline-block', 'display-none');
+                img_placeholder.style.height = '';
+                img_placeholder.style.width = '';
+            }, 300);
+        }
+    });
+});    
+
+function switch_class(element, old_class, new_class)
+{
+    element.classList.remove(old_class);
+    element.classList.add(new_class);
+}
 
 
