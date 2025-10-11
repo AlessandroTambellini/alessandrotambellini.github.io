@@ -52,6 +52,7 @@ code {
 .code-block span {
     display: block;
     line-height: 1.3;
+    word-wrap: break-word
 }
 
 /* Nested blocks */
