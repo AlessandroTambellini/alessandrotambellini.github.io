@@ -22,8 +22,9 @@
             margin-top: 2em;
         }
 
-        article > ul {
-            margin-block: .5em;
+        article > ul,
+        article > ol {
+            margin-bottom: .5em;
         }
 
         article img {
@@ -127,7 +128,7 @@
         <article>
             <time class='log-date' datetime="2025-10-07">10 Oct 2025</time>
             <p>
-                Just to make an example on the concept of <a href="#spa">SPA</a>,
+                Just to make an example on the concept of <a href="#spa"><abbr>SPA</abbr></a> (Single Page Application),
                 in Postream you can switch between dark and light mode and once toggled, the UI keeps the choosen "state" while navigating the pages
                 and you don't see any flickering of mode change (e.g. from light to dark) while loading a new page.
                 The important thing is to know when to check the mode (with a tiny script) before the browsers starts the styling:
@@ -203,17 +204,44 @@
                 <code class="code-block">&lt;span role='img' alt='&lt;Icon Description&gt;'&gt;...&lt;/span&gt;</code>
             </section>
         </article>
+
         <article>
             <time class='log-date' datetime="2025-09-23">23 Sep 2025</time>
             <p>
                 Template literals are one of my favourite ES6 features, but with a caveat: all the whitespaces and newlines are kept
                 and, while constructing the HTML templates, many extra bytes are piled in the final file sent to the client. 
                 Therefore, I have 2 options: using <code>replaceAll()</code> or concatenating single lines with the '<code>+</code>' sign.
-                I opted for the 2nd option because the performance is a bit better and it's not a problem for me to automatically add a plus sign at the end of
-                each line.
-                See <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/templates.mjs">templates.mjs</a>
+                I opted for the 2nd option for a couple of reasons:
             </p>
+            <ol>
+                <li>The performance is a bit better and it's not a problem for me to automatically add a plus sign at the end of
+                each line</li>
+                <li>I can insert comments among the template lines :-)</li>
+            </ol>
+            <code class="code-block">
+                <span class="block">
+                    DOMElements['.reply-card'] = function(reply)<br>
+                    {
+                    <span class="block">
+                        const { id, content, created_at } = reply;<br>
+                        <br>
+                        return (<br>
+                            <span class="block">
+                                `&lt;article id='reply-${id}' class='card reply-card'&gt;` +
+                                <span class="block">
+                                    `&lt;p&gt;${content}&lt;/p&gt;` +<br>
+                                    // The quick brown fox jumps over the lazy dog<br>
+                                    `&lt;time datetime="${created_at}"&gt;&lt;/time&gt;` +
+                                </span>
+                                `&lt;/article&gt;`
+                            </span>
+                        );
+                    </span>
+                    }
+                </span>
+            </code>
         </article>
+
         <article id='packages'>
             <time class='log-date' datetime="2025-09-02">2 Sep 2025</time>
             <p>
@@ -241,7 +269,7 @@
                 <code>position: sticky;</code> isn't just about making a good visual effect for a navbar.
                 It allows to save on containers, allowing the HTML to be more semantic.
             </p>
-            <p>Snippet from my project 'Post Stream':</p>
+            <p>Snippet from my project 'Postream':</p>
             
             <p>Before:</p>
             <code class="code-block">
@@ -316,7 +344,7 @@
                 And perhaps without uploading and downloading gigabytes of JS blob?
                 And perhaps without all the crazy, high-end, ultra-powerfull, magic, astonishing frameworks and libraries?<br>
                 This is my modest try: 
-                <a class="my-external-link" href="https://github.com/AlessandroTambellini/Post-Stream">Post Stream</a>.<br>
+                <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream">Postream</a>.<br>
                 Also, a website, more precisely a website of the Web 2.0, performs 4 main actions:
             </p>
             <ul>
