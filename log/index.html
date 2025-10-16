@@ -7,9 +7,6 @@
 
     <title>Log | Alessandro Tambellini</title>
     
-    <!-- <style>
-    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-    </style> -->
     <link rel="alternate" type="application/rss+xml" title="My Log RSS Feed" href="/rss.xml">
     <link rel="icon" type="image/webp" href="../assets/logo.webp">
     <link rel="stylesheet" href="../stylesheets/universal.css">  
@@ -17,6 +14,12 @@
     <script defer src="../scripts/universal.js"></script>
 
     <style>
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
         .log-date:not(article:nth-of-type(1) .log-date) { 
             display: inline-block;
             margin-top: 2em;
@@ -125,6 +128,47 @@
         <a id="rss-feed" href="/rss.xml">RSS</a>
         <!-- Another one: a goal of react was to unify html, css and js in a single file. apparently i did it! -->
         
+        <article id="per-component-development">
+            <time datetime="2025-10-16">16 Oct 2025</time>
+            <p>
+                I'll try to justify the per-component development of React.js.<br>
+                At Facebook there are hundreds of thousands of employees, tens of thousands of which are working on a single product I guess.
+                There are a lot of employees coming and going and so you have to think on how to structure a codebase.<br>
+                A good choice might be to modularize it as much as possible: each component of the UI developed separately in its own file.<br>
+                This approach has three consequences:
+            </p>
+            <ol>
+                <li>Many files</li>
+                <li>Little room for manoeuvre regarding styling</li>
+                <li>Per-component logic</li>
+            </ol>
+            <p>And the effects are:</p>
+            <ol>
+                <li>Bundling and strategies to minimize the number of requests from the browser</li>
+                <li>
+                    You may be tempted to inject css in the HTML tags (inline styling) but it has an high specificity difficult to control.
+                    You may think about per-page styling (embedded styling) but you realize you don't have this luxury!
+                    The last resort is to make of everything a class: Tailwind CSS to the rescue :)
+                </li>
+                <li>Probably you end up with redundant logic &#8658; Tools to identify redundancy and fix it</li>
+            </ol>
+
+            <p>
+                In short, sometimes people say: "Well, but you aren't Facebook" referring to the complexity of the app, 
+                but I'd add that you aren't Facebook also as a company!
+            </p>
+            <p>
+                But you know what's a worse thing? That when you go on the React.js website they say that only a bit of the basics of JS are needed
+                and they make you develop a Tic-Tac-Toe and so you are tempted to think: "Oh, well, I guess to make such a thing I need React.js".<br>
+                But why they tell you that?<br>
+                Because they want the web to rotate around Facebook: open-source contributions go to Facebook libraries/frameworks,
+                standards move towards what Facebook needs given half of the "modern" web is developed with Facebook technologies and
+                when people enter Facebook they are already proficient with their technologies.
+            </p>
+
+            <p>That's my hypothesis.</p>
+        </article>
+
         <article>
             <time class='log-date' datetime="2025-10-07">10 Oct 2025</time>
             <p>
