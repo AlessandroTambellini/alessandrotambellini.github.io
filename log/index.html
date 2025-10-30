@@ -6,11 +6,11 @@
     <meta name="description" content="Collection of my logs">
 
     <title>Log | Alessandro Tambellini</title>
-    
+
     <link rel="alternate" type="application/rss+xml" title="My Log RSS Feed" href="/rss.xml">
     <link rel="icon" type="image/webp" href="../assets/logo.webp">
-    <link rel="stylesheet" href="../stylesheets/universal.css">  
-    
+    <link rel="stylesheet" href="../stylesheets/universal.css">
+
     <script defer src="../scripts/universal.js"></script>
 
     <style>
@@ -20,7 +20,7 @@
             }
         }
 
-        .log-date:not(article:nth-of-type(1) .log-date) { 
+        .log-date:not(article:nth-of-type(1) .log-date) {
             display: inline-block;
             margin-top: 2em;
         }
@@ -49,8 +49,8 @@
             }
         }
 
-        @media (min-width: 1050px) 
-        {    
+        @media (min-width: 1050px)
+        {
             .fullscreen {
                 cursor: pointer;
                 position: fixed;
@@ -153,7 +153,7 @@
             </ol>
 
             <p>
-                In short, sometimes people say: "Well, but you aren't Facebook" referring to the complexity of the app, 
+                In short, sometimes people say: "Well, but you aren't Facebook" referring to the complexity of the app,
                 but I'd add that you aren't Facebook also as a company!
             </p>
             <p>
@@ -195,32 +195,32 @@
                 </span>
             </code>
         </article>
-        
+
         <article id="interpreter-design-choice">
             <time class='log-date' datetime="2025-09-30">30 Sep 2025</time>
             <p>
-                An interesting interpreter design choice: 
+                An interesting interpreter design choice:
                 <a class="my-external-link" href="https://gist.github.com/AlessandroTambellini/9428070f40437660fcece3b639b1ab07">test.html</a>.
                 Try to open <code>test.html</code> in a browser.
             </p>
         </article>
-        
+
         <article id="asset-location">
             <time class='log-date' datetime="2025-09-29">29 Sep 2025</time>
             <p>
-                I remember reading a post of Aaron Swartz of around 2005/6 where he said something on the line of: "Well, Django isn't really well architectured because 
+                I remember reading a post of Aaron Swartz of around 2005/6 where he said something on the line of: "Well, Django isn't really well architectured because
                 forces you to put files in specific folders". Almost 20 years later, while using Vite.js I had problems putting assets
-                in whatever folder I wanted. Apparently, in 
-                <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/handlers.mjs">get_asset()</a> 
+                in whatever folder I wanted. Apparently, in
+                <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/handlers.mjs">get_asset()</a>
                 I solved an unsolved Computer Science problem!
             </p>
         </article>
-        
+
         <article id="splitting-code-on-the-client-is-expensive">
             <time class='log-date' datetime="2025-09-28">28 Sep 2025</time>
             <p>
                 In Postream, I had a separate CSS file per type of component: <code>buttons.css</code>, <code>cards.css</code> and <code>forms.css</code>.
-                I splitted these component stylings in different files to just import a styling if needed, 
+                I splitted these component stylings in different files to just import a styling if needed,
                 given not all three of these components are used in all the pages.<br>
                 First, my consideration wasn't really meaningful because in any page at least two of these components are used
                 (so, not a lot of difference) and secondly (and most importantly!) the browser has to do a different request for each file!
@@ -240,9 +240,9 @@
                 <time datetime="2025-10-07">Edit of 7 Oct 2025</time>:
                 <p>
                     Another area where you can save server requests is icons.
-                    It's pretty easy to make icons in HTML and CSS. In Postream I made the logo, a sun, a moon and some other minor stuff. 
+                    It's pretty easy to make icons in HTML and CSS. In Postream I made the logo, a sun, a moon and some other minor stuff.
                     I also made "dynamic" hamburger menu that changes the color and the number of rows based on the page, but removed it because
-                    was just a "shiny object". The important thing is to make clear they are icons: 
+                    was just a "shiny object". The important thing is to make clear they are icons:
                 </p>
                 <code class="code-block">&lt;span role='img' alt='&lt;Icon Description&gt;'&gt;...&lt;/span&gt;</code>
             </section>
@@ -252,7 +252,7 @@
             <time class='log-date' datetime="2025-09-23">23 Sep 2025</time>
             <p>
                 Template literals are one of my favourite ES6 features, but with a caveat: all the whitespaces and newlines are kept
-                and, while constructing the HTML templates, many extra bytes are piled in the final file sent to the client. 
+                and, while constructing the HTML templates, many extra bytes are piled in the final file sent to the client.
                 Therefore, I have 2 options: using <code>replaceAll()</code> or concatenating single lines with the '<code>+</code>' sign.
                 I opted for the 2nd option for a couple of reasons:
             </p>
@@ -289,7 +289,7 @@
             <time class='log-date' datetime="2025-09-02">2 Sep 2025</time>
             <p>
                 Who needs package managers, build tools, and YAML files?
-                Just copy-pasted the code I needed and deployed directly from the main branch: 
+                Just copy-pasted the code I needed and deployed directly from the main branch:
                 <a class="my-external-link" href="https://github.com/AlessandroTambellini/3d-matrix-visualizer">3d-matrix-visualizer</a>.<br>
                 Consequences?
             </p>
@@ -297,12 +297,12 @@
                 <li>It saves a lot of developer's time (at least mine)</li>
                 <li>The codebase is cleaner</li>
                 <li>
-                    The website is easily debuggable from the DevTools: no hashing of filenames, bundles and minifications. 
+                    The website is easily debuggable from the DevTools: no hashing of filenames, bundles and minifications.
                     And no, the website isn't slower because the problem isn't my little scripts of hundreds of lines of code.
                 </li>
             </ul>
             <p>
-                See the difference with the previous approach: 
+                See the difference with the previous approach:
                 <a class="my-external-link" href="https://github.com/AlessandroTambellini/matrix-visualizer">matrix-visualizer</a>.
             </p>
         </article>
@@ -313,11 +313,11 @@
                 It allows to save on containers, allowing the HTML to be more semantic.
             </p>
             <p>Snippet from my project 'Postream':</p>
-            
+
             <p>Before:</p>
             <code class="code-block">
                 <span class="block">
-                    &lt;main&gt;                
+                    &lt;main&gt;
                     <span class="block">
                         &lt;h2&gt;Posts&lt;/h2&gt;
                         <span>&lt;div id='replies-container'&gt;</span>
@@ -373,20 +373,20 @@
         <article id='react-js-pollution'>
             <time class='log-date' datetime="2025-08-03">3 Aug 2025</time>
             <p>
-                Sometimes I like to right click web pages to take a look at the source code. 
+                Sometimes I like to right click web pages to take a look at the source code.
                 In most cases it's a miserable blob of nested <code>&lt;div&gt;</code>s without any sense.<br>
-                I remember one month ago taking a look at the Porsche website made in Next.js and, 
+                I remember one month ago taking a look at the Porsche website made in Next.js and,
                 immediately after, watching the 2025 Vercel Conference (The company behind Next.js)
-                where they basically said: 
-                "Well, crawlers and agents are not able to scan our websites and so we thought about creating the text-based representation 
-                of the content of a page in parallel to the page itself, specific for the crawlers"... 
-                Instead of questioning their JS blob on the frontend, they come up with this solution. 
-                Are they really that blind or is it just a question of interests? Or am I just naive?<br> 
-                Now, my follow-up question is, 
-                is it possible for a complex website to be semantic? 
+                where they basically said:
+                "Well, crawlers and agents are not able to scan our websites and so we thought about creating the text-based representation
+                of the content of a page in parallel to the page itself, specific for the crawlers"...
+                Instead of questioning their JS blob on the frontend, they come up with this solution.
+                Are they really that blind or is it just a question of interests? Or am I just naive?<br>
+                Now, my follow-up question is,
+                is it possible for a complex website to be semantic?
                 And perhaps without uploading and downloading gigabytes of JS blob?
                 And perhaps without all the crazy, high-end, ultra-powerfull, magic, astonishing frameworks and libraries?<br>
-                This is my modest try: 
+                This is my modest try:
                 <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream">Postream</a>.<br>
                 Also, a website, more precisely a website of the Web 2.0, performs 4 main actions:
             </p>
@@ -401,11 +401,11 @@
                 <img src="../assets/log/website-scheme.webp" alt="Website Scheme">
             </div>
             <p id="spa">
-                If these actions are performed by using what the web offers (HTTP, URL, HTML), 
+                If these actions are performed by using what the web offers (HTTP, URL, HTML),
                 it's pretty straightforward to implement such a system.<br>
-                But, to make a bit easier to control some UI state, 
+                But, to make a bit easier to control some UI state,
                 some people decided to adopt a model called <strong>Single Page Application</strong>.
-                A model where the easiness of manipulating data by exploiting the change of page is lost 
+                A model where the easiness of manipulating data by exploiting the change of page is lost
                 at the cost of what I already said before.
             </p>
             <p>
@@ -431,15 +431,15 @@
         <article>
             <time class='log-date' datetime="2025-07-21">21 Jul 2025</time>
             <p>
-                Not a Sublime user, but I find its development interesting, 
-                also considering that isn't built using Electron: 
-                <a class="external-link" target='_blank' href="https://www.sublimetext.com/blog/articles/anatomy-of-a-next-generation-text-editor">Anatomy of a Next Generation Text Editor</a>.          
+                Not a Sublime user, but I find its development interesting,
+                also considering that isn't built using Electron:
+                <a class="external-link" target='_blank' href="https://www.sublimetext.com/blog/articles/anatomy-of-a-next-generation-text-editor">Anatomy of a Next Generation Text Editor</a>.
             </p>
         </article>
         <article>
             <time class='log-date' datetime="2025-06-28">28 Jun 2025</time>
             <p>
-                Matthew Prince, CEO of Cloudflare, 
+                Matthew Prince, CEO of Cloudflare,
                 talks about AI bots and publishers, and some of the points he makes are:
             </p>
             <ul>
@@ -472,11 +472,11 @@
             </ol>
             <p>
                 So, given I don't see the ego/fame point as a problem, everything comes down to the money aspect.
-                And so, what's the consequence? That you don't earn by writing on the web &#8658; 
-                no clickbait, no ads, free content, more independent publishers and less corporate publishers. 
+                And so, what's the consequence? That you don't earn by writing on the web &#8658;
+                no clickbait, no ads, free content, more independent publishers and less corporate publishers.
             </p>
             <p>
-                Link to the video: 
+                Link to the video:
                 <a class="external-link" target='_blank' href="https://x.com/carlhendy/status/1938465616442306871">
                     x.com/carlhendy/status/1938465616442306871
                 </a>
@@ -486,14 +486,14 @@
             <time class='log-date' datetime="2025-06-24">24 Jun 2025</time>
             <p>
                 Read <cite><em>A Programmable Web: An Unfinished Work</em></cite>, by Aaron Swartz.<br>
-                It makes a bunch of interesting points related to: openess of data, API design, structure of URLs, 
+                It makes a bunch of interesting points related to: openess of data, API design, structure of URLs,
                 Digest access authentication built-in HTTP, stateless web, robots & crawlers.
             </p>
         </article>
         <article>
             <time class='log-date' datetime="2025-06-19">19 Jun 2025</time>
             <p>
-                I wouldn't write this today: 
+                I wouldn't write this today:
                 <a class="my-external-link" href="https://medium.com/@alessandrotambellini03/my-view-of-a-browser-5e7b6122832c">
                     My view of a Browser
                 </a>.
@@ -503,9 +503,9 @@
             <time class='log-date' datetime="2025-04-07">7 Apr 2025</time>
             <p>
                 Related to
-                <a href="#idiosyncrasies-of-the-html-parser">
+                <a class="internal-link" href="#idiosyncrasies-of-the-html-parser">
                     idiosyncrasies of the HTML parser
-                </a>: 
+                </a>:
                 <a class="my-external-link" href="https://gist.github.com/AlessandroTambellini/b11d6ac91115d3a0d485f1fa78865f19">
                     gist.github.com/AlessandroTambellini/b11d6ac91115d3a0d485f1fa78865f19
                 </a>
@@ -514,7 +514,7 @@
 	  	<article>
             <time class='log-date' datetime="2025-03-14">14 Mar 2025</time>
             <p>
-                Worked a couple of weeks on ReqLoop. A networking project, but 
+                Worked a couple of weeks on ReqLoop. A networking project, but
                 also an occasion to play with <code>&lt;template&gt;</code> and
                 <code>ResizeObserver()</code>.
             </p>
@@ -522,26 +522,26 @@
         <article>
             <time class='log-date' datetime="2025-02-25">25 Feb 2025</time>
             <p>
-                Revisited and reshaped a little article about the NAND gate I wrote 3 years ago:
-                <a class="my-external-link" href="https://alessandrotambellini.github.io/Just-a-NAND-gate/">Just a NAND gate</a>
+                Dusted off an old little article about the NAND gate:
+                <a class="internal-link" href="./nand-gate/">./nand-gate</a>
             </p>
         </article>
         <article id="idiosyncrasies-of-the-html-parser">
             <time class='log-date' datetime="2025-02-19">19 Feb 2025</time>
             <p>
-                Today I read 
+                Today I read
                 <a class="external-link" target='_blank' href="https://htmlparser.info/#table-of-contents">Idiosyncrasies of the HTML parser</a>.<br>
                 To be precise, I read the first two chapters and skimmed the third one.<br>
-                What I understood is that the HTML parser of browsers is built to handle any type of 
-                "writing style" plus, without ever throwing an error. In the style of: 
-                "Hey, don't worry, however you write it's fine and we are never gonna throw you an error!".<br>
-                It remembers me of an interview to Brendan Eich where he says that from the first draft 
-                of JS the equality operator <code>==</code> was the strict equality one but then, people persuaded
+                What I understood is that the HTML parser of browsers is built to handle any type of
+                "writing style" without ever throwing an error. In the style of:
+                "Hey, don't worry however you write because it's fine and we will never throw you an error!".<br>
+                It remembers me of an interview to Brendan Eich where he says that, from the first draft
+                of JS, the equality operator (<code>==</code>) was the strict equality one, but then people persuaded
                 him to make it loosely equal.<br>
-                Were these decisions made to let people populate the web in the easiest way possible without 
+                Were these decisions made to let people populate the web in the easiest way possible without
                 worrying about the programming barrier?<br>
-                I can draw a parallel with the decision of YouTube to remove the dislike button at the cost
-                of lowering the quality of the content "to let people express fearlessly".
+                I can draw a parallel with the decision of YouTube to remove the dislike button
+                "to let people express themselves fearlessly" at the cost of lowering the quality of the content.
                 Translated: to populate YouTube.
             </p>
         </article>
@@ -556,7 +556,7 @@
             <time class='log-date' datetime="2025-02-15">15 Feb 2025</time>
             <p>
                 While reading the emscripten docs,
-                I came across this interesting article: 
+                I came across this interesting article:
                 <a class="external-link" target='_blank' href="https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install#where-do-these-unix-scripts-come-from">
                     The magic behind configure, make, and make install
                 </a>
@@ -591,7 +591,7 @@
                 <a href="/logroll/">logroll</a>
             </li>
         </menu>
-        
+
         <button id="minify-nav-btn" aria-label='minify side-nav' class='display-block'>
             <span role='img' alt='minify side-nav icon'>〈</span>
         </button>

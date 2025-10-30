@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="NAND gate">
+	<meta name="description" content="NAND gate: how the building block of a computer works">
+	<meta name="author" content="Alessandro Tambellini">
+	<title>NAND gate</title>
+
+	<style>
+		/* This is copy-pasted design style from my website */
+
+		:root {
+			--website-nav-btn-size: 3rem;
+			--website-nav-btn-margin: 1rem;
+			--background-color: rgb(26, 28, 32);
+			--text-color: rgb(236, 239, 242);
+			--delimiter-color: rgb(46, 48, 57);
+			--link-color: rgb(115, 122, 222);
+			--time-color: rgb(140, 144, 161);
+			--quote-color: rgb(140, 144, 161);
+		}
+
+		body {
+			margin: 0;
+			background-color: var(--background-color);
+			color: var(--text-color);
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: bold;
+		}
+
+		h1 {
+			line-height: 3rem;
+		}
+
+		h2 {
+			font-size: 2rem;
+			line-height: 1.2;
+			padding-inline: .25em;
+			margin-bottom: .25em;
+			margin-top: 1em;
+		}
+
+		code {
+			font-family: fantasy;
+			color: var(--time-color);
+		}
+
+		a {
+			color: var(--link-color);
+		}
+
+		a:hover {
+			color: rgb(88, 95, 222);
+		}
+
+		hr {
+			border: 1px solid var(--delimiter-color);
+		}
+
+		p, ul {
+			max-width: 80ch;
+			font-size: 1.25rem;
+		}
+
+		p {
+			line-height: 1.6;
+			padding-inline: 1rem;
+			margin-block: .5rem;
+		}
+
+		ul {
+			line-height: 1.5;
+		}
+
+		button {
+			cursor: pointer;
+		}
+
+		/*  */
+
+		:root {
+			--clr-copper: 29, 57%, 46%;
+			--clr-tin: 210, 2%, 83%;
+			--clr-code: 240, 100%, 50%;
+			--btn-height: calc(var(--fs-400) * 2);
+			--fs-800: 3.5rem;
+		}
+
+		@media (min-width: 35em) {
+			:root {
+				--fs-800: 5rem;
+				--fs-400: 1rem;
+			}
+		}
+
+		@media (min-width: 45em) {
+			:root {
+				--fs-800: 6.25rem;
+				--fs-400: 1.125rem;
+			}
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-size: var(--fs-400);
+		}
+
+		article {
+			/* This padding is to let the text at the bottom of the page not be covered by the #website-nav-btn */
+			padding-bottom: calc(var(--website-nav-btn-size) + var(--website-nav-btn-margin));
+			width: 100%;
+			max-width: 800px;
+		}
+
+		h1 {
+			font-size: var(--fs-800);
+			text-align: center;
+		}
+
+		figure {
+			margin: 0;
+			margin-block: 1.5em;
+		}
+
+		button {
+			font: inherit;
+		}
+
+		.overlined-text {
+		text-decoration: overline;
+		}
+
+		figcaption {
+			text-align: center;
+		}
+
+		table {
+			margin-inline: auto;
+			margin-block: 1em;
+		}
+
+		.logic-table th {
+			border-bottom: 1px solid white;
+		}
+
+		.logic-table th, .logic-table td {
+			padding-inline: .75em;
+		}
+
+		#set-figure {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background-color: yellow;
+			padding-block: 1rem;
+		}
+
+		#set-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+		}
+
+		.set {
+			position: absolute;
+			width: 50vw;
+			/* TODO fix based on the width of the text */
+			max-width: 50ch;
+			aspect-ratio: 1;
+			background-color: yellow;
+			border-radius: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid black;
+		}
+
+		.set:nth-child(1) {
+			left: -30%;
+		}
+
+		.set:nth-child(2) {
+			overflow: hidden;
+			position: relative;
+			right: -30%;
+		}
+
+		#sets-intersection {
+			position: absolute;
+			left: -60%;
+			width: 100%;
+			aspect-ratio: 1;
+			background-color: white;
+			border-radius: 100%;
+			border: 1px solid black;
+		}
+
+		#nand-gate-circuit-diagram {
+			margin-inline: auto;
+			margin-block: 1.5em;
+			display: block;
+		}
+
+		/*  */
+
+		#not-gate, #nand-gate {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+		}
+
+		#nand-gate > div:nth-of-type(1) {
+			height: fit-content;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			padding-left: .5em;
+		}
+
+		#nand-gate > div:nth-of-type(1) div {
+			width: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#nand-gate > div:nth-of-type(1) div p {
+			margin: 0;
+			padding-inline: .5em;
+		}
+
+		#nand-gate > div:nth-of-type(1) div hr {
+			border: 1px solid goldenrod;
+			width: 100%;
+			height: 1px;
+		}
+
+		#nand-gate > div:nth-of-type(2) {
+			height: 10vh;
+			max-height: 120px;
+			border-top-right-radius: min(10vh, 100px);
+			border-bottom-right-radius: min(10vh, 100px);
+			background-color: slategrey;
+			width: 100%;
+		}
+
+		#nand-gate > div:nth-of-type(3) {
+			border-radius: 100%;
+			height: 3vh;
+			min-height: 1rem;
+			aspect-ratio: 1;
+			max-height: 40px;
+			background-color: silver;
+		}
+
+		#nand-gate > hr {
+			border: 1px solid yellow;
+			width: 100%;
+		}
+
+		#nand-gate > p {
+			padding-inline: .5em;
+		}
+
+		/*  */
+
+		#not-gate p {
+			padding-inline: .5em;
+		}
+
+		#not-gate hr {
+			border: 1px solid goldenrod;
+			width: 100%;
+		}
+
+		#not-gate span:nth-of-type(1) {
+			outline: 2px solid goldenrod;
+			height: 6vh;
+			max-height: 60px;
+			width: 100%;
+		}
+
+		#not-gate span:nth-of-type(2) {
+			height: 10vh;
+			max-height: 100px;
+			border-top-right-radius: min(10vh, 100px);
+			border-bottom-right-radius: min(10vh, 100px);
+			background-color: slategrey;
+			width: 100%;
+		}
+
+		#not-gate span:nth-of-type(3) {
+			border-radius: 100%;
+			height: 3vh;
+			min-height: 1rem;
+			aspect-ratio: 1;
+			max-height: 30px;
+			background-color: silver;
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<h1>NAND gate</h1>
+
+		<figure id="nand-gate">
+			<div>
+				<div>
+					<button id="nand-gate-btn-a">off</button>
+					<p>a</p><hr id="wire-a">
+				</div>
+				<div>
+					<button id="nand-gate-btn-b">off</button>
+					<p>b</p><hr id="wire-b">
+				</div>
+			</div>
+			<div></div>
+			<div></div>
+			<hr id="wire-c">
+			<p>c</p>
+		</figure>
+
+		<table class="logic-table">
+			<thead>
+				<tr>
+					<th scope="col">a</th>
+					<th scope="col">b</th>
+					<th scope="col">c</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="td-1">off</td>
+					<td>off</td>
+					<td>on</td>
+				</tr>
+				<tr>
+					<td class="td-1">on</td>
+					<td>off</td>
+					<td>on</td>
+				</tr>
+				<tr>
+					<td class="td-1">off</td>
+					<td>on</td>
+					<td>on</td>
+				</tr>
+				<tr>
+					<td class="td-1">on</td>
+					<td>on</td>
+					<td>off</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>
+			The NAND gate obeys to the following
+			<a href="https://en.wikipedia.org/wiki/De_Morgan's_laws">De Morgan's law</a>:
+			<span class="overlined-text">(A &middot; B)</span> &#8801; <span class="overlined-text">(A</span> + <span class="overlined-text">B)</span>
+		</p>
+
+		<p>
+			Simbology:
+		</p>
+		<ul>
+			<li>
+				Negation: <span class="overlined-text">x</span> == NOT x
+			</li>
+			<li>
+				Intersection: &middot; == AND == &cap;
+			</li>
+			<li>
+				Union: + == OR == &cup;
+			</li>
+		</ul>
+
+		<p>You can express the same meaning with different symbology:</p>
+		<ul>
+			<li>
+				<span class="overlined-text">A &cap; B</span>
+				==
+				<span class="overlined-text">A</span> &cup; <span class="overlined-text">B</span>
+			</li>
+			<li>
+				NOT(A AND B) == (NOT A) OR (NOT B)
+			</li>
+			<li>
+				<span class="overlined-text">A &middot; B</span>
+				==
+				<span class="overlined-text">A</span> + <span class="overlined-text">B</span>
+			</li>
+			<li>
+				In JavaScript: <code>!(A && B) === !A || !B</code>
+			</li>
+		</ul>
+
+		<p>
+			Try to replace A and B with <code>true</code> and
+			<code>false</code> and log it. In whichever
+			way you set A and B, the output will always be <code>true</code>.
+		</p>
+
+		<figure id="set-figure">
+			<figcaption>
+				<span class="overlined-text">A &middot; B</span>
+			</figcaption>
+			<div id="set-container">
+				<div class="set">A</div>
+				<div class="set">
+					B
+					<div id="sets-intersection"></div>
+				</div>
+			</div>
+		</figure>
+
+		<p>
+			The NAND gate is the only component needed to build a computer.
+			When I say computer, I refer to CPU and RAM without peripheral devices.
+			This is possible, because the NAND gate has the property of
+			<strong>functional completeness</strong>.
+			It means that just by combining NAND gates, you can
+			express all possible truth tables: logical NAND, logical
+			conjunction, logical disjunction, logical equality, exlusive
+			disjunction, logical NOR.
+		</p>
+
+		<p>Example</p>
+		<span role="img" id="not-gate">
+			<p>a, b</p>
+			<hr>
+			<span></span>
+			<span></span>
+			<span></span>
+			<hr>
+			<p>c</p>
+		</span>
+
+		<p>
+			I just wired together a and b, and by reading the table you can understand why it's called NOT gate.
+		</p>
+		<table class="logic-table">
+			<thead>
+			<tr>
+				<th scope="col">a, b</th>
+				<th scope="col">c</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>off</td>
+				<td>on</td>
+			</tr>
+			<tr>
+				<td class="td-1">on</td>
+				<td>off</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<p>
+			For more information about the gates and how they are wired
+			up together to build the computer logic, I suggest the book
+			<a href="http://www.buthowdoitknow.com/">But How Do It Know?</a>
+		</p>
+
+		<section>
+			<h2>
+				But how can I build a gate? And what makes a gate a gate?
+			</h2>
+			<p>
+				A gate is made of <strong>transistors</strong>.
+				Transistors are semiconductor devices that can act as switches or amplifiers.
+				You can build a circuit on a breadboard to simulate the behaviour of
+				a NAND gate inside a microprocessor. Because they can be combined
+				together on an integrated circuit, it is possible to put
+				billions of them in one package.
+			</p>
+			<img id="nand-gate-circuit-diagram"
+				src="./nand-gate-circuit-diagram.webp"
+				onerror="this.src = './nand-gate-circuit-diagram.jpg';"
+				alt="NAND gate circuit diagram">
+		</section>
+	</article>
+
+    <script>
+        const btn_a = document.querySelector('#nand-gate-btn-a');
+        const btn_b = document.querySelector('#nand-gate-btn-b');
+        const wire_a = document.querySelector('#wire-a');
+        const wire_b = document.querySelector('#wire-b');
+        const wire_c = document.querySelector('#wire-c');
+
+        let a_off = false;
+        let b_off = false;
+        [btn_a, btn_b].forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn === btn_a) {
+                    a_off
+                    ? (wire_a.style.borderColor = 'goldenrod')
+                    : (wire_a.style.borderColor = 'yellow');
+                } else {
+                    b_off
+                    ? (wire_b.style.borderColor = 'goldenrod')
+                    : (wire_b.style.borderColor = 'yellow');
+                }
+
+                btn === btn_a ? (a_off = !a_off) : (b_off = !b_off);
+                if (a_off && b_off) {
+                    wire_c.style.borderColor = 'goldenrod';
+                } else {
+                    wire_c.style.borderColor = 'yellow';
+                }
+
+                btn.textContent = btn.textContent === 'off' ? 'on' : 'off';
+            });
+        });
+    </script>
+</body>
+</html>
