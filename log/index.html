@@ -127,6 +127,35 @@
     <main>
         <a id="rss-feed" href="/rss.xml">RSS</a>
 
+        <article>
+            <time class='log-date' datetime="2025-11-12">12 Nov 2025</time>
+            <p>
+                Every time I use a Nodejs API function, I end up surronding it with <code>try-catch</code>
+                and returning two states:
+            </p>
+            <code class="code-block">
+                let file_content = null, fs_error = null;<br>
+                <span class="block">
+                    try {<br>
+                    <span class="block">
+                        file_content = await readFile(filepath);
+                    </span>
+                    </span>
+                <span class="block">
+                    } catch (error) {<br>
+                    <span class="block">
+                        fs_error = error;<br>
+                    </span>
+                    }<br><br>
+                </span>
+
+                return { file_content, fs_error };
+            </code>
+            <p>
+                Never found the error propagation useful. Especially in servers.
+            </p>
+        </article>
+
         <article id="per-component-development">
             <time class='log-date' datetime="2025-10-16">16 Oct 2025</time>
             <p>

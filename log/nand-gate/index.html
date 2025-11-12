@@ -506,24 +506,18 @@
 
         let a_off = false;
         let b_off = false;
+
         [btn_a, btn_b].forEach(btn => {
             btn.addEventListener('click', () => {
                 if (btn === btn_a) {
-                    a_off
-                    ? (wire_a.style.borderColor = 'goldenrod')
-                    : (wire_a.style.borderColor = 'yellow');
+                    wire_a.style.borderColor = a_off ? 'goldenrod' : 'yellow';
                 } else {
-                    b_off
-                    ? (wire_b.style.borderColor = 'goldenrod')
-                    : (wire_b.style.borderColor = 'yellow');
+                    wire_b.style.borderColor = b_off ? 'goldenrod' : 'yellow';
                 }
 
                 btn === btn_a ? (a_off = !a_off) : (b_off = !b_off);
-                if (a_off && b_off) {
-                    wire_c.style.borderColor = 'goldenrod';
-                } else {
-                    wire_c.style.borderColor = 'yellow';
-                }
+
+				wire_c.style.borderColor = (a_off && b_off) ? 'goldenrod' : 'yellow';
 
                 btn.textContent = btn.textContent === 'off' ? 'on' : 'off';
             });
