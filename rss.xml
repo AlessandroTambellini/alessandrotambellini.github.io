@@ -6,8 +6,16 @@
         <atom:link href="https://alessandrotambellini.github.io/rss.xml" rel="self" type="application/rss+xml" />
         <description>My log</description>
         <language>en</language>
-        <lastBuildDate>Thu, 16 Oct 2025 11:00:00 CEST</lastBuildDate>
+        <lastBuildDate>Thu, 15 Nov 2025 11:00:00 CEST</lastBuildDate>
         
+        <item>
+            <title>Postream Conclusions</title>
+            <link>https://alessandrotambellini.github.io/log/#postream-conclusions</link>
+            <description>My conclusions developing Postream for 5 months</description>
+            <pubDate>Thu, 15 Nov 2025 11:00:00 CEST</pubDate>
+            <guid>https://alessandrotambellini.github.io/log/#postream-conclusions</guid>
+        </item>
+
         <item>
             <title>Per-Component Development</title>
             <link>https://alessandrotambellini.github.io/log/#per-component-development</link>

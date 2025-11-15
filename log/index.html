@@ -127,6 +127,43 @@
     <main>
         <a id="rss-feed" href="/rss.xml">RSS</a>
 
+        <article id="postream-conclusions">
+            <time class='log-date' datetime="2025-11-15">15 Nov 2025</time>
+            <p>
+                Made Postream to see what was possible to make just using the native Web API.
+                The more I was developing the app, the more I was shifting the rendering towards the server
+                and then the project moved also to be: "Is developing a server using plain Nodejs practical?"<br>
+                My conclusion is that it is practical. My fear was that the Nodejs API was too "low level"
+                in the sense that wasn't giving abstractions to quickly setup a server, 
+                but I didn't encounter this problem. 
+                The fear came by looking at the huge number of dependencies also used on the server-side.<br>
+
+                I also think that the limitations of Node are related to the language: JavaScript.
+                The hackish stuff derive from the nature of js, not Node per se.<br>
+
+                So, the conclusive take on Node is that it is suitable to make an app server but, 
+                given the existance of Go, there is no point in using Node.
+                I find Node useful for network-related scripts like Href-Crawler. That's it.<br>
+                
+                The Node and Deno environments come from the ideology of using JS 
+                both on the client and on the server-side
+                and to merge them into an unique developing experience. 
+                This ideology took hold from the massive usage of JS on the client-side.<br>
+                
+                Another thing that annoys me a bit (but I don't know how rationale it is)
+                is that, to make apps, it's a spam of Chromium everywhere and 
+                I don't wanna see the same spam of V8 to make servers.<br>
+
+                Maybe the only negative take out of this project is that the Web API is huge and with bad naming. 
+                But it is what it is, 
+                it derives from an evolutionary process of 30 years and you cannot do much about it.
+                You just have to know the idiosyncrasis. Same story for the splitting in HTML, CSS and JS that sometimes
+                forces an approach not that handy.<br>
+                <br>
+                Postream is ~4000 loc.
+            </p>
+        </article>
+
         <article>
             <time class='log-date' datetime="2025-11-12">12 Nov 2025</time>
             <p>
@@ -135,33 +172,26 @@
             </p>
             <code class="code-block">
                 let file_content = null, fs_error = null;<br>
-                <span class="block">
-                    try {<br>
-                    <span class="block">
-                        file_content = await readFile(filepath);
-                    </span>
-                    </span>
-                <span class="block">
-                    } catch (error) {<br>
-                    <span class="block">
-                        fs_error = error;<br>
-                    </span>
-                    }<br><br>
-                </span>
+                try {<br>
+                &emsp;&emsp;file_content = await readFile(filepath);<br>
+                } catch (error) {<br>
+                &emsp;&emsp;fs_error = error;<br>
+                }<br><br>
 
                 return { file_content, fs_error };
             </code>
             <p>
-                Never found the error propagation useful. Especially in servers.
+                Don't find the error propagation useful. Especially in servers.
             </p>
         </article>
 
         <article id="per-component-development">
             <time class='log-date' datetime="2025-10-16">16 Oct 2025</time>
             <p>
-                I'll try to justify the per-component development of React.js.<br>
-                At Facebook there are hundreds of thousands of employees, tens of thousands of which are working on a single product I guess.
-                There are a lot of employees coming and going and so you have to think on how to structure a codebase.<br>
+                I'll try to justify the per-component development of React.js:<br>
+                at Facebook, there are hundreds of thousands of employees, tens of thousands of which are working on a single product I guess.
+                There are a lot of employees coming and going and so you have to think on how to structure a codebase
+                to avoid "loss of knowledge" and make it fast to grab it.<br>
                 A good choice might be to modularize it as much as possible: each component of the UI developed separately in its own file.<br>
                 This approach has three consequences:
             </p>
@@ -172,11 +202,11 @@
             </ol>
             <p>And the effects are:</p>
             <ol>
-                <li>Bundling and strategies to minimize the number of requests from the browser</li>
+                <li>Bundling to minimize the number of requests from the browser</li>
                 <li>
                     You may be tempted to inject css in the HTML tags (inline styling) but it has an high specificity difficult to control.
                     You may think about per-page styling (embedded styling) but you realize you don't have this luxury!
-                    The last resort is to make of everything a class: Tailwind CSS to the rescue :)
+                    And so the last resort is to make of everything a class: Tailwind CSS to the rescue :)
                 </li>
                 <li>Probably you end up with redundant logic &#8658; Tools to identify redundancy and fix it</li>
             </ol>
@@ -186,9 +216,11 @@
                 but I'd add that you aren't Facebook also as a company!
             </p>
             <p>
-                But you know what's a worse thing? That when you go on the React.js website they say that only a bit of the basics of JS are needed
-                and they make you develop a Tic-Tac-Toe and so you are tempted to think: "Oh, well, I guess to make such a thing I need React.js".<br>
-                But why they tell you that?<br>
+                But you know what's a worse thing? That when you go on the React.js website they say to you
+                that you need to know a bit about the basics of JS
+                and they make you develop a Tic-Tac-Toe and so you are tempted to think: 
+                "Oh, well, I guess to make such a thing (such a simple thing!) I need React.js".<br>
+                But why do they tell you that?<br>
                 Because they want the web to rotate around Facebook: open-source contributions go to Facebook libraries/frameworks,
                 standards move towards what Facebook needs given half of the "modern" web is developed with Facebook technologies and
                 when people enter Facebook they are already proficient with their technologies.
@@ -203,7 +235,7 @@
                 Just to make an example on the concept of <a href="#spa"><abbr>SPA</abbr></a> (Single Page Application),
                 in Postream you can switch between dark and light mode and once toggled, the UI keeps the choosen "state" while navigating the pages
                 and you don't see any flickering of mode change (e.g. from light to dark) while loading a new page.
-                The important thing is to know when to check the mode (with a tiny script) before the browsers starts the styling:
+                The important thing to know is when to check the mode (with a tiny script) before the browsers starts the styling:
             </p>
             <code class="code-block">
                 <span class="block">
@@ -239,8 +271,7 @@
             <p>
                 I remember reading a post of Aaron Swartz of around 2005/6 where he said something on the line of: "Well, Django isn't really well architectured because
                 forces you to put files in specific folders". Almost 20 years later, while using Vite.js I had problems putting assets
-                in whatever folder I wanted. Apparently, in
-                <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream/blob/main/src/handlers.mjs">get_asset()</a>
+                in whatever folder I wanted. Apparently, in Postream,
                 I solved an unsolved Computer Science problem!
             </p>
         </article>
@@ -254,7 +285,7 @@
                 First, my consideration wasn't really meaningful because in any page at least two of these components are used
                 (so, not a lot of difference) and secondly (and most importantly!) the browser has to do a different request for each file!
                 So, I decided to pile them toghether inside <code>_universal.css</code> where I already had the 'universal' styling about
-                colors, layout, etc. In this way, for each page loaded of the website, there are on avg 3 less requests to the server.<br>
+                colors and layout. In this way, for each page loaded of the website, there are ~3 less requests to the server.<br>
                 Another thing I did, was removing the page-specific css file where unnecessary: many pages have a page-specific styling
                 that is really tiny, so I just embedded it in the document <code>&lt;head&gt;</code>. There are just a couple of pages for which I prefer to
                 have a separate css file.<br>
@@ -361,14 +392,10 @@
 
             <p>After:</p>
             <code class="code-block">
-                <span class="block">
-                    &lt;main&gt;
-                    <span class="block">
-                        <span>&lt;h2&gt;Posts&lt;/h2&gt;</span>
-                        {{ post-cards }}
-                    </span>
-                    &lt;/main&gt;
-                </span>
+                &lt;main&gt;<br>
+                &emsp;&emsp;&lt;h2&gt;Posts&lt;/h2&gt;<br>
+                &emsp;&emsp;{{ post-cards }}<br>
+                &lt;/main&gt;
             </code>
 
             <p>
@@ -455,7 +482,11 @@
             <div class="img-wrapper">
                 <img src="../assets/log/network-request-analysis.webp" alt="Network Request Analysis">
             </div>
-            <p>Can you have the same clarity in React.js?</p>
+            <p>
+                Can you have the same clarity in React.js?<br>
+                Moreover, a possible stack trace of an error is much more readable 
+                even if I structure the code in a really bad way.
+            </p>
         </article>
         <article>
             <time class='log-date' datetime="2025-07-21">21 Jul 2025</time>
