@@ -173,11 +173,11 @@
             <code class="code-block">
                 let file_content = null, fs_error = null;<br>
                 try {<br>
-                &emsp;&emsp;file_content = await readFile(filepath);<br>
+                &emsp;file_content = await readFile(filepath);<br>
                 } catch (error) {<br>
-                &emsp;&emsp;fs_error = error;<br>
-                }<br><br>
-
+                &emsp;fs_error = error;<br>
+                }<br>
+                <br>
                 return { file_content, fs_error };
             </code>
             <p>
@@ -238,22 +238,14 @@
                 The important thing to know is when to check the mode (with a tiny script) before the browsers starts the styling:
             </p>
             <code class="code-block">
-                <span class="block">
-                    &lt;body&gt;
-                    <span class="block">
-                        &lt;script&gt;
-                            <span class="block">
-                                <span>const light_mode = localStorage.getItem('light-mode');</span>
-                                <span>if (light_mode === 'moon-mode') {</span>
-                                <span class="block">
-                                    document.querySelector('html').classList.add('moon-mode');
-                                </span>
-                                <span>}</span>
-                            </span>
-                        &lt;/script&gt;
-                        <span>...</span>
-                    </span>
-                </span>
+                &lt;body&gt;<br>
+                &emsp;&lt;script&gt;<br>
+                &emsp;&emsp;const light_mode = localStorage.getItem('light-mode');<br>
+                &emsp;&emsp;if (light_mode === 'moon-mode') {<br>
+                &emsp;&emsp;&emsp;document.querySelector('html').classList.add('moon-mode');<br>
+                &emsp;&emsp;}<br>
+                &emsp;&lt;/script&gt;<br>
+                &emsp;...
             </code>
         </article>
 
@@ -304,7 +296,9 @@
                     I also made "dynamic" hamburger menu that changes the color and the number of rows based on the page, but removed it because
                     was just a "shiny object". The important thing is to make clear they are icons:
                 </p>
-                <code class="code-block">&lt;span role='img' alt='&lt;Icon Description&gt;'&gt;...&lt;/span&gt;</code>
+                <code class="code-block">
+                    &lt;span role='img' alt='&lt;Icon Description&gt;'&gt;...&lt;/span&gt;
+                </code>
             </section>
         </article>
 
@@ -322,26 +316,18 @@
                 <li>I can insert comments among the template lines :-)</li>
             </ol>
             <code class="code-block">
-                <span class="block">
-                    DOMElements['.reply-card'] = function(reply)<br>
-                    {
-                    <span class="block">
-                        const { id, content, created_at } = reply;<br>
-                        <br>
-                        return (<br>
-                            <span class="block">
-                                `&lt;article id='reply-${id}' class='card reply-card'&gt;` +
-                                <span class="block">
-                                    `&lt;p&gt;${content}&lt;/p&gt;` +<br>
-                                    // The quick brown fox jumps over the lazy dog<br>
-                                    `&lt;time datetime="${created_at}"&gt;&lt;/time&gt;` +
-                                </span>
-                                `&lt;/article&gt;`
-                            </span>
-                        );
-                    </span>
-                    }
-                </span>
+                DOMElements['.reply-card'] = function(reply)<br>
+                {<br>
+                &emsp;const { id, content, created_at } = reply;<br>
+                <br>
+                &emsp;return (<br>
+                &emsp;&emsp;`&lt;article id='reply-${id}' class='card reply-card'&gt;` +<br>
+                &emsp;&emsp;&emsp;`&lt;p&gt;${content}&lt;/p&gt;` +<br>
+                &emsp;&emsp;&emsp;// The quick brown fox jumps over the lazy dog<br>
+                &emsp;&emsp;&emsp;`&lt;time datetime="${created_at}"&gt;&lt;/time&gt;` +<br>
+                &emsp;&emsp;'&lt;/article&gt;'<br>
+                &emsp;);<br>
+                }
             </code>
         </article>
 
@@ -376,25 +362,19 @@
 
             <p>Before:</p>
             <code class="code-block">
-                <span class="block">
-                    &lt;main&gt;
-                    <span class="block">
-                        &lt;h2&gt;Posts&lt;/h2&gt;
-                        <span>&lt;div id='replies-container'&gt;</span>
-                        <span class="block">
-                            {{ post-cards }}
-                        </span>
-                        <span>&lt;/div&gt;</span>
-                    </span>
-                    &lt;/main&gt;
-                </span>
+                &lt;main&gt;<br>
+                &emsp;&lt;h2&gt;Posts&lt;/h2&gt;<br>
+                &emsp;&lt;div id='replies-container'&gt;<br>
+                &emsp;&emsp;{{ post-cards }}<br>
+                &emsp;&lt;/div&gt;<br>
+                &lt;/main&gt;
             </code>
 
             <p>After:</p>
             <code class="code-block">
                 &lt;main&gt;<br>
-                &emsp;&emsp;&lt;h2&gt;Posts&lt;/h2&gt;<br>
-                &emsp;&emsp;{{ post-cards }}<br>
+                &emsp;&lt;h2&gt;Posts&lt;/h2&gt;<br>
+                &emsp;{{ post-cards }}<br>
                 &lt;/main&gt;
             </code>
 
