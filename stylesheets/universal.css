@@ -27,8 +27,11 @@
     box-sizing: border-box;
 }
 
-body {
+html {
     background-color: var(--background-color);
+}
+
+body {
     color: var(--text-color);
     font-family: sans-serif;
 }
