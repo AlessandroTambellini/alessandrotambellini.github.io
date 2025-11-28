@@ -27,11 +27,8 @@
     box-sizing: border-box;
 }
 
-html {
-    background-color: var(--background-color);
-}
-
 body {
+    background-color: var(--background-color);
     color: var(--text-color);
     font-family: sans-serif;
 }
@@ -50,6 +47,7 @@ code {
     border: 1px solid #454545;
     padding: 1em;
     width: 100%;
+    word-break: break-word;
 }
 
 time {
