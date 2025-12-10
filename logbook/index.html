@@ -126,37 +126,52 @@
     <main>
         <a id="rss-feed" href="/rss.xml">RSS</a>
 
+        <article id="react-usefullness">
+            <time class="log-date" datetime="2025-12-10">10 Dec 2025</time>
+            <p>
+                Consider 'Draw Algos' of the visual page,
+                it has many global flags (algo, root, targets, f_clear, f_rubber, ..., leftBtn_down)
+                that are updated within most functions and whose state affects one another.<br>
+                Managing them is tedious and using React would come handy for it.
+                Problem is, React also bring a lot of other features not used (e.g. React diff)
+                and so using it would be an overkill.
+                The solution is simply to structure the flags management a bit better.<br>
+                TL;DR: Again, React is a complex tool made for Facebook.
+            </p>
+        </article>
+
         <article id="postream-conclusions">
             <time class='log-date' datetime="2025-11-21">21 Nov 2025</time>
             <p>
                 Related to <a href="#per-component-development">per-component-development</a>:<br>
-                In general, technology developed by company &lt;x&gt; for their needs, probably doesn't fit your needs.
+                Technology developed by company &lt;x&gt; is for <b>their</b> needs and probably doesn't fit <b>your</b> needs.
                 Another example: take a look at this comment on Carbon: 
                 <a class="external-link" target="_blank" href="https://youtu.be/EGgJrazDTYw?si=qnUQAAo6TbZIT4ch">
                     Carbon Language - Who is it even for?
                 </a>
                 <br>
-                So, don't go crazy when big company &lt;x&gt; makes some of their internal tools open-source.
+                So, don't go crazy when company &lt;x&gt; open sources some of its internal tools.
             </p>
         </article>
 
         <article id="postream-conclusions">
             <time class='log-date' datetime="2025-11-15">15 Nov 2025</time>
             <p>
-                Made Postream to see what was possible to make just using the native Web API.
-                The more I was developing the app, the more I was shifting the rendering towards the server
+                Made Postream to see how handy it is to develop an app only using the native Web API.
+                But, the more I was developing the app, the more I was shifting the rendering towards the server
                 and then the project moved also to be: "Is developing a server using plain Nodejs practical?"<br>
                 My conclusion is that it is practical. My fear was that the Nodejs API was too "low level"
-                in the sense that wasn't giving abstractions to quickly setup a server, 
-                but I didn't encounter this problem. 
-                The fear came by looking at the huge number of dependencies also used on the server-side.<br>
+                in the sense that doesn't give abstractions to quickly setup a server, 
+                but I didn't encounter this problem.<br>
 
-                I also think that the limitations of Node are related to the language: JavaScript.
+                Still, I do think Node has limitations, but thery are related to the language: JavaScript.
                 The hackish stuff derive from the nature of js, not Node per se.<br>
 
                 So, the conclusive take on Node is that it is suitable to make an app server but, 
                 given the existance of Go, there is no point in using Node.
-                I find Node useful for network-related scripts like Href-Crawler. That's it.<br>
+                I find Node useful for network-related scripts like 
+                <a href="https://github.com/AlessandroTambellini/Href-Crawler" class="my-external-link">Href-Crawler</a>. 
+                That's it.<br>
                 
                 The Node and Deno environments come from the ideology of using JS 
                 both on the client and on the server-side
@@ -173,7 +188,7 @@
                 You just have to know the idiosyncrasis. Same story for the splitting in HTML, CSS and JS that sometimes
                 forces an approach not that handy.<br>
                 <br>
-                Postream is ~4000 loc.
+                Postream is ~4000 loc. Pretty hackable.
             </p>
         </article>
 

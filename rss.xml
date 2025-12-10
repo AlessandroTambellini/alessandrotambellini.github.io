@@ -6,7 +6,14 @@
         <atom:link href="https://alessandrotambellini.github.io/rss.xml" rel="self" type="application/rss+xml" />
         <description>My logbook</description>
         <language>en</language>
-        <lastBuildDate>Thu, 21 Nov 2025 11:00:00 CEST</lastBuildDate>
+        <lastBuildDate>Thu, 10 Dec 2025 11:00:00 CEST</lastBuildDate>
+
+        <item>
+            <title>React Usefullness</title>
+            <link>https://alessandrotambellini.github.io/logbook/#react-usefullness</link>
+            <pubDate>Thu, 10 Dec 2025 11:00:00 CEST</pubDate>
+            <guid>https://alessandrotambellini.github.io/logbook/#react-usefullness</guid>
+        </item>
 
         <item>
             <title>Postream Conclusions</title>
