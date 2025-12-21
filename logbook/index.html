@@ -132,6 +132,25 @@
     <main>
         <a id="rss-feed" href="/rss.xml">RSS</a>
 
+        <article id="repeated-markup">
+            <time class="log-date" datetime="2025-12-21">21 Dec 2025</time>
+            <p>
+                In the html pages of Postream, there is often hand-written, repeated markup.
+                What do I mean by that? For instance, every form contains a feedback-card;
+                nevertheless, I don't use a "feedback-card-template" that I inject into the form via JS. 
+                Why? Because of two reasons:
+            </p>
+            <ul>
+                <li>You may think that if I want to change something about the feedback-card, then
+                    I have to change each one of them manually. But that's not true because
+                    a search-and-replace has always been enough for me.
+                </li>
+                <li>Faster. Constructing templates via JS before sending them to the client is slower. So,
+                    where I can avoid it, I avoid it.
+                </li>
+            </ul>
+        </article>
+
         <article id="react-usefullness">
             <time class="log-date" datetime="2025-12-10">10 Dec 2025</time>
             <p>
