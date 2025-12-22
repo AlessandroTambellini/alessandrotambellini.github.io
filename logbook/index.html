@@ -655,8 +655,7 @@
     <script>
         const canvas = document.querySelector('#website-scheme');
         const ctx = canvas.getContext('2d');
-
-        const color = 'rgb(236, 239, 242)';
+        
         const starting_canvas_width = canvas.clientWidth;
         
         draw_scheme();
@@ -665,8 +664,6 @@
         function draw_rect(x0, y0, x_length, y_length, label, fs_label) 
         {
             const border_radius = 8;
-            ctx.strokeStyle = color;
-            ctx.lineWidth = 2;
 
             ctx.beginPath();
             {
@@ -688,25 +685,12 @@
             ctx.stroke();
 
             // label
-            draw_text(label, fs_label, x0+x_length/2, y0+y_length/2);            
-        }
-        
-        function drawCircle(xc, yc, r, label, fs_label) 
-        {
-            ctx.strokeStyle = color;
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            ctx.arc(xc, yc, r, 0, Math.PI * 2);
-            ctx.stroke();
-
-            // label
-            draw_text(label, fs_label, xc, yc);   
+            ctx.font = `${fs_label}rem sans-serif`;
+            ctx.fillText(label, x0+x_length/2, y0+y_length/2);
         }
         
         function draw_arrow(x0, y0, x1, y1, label, fs_label) 
         {
-            ctx.strokeStyle = color;
-            ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.moveTo(x0, y0);
             ctx.lineTo(x1, y1);
@@ -734,19 +718,10 @@
             {
                 ctx.translate(x0+(x1-x0)/2, y0+(y1-y0)/2);
                 ctx.rotate(angle);
-                draw_text(label, fs_label, 0, 10);
+                ctx.font = `${fs_label}rem sans-serif`;
+                ctx.fillText(label, 0, 10);
             }
             ctx.restore();
-        }
-        
-        function draw_text(text, font_size, xc, yc)
-        {                
-
-            ctx.fillStyle = color;
-            ctx.font = `${font_size}rem sans-serif`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(text, xc, yc);
         }
 
         function draw_scheme() 
@@ -760,6 +735,11 @@
             
             ctx.scale(dpr, dpr);
 
+            ctx.strokeStyle = ctx.fillStyle = 'rgb(236, 239, 242)';
+            ctx.lineWidth = 2;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
             const scale = canvas_width/starting_canvas_width;
 
             const padding = 50 * scale;
@@ -770,11 +750,18 @@
             const rect2_y_length = 100 * scale;
             const fs_shape = 1.4 * scale;
             const fs_arrow = 1.0 * scale;
-
+            
             draw_rect(padding, padding, rect1_x_length, rect1_y_length, 'form', fs_shape);
             
-            drawCircle(canvas_width-circle_r-padding, canvas_height/2, circle_r, 'data', fs_shape);
-                
+            ctx.beginPath();
+            {
+                const xc = canvas_width-circle_r-padding;
+                const yc = canvas_height/2;
+                ctx.arc(xc, yc, circle_r, 0, Math.PI * 2);
+                ctx.font = `${fs_shape}rem sans-serif`;
+                ctx.fillText('data', xc, yc);
+            }
+            ctx.stroke();
 
             draw_arrow(padding+rect1_x_length, padding+rect1_y_length/2, canvas_width-2*circle_r-padding, canvas_height/2-20, 'data manipulation', fs_arrow);
             
