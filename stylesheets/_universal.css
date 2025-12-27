@@ -94,7 +94,7 @@ a {
 .my-external-link {
     color: #86bbff;
 }
-.external-link {
+a[target=_blank] {
     color: orange;
 }
 /* 
@@ -111,7 +111,7 @@ a:hover {
     /* color: #6893c9; */
     color: #81aeff;
 }
-.external-link:hover {
+a[target=_blank]:hover {
     /* color: #c68000; */
     color: #e9bc00;
 }
