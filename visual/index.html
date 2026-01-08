@@ -9,7 +9,90 @@
 
     <link rel="icon" type="image/webp" href="../assets/circular-logo.webp">
     <link rel="stylesheet" href="../stylesheets/_universal.css">
-    <link rel="stylesheet" href="../stylesheets/visual.css">
+    <style>
+        article > h2:not(article:nth-of-type(1) h2) {
+            margin-top: .75em;
+        }
+
+        article > h2 {
+            font-size: 3rem;
+            line-height: 1.4;
+            margin-bottom: .25em;
+        }
+
+        .game-header {
+            padding: .5em .25em;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+
+        hr {
+            margin-top: 2em;
+        }
+
+        #spaceship-survival-article {
+            container-type: inline-size;
+        }
+
+        iframe, 
+        .iframe-replacement {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 3/4;
+        }
+
+        .page-not-responsive {
+            display: none;
+        }
+
+        .iframe-replacement {
+            display: block;
+            outline: 2px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        @media (min-width: 800px) {
+            iframe, 
+            .iframe-replacement {
+                aspect-ratio: 16/9;
+            }
+        }
+
+        @container (width >= 800px) {
+            .iframe-replacement {
+                display: none;
+            }
+
+            .page-not-responsive {
+                display: block;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2em;
+            margin-inline: auto;
+        }
+
+        .play-icon {
+            transform: scale(.65);
+            margin-left: .25em;
+        }
+
+        .play-icon + a {
+            margin-left: 1em;
+        }
+
+        .source-code-icon {
+            color: rgb(140, 144, 161);
+            margin-left: .25em;
+            /* margin-right: .25em; */
+        }
+    </style>
     
     <script defer src="../scripts/_universal.js"></script>
 </head>
@@ -20,17 +103,18 @@
             <iframe title="3D Matrix Visualizer" src="https://alessandrotambellini.github.io/3d-matrix-visualizer/"></iframe>
             <header class="game-header">
                 <a target="_blank" href="https://alessandrotambellini.github.io/3d-matrix-visualizer/">
-                    play in new tab
+                    Play in new Tab
                 </a>
-                <span role="img" alt='play icon' class="play-icon">🛆</span>
+                <object class="play-icon" data="../assets/play-icon.svg" type="image/svg+xml"></object>
 
                 <a class="my-external-link" target="_blank" href="https://github.com/AlessandroTambellini/3d-matrix-visualizer">
-                    source code
+                    Source Code
                 </a>
                 <span role="img" alt='source-code icon' class="source-code-icon">&lt;/&gt;</span>
             </header>
             <p>Visualize matrices.</p>
         </article>
+
         <hr>
         
         <article id="draw-algos-article">
@@ -38,12 +122,12 @@
             <iframe title="Draw Algos" src="https://alessandrotambellini.github.io/draw-algos/"></iframe>
             <header class="game-header">
                 <a target="_blank" href="https://alessandrotambellini.github.io/draw-algos/">
-                    play in new tab
+                    Play in new Tab
                 </a>
-                <span role="img" alt='play icon' class="play-icon">🛆</span>
+                <object class="play-icon" data="../assets/play-icon.svg" type="image/svg+xml"></object>
 
                 <a class="my-external-link" target="_blank" href="https://github.com/AlessandroTambellini/draw-algos">
-                    source code
+                    Source Code
                 </a>
                 <span role="img" alt='source-code icon' class="source-code-icon">&lt;/&gt;</span>
             </header>
@@ -52,6 +136,7 @@
                 by drawing mazes, stopping the execution and regulating the speed.
             </p>
         </article>
+
         <hr>
 
         <article>
@@ -59,12 +144,12 @@
             <iframe title="Snake" src="https://alessandrotambellini.github.io/snake/"></iframe>
             <header class="game-header">
                 <a target="_blank" href="https://alessandrotambellini.github.io/snake/">
-                    play in new tab
+                    Play in new Tab
                 </a>
-                <span role="img" alt='play icon' class="play-icon">🛆</span>
+                <object class="play-icon" data="../assets/play-icon.svg" type="image/svg+xml"></object>
 
                 <a class="my-external-link" target="_blank" href="https://github.com/AlessandroTambellini/snake">
-                    source code
+                    Source Code
                 </a>
                 <span role="img" alt='source-code icon' class="source-code-icon">&lt;/&gt;</span>
             </header>
@@ -80,6 +165,7 @@
                 Link to the article: <a target="_blank" href="https://lcamtuf.substack.com/p/dont-build-a-platform-unless">Don't build a platform... unless?</a>
             </p>
         </article>
+        
         <hr>
 
         <article id="spaceship-survival-article">
@@ -93,20 +179,16 @@
                 </p> 
             </div>
             <header class="game-header">
-                <a target="_blank" href="./spaceship-survival.html">
-                    play in new tab
-                </a>
-                <span role="img" alt='play icon' class="play-icon">🛆</span>
-                <!-- <span role="img" class="new-tab-icon first-new-tab-icon">￩</span> -->
+                <a target="_blank" href="./spaceship-survival.html">Play in new Tab</a>
+                <object class="play-icon" data="../assets/play-icon.svg" type="image/svg+xml"></object>
 
-                <a class="my-external-link" target="_blank" href="https://github.com/AlessandroTambellini/spaceship-survival">
-                    source code 
-                </a>
+                <a class="my-external-link" target="_blank" 
+                    href="https://github.com/AlessandroTambellini/spaceship-survival">Source Code</a>
                 <span role="img" alt='source-code icon' class="source-code-icon">&lt;/&gt;</span>
-                <!-- <span role="img" class="new-tab-icon">￩</span> -->
             </header>
             <p>Written in C, compiled to WebAssembly, served via an <code>&lt;iframe&gt;</code>.</p>
         </article>
+
         <hr>
 
         <article>
@@ -114,27 +196,26 @@
             <iframe title="Canvas" src="https://alessandrotambellini.github.io/canvas/"></iframe>
             <header class="game-header">
                 <a target="_blank" href="https://alessandrotambellini.github.io/canvas">
-                    play in new tab
+                    Play in new Tab
                 </a>
-                <span role="img" alt='play icon' class="play-icon">🛆</span>
+                <object class="play-icon" data="../assets/play-icon.svg" type="image/svg+xml"></object>
 
-                <a class="my-external-link" target="_blank" href="https://github.com/AlessandroTambellini/canvas">
-                    source code
-                </a>
+                <a class="my-external-link" target="_blank" 
+                    href="https://github.com/AlessandroTambellini/canvas">Source Code</a>
                 <span role="img" alt='source-code icon' class="source-code-icon">&lt;/&gt;</span>
             </header>
             <p>Draw on a grid and mix elementary colors.</p>
         </article>
+
         <hr>
 
         <footer>
-            <p>
-                I don't use frameworks because I want to explore the 
+            <small>
+                I don't use neither frameworks nor libraries because I want to explore the 
                 <strong>browser API</strong> and adding layers of abstraction
-                would make it difficult.
-            </p>
+                would deviate from the objective.
+            </small>
         </footer>
-
     </main>
 
     <nav id="side-nav" class="display-none">

@@ -1,7 +1,7 @@
 @font-face { 
     src:
         local('Source Code Pro'), 
-        url('../assets/Source_Code_Pro/SourceCodePro-Regular.ttf') format('truetype');
+        url('../assets/SourceCodePro-Regular.ttf') format('truetype');
     font-family: 'Source Code Pro';
 }
 
@@ -91,7 +91,8 @@ a {
 .internal-link {
     color: var(--link-color);
 }
-.my-external-link {
+.my-external-link,
+a[target=_blank].my-external-link {
     color: #86bbff;
 }
 a[target=_blank] {
@@ -134,8 +135,8 @@ p {
 }
 
 ul, ol {
-    line-height: 1.5;
     list-style-position: inside;
+    line-height: 1.5;
 }
 
 li > ul {
