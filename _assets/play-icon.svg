@@ -2,8 +2,8 @@
     <path 
         d="M 2 2 L 2 22 L 22 12 Z" 
         fill="#28a745" 
-        stroke="#28a745" 
-        stroke-width="4" 
+        stroke="#ffffff" 
+        stroke-width="1" 
         stroke-linejoin="round" 
         stroke-linecap="round"
     />
