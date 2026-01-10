@@ -690,14 +690,58 @@
 
     <script>
         const canvas = document.querySelector('#website-scheme');
-        // new CanvasRenderingContext2D(): 
-        // disable this to see the suggestions about the canvas API
         const ctx = canvas.getContext('2d');
         
-        const starting_canvas_width = canvas.clientWidth;
+        const REFERENCE_WIDTH = 800;        
         
         draw_scheme();
         window.addEventListener('resize', draw_scheme);
+
+        function draw_scheme() 
+        {
+            const canvas_width = canvas.clientWidth;
+            const canvas_height = 3/4 * canvas.clientWidth;
+            
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = canvas_width * dpr;
+            canvas.height = canvas_height * dpr;
+            
+            ctx.scale(dpr, dpr);
+
+            ctx.strokeStyle = ctx.fillStyle = 'rgb(236, 239, 242)';
+            ctx.lineWidth = 2;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            const scale = canvas_width/REFERENCE_WIDTH;
+
+            const padding = 50 * scale;
+            const rect1_x_length = 120 * scale;
+            const rect1_y_length = 120 * scale;
+            const circle_r = 70 * scale;
+            const rect2_x_length = 220 * scale;
+            const rect2_y_length = 100 * scale;
+            const fs_shape = 1.4 * scale;
+            const fs_arrow = 1.0 * scale;
+            
+            draw_rect(padding, padding, rect1_x_length, rect1_y_length, 'form', fs_shape);
+            
+            ctx.beginPath();
+            {
+                const xc = canvas_width-circle_r-padding;
+                const yc = canvas_height/2;
+                ctx.arc(xc, yc, circle_r, 0, Math.PI * 2);
+                ctx.font = `${fs_shape}rem sans-serif`;
+                ctx.fillText('data', xc, yc);
+            }
+            ctx.stroke();
+
+            draw_arrow(padding+rect1_x_length, padding+rect1_y_length/2, canvas_width-2*circle_r-padding, canvas_height/2-20, 'data manipulation', fs_arrow);
+            
+            draw_rect(padding, canvas_height-padding-rect2_y_length, rect2_x_length, rect2_y_length, 'Show Data Page', fs_shape);
+            
+            draw_arrow(canvas_width-2*circle_r-padding, canvas_height/2+20, padding+rect2_x_length, canvas_height-padding-rect2_y_length/2, 'data manipulation', fs_arrow);
+        }
 
         function draw_rect(x0, y0, x_length, y_length, label, fs_label) 
         {
@@ -735,7 +779,7 @@
             ctx.stroke();
             
             const angle = Math.atan2(y1 - y0, x1 - x0);
-
+        
             // Arrow Head
             const headLength = 12;
             ctx.beginPath();
@@ -757,55 +801,9 @@
                 ctx.translate(x0+(x1-x0)/2, y0+(y1-y0)/2);
                 ctx.rotate(angle);
                 ctx.font = `${fs_label}rem sans-serif`;
-                ctx.fillText(label, 0, 10);
+                ctx.fillText(label, 0, -10);
             }
             ctx.restore();
-        }
-
-        function draw_scheme() 
-        {
-            const canvas_width = canvas.clientWidth;
-            const canvas_height = 3/4 * canvas.clientWidth;
-            
-            const dpr = window.devicePixelRatio || 1;
-            canvas.width = canvas_width * dpr;
-            canvas.height = canvas_height * dpr;
-            
-            ctx.scale(dpr, dpr);
-
-            ctx.strokeStyle = ctx.fillStyle = 'rgb(236, 239, 242)';
-            ctx.lineWidth = 2;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-
-            const scale = canvas_width/starting_canvas_width;
-
-            const padding = 50 * scale;
-            const rect1_x_length = 120 * scale;
-            const rect1_y_length = 120 * scale;
-            const circle_r = 70 * scale;
-            const rect2_x_length = 220 * scale;
-            const rect2_y_length = 100 * scale;
-            const fs_shape = 1.4 * scale;
-            const fs_arrow = 1.0 * scale;
-            
-            draw_rect(padding, padding, rect1_x_length, rect1_y_length, 'form', fs_shape);
-            
-            ctx.beginPath();
-            {
-                const xc = canvas_width-circle_r-padding;
-                const yc = canvas_height/2;
-                ctx.arc(xc, yc, circle_r, 0, Math.PI * 2);
-                ctx.font = `${fs_shape}rem sans-serif`;
-                ctx.fillText('data', xc, yc);
-            }
-            ctx.stroke();
-
-            draw_arrow(padding+rect1_x_length, padding+rect1_y_length/2, canvas_width-2*circle_r-padding, canvas_height/2-20, 'data manipulation', fs_arrow);
-            
-            draw_rect(padding, canvas_height-padding-rect2_y_length, rect2_x_length, rect2_y_length, 'Show Data Page', fs_shape);
-            
-            draw_arrow(canvas_width-2*circle_r-padding, canvas_height/2+20, padding+rect2_x_length, canvas_height-padding-rect2_y_length/2, 'data manipulation', fs_arrow);
         }
     </script>
 </body>
