@@ -132,6 +132,42 @@
     <main>
         <a id="rss-feed" href="/rss.xml">RSS</a>
 
+        <article id="native-code-generation">
+            <time class="log-date" datetime="2025-01-10">10 Jan 2026</time>
+            <p>
+                Over the past year I looked at many JS frameworks and 
+                their native code generation (well, native for the web) always outputs a blob of JS and nested <code>&lt;div&gt;</code>s.<br>
+                
+                In the system programming languages world, languages developed in the last decade (Rust, Zig, Jai, Odin)
+                all rely on LLVM: tool to generate optimized native code. 
+                So, it seems like optimized code generation isn't easy.<br>
+
+                And so, my question is, should web frameworks rely on an LLVM-like tool to generate HTML, CSS & JS?<br>
+                
+                Problem is, opinions around LLVM seems a bit fuzzy: 
+                hearing from Jai and Odin developers, it seems to be a difficult task to generate optimized code but,
+                at the same time, the same developers say that LLVM is overly-complicated and it's not worth it.
+                And, I saw that Rust and Zig are trying to migrate away from LLVM. But, with a different approach:
+                the first trying to switch to an alternative while the second one not relying at all on such a tool.
+            </p>
+
+            <p>
+                I don't know, it's just something I put on the table since I'm just relying other people's opinions
+                because I neither have ever used LLVM nor tried to generate native code without relying on an external tool.<br>
+
+                Is it an LLVM-specific problem? Is it a problem of code-generation tools in general?
+                Does it depends on the size and ambitions of the project?
+                On the compiler-frontend side tools like Yacc and Bison seems to be debunked: they aren't worth it.
+                Implement the tokenization and parsing on your own. 
+                Will the same fate be the case for the compiler-backend side?
+            </p>
+
+            <p>
+                Final note: looked at some SVGs made with Inkscape
+                and the SVG code it generates seems overly-complex as well compared to writing it by hand. 
+            </p>
+        </article>
+
         <article id="repeated-markup">
             <time class="log-date" datetime="2025-12-21">21 Dec 2025</time>
             <p>
