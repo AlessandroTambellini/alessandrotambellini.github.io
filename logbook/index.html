@@ -19,32 +19,50 @@
             }
         }
 
-        .log-date:not(article:nth-of-type(1) .log-date) {
+        #rss-feed {
+            display: block;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .log-date:not(.log:nth-of-type(1) .log-date) {
             display: inline-block;
             margin-top: 2em;
         }
 
-        article > ul,
-        article > ol {
+        .log > *:last-child {
+            margin-bottom: 0;
+        }
+
+        .log > ul,
+        .log > ol {
             margin-bottom: .5em;
         }
 
-        article img {
-            margin-block: .5rem;
-        }
-        article .img-placeholder {
-            margin-block: .5rem;
+        main li {
+            margin-left: 1ch;
         }
 
         @media (min-width: 950px) {
-            /* On small screens, the indentation of the content isn't handy and it's actually noisy. */
-            article > *:not(.log-date) {
+            /* On small screens, 
+            the indentation of the content isn't handy and it's actually noisy. */
+            article > *:not(.log-date, .fullscreen) {
                 --margin-left: .25rem;
                 margin-left: var(--margin-left);
             }
 
-            .inner-section > *:not(time) {
+            .addendum > *:not(time, .fullscreen) {
                 margin-left: calc(var(--margin-left)*2);
+            }
+        }
+
+        .img-wrapper > img {
+            margin-block: .5rem;
+        }
+        
+        @media (max-width: 1049px) {
+            .img-placeholder {
+                display: none;
             }
         }
 
@@ -63,11 +81,6 @@
                 z-index: 1;
                 background-color: rgba(0, 0, 0, 0.528);
                 backdrop-filter: blur(3px);
-            }
-
-            .img-placeholder {
-                display: unset;
-                background-color: rgb(40, 43, 49);
             }
 
             img {
@@ -111,24 +124,10 @@
             }
         }
 
-        #rss-feed {
-            display: block;
-            margin-left: auto;
-            text-align: right;
-        }
-
-        main > article *:last-child {
-            margin-bottom: 0;
-        }
-
         #website-scheme {
             width: 100%;
             height: auto;
             display: block;
-        }
-
-        main li {
-            margin-left: 1ch;
         }
     </style>
 </head>
@@ -136,7 +135,7 @@
     <main>
         <a id="rss-feed" href="/rss.xml">RSS</a>
 
-        <article id="native-code-generation">
+        <article id="native-code-generation" class="log">
             <time class="log-date" datetime="2025-01-10">10 Jan 2026</time>
             <p>
                 Over the past year I looked at many web frameworks and 
@@ -178,7 +177,7 @@
             </ul>
         </article>
 
-        <article id="repeated-markup">
+        <article id="repeated-markup" class="log">
             <time class="log-date" datetime="2025-12-21">21 Dec 2025</time>
             <p>
                 In the html pages of Postream, there is often hand-written, repeated markup.
@@ -197,7 +196,7 @@
             </ul>
         </article>
 
-        <article id="react-usefullness">
+        <article id="react-usefullness" class="log">
             <time class="log-date" datetime="2025-12-10">10 Dec 2025</time>
             <p>
                 Consider 'Draw Algos' of the visual page,
@@ -211,7 +210,7 @@
             </p>
         </article>
 
-        <article id="postream-conclusions">
+        <article id="postream-conclusions" class="log">
             <time class='log-date' datetime="2025-11-21">21 Nov 2025</time>
             <p>
                 Related to <a href="#per-component-development">per-component-development</a>:<br>
@@ -225,7 +224,7 @@
             </p>
         </article>
 
-        <article id="postream-conclusions">
+        <article id="postream-conclusions" class="log">
             <time class='log-date' datetime="2025-11-15">15 Nov 2025</time>
             <p>
                 Made Postream to see how handy it is to develop an app only using the native Web API.
@@ -263,7 +262,7 @@
             </p>
         </article>
 
-        <article>
+        <article class="log">
             <time class='log-date' datetime="2025-11-12">12 Nov 2025</time>
             <p>
                 Every time I use a Nodejs API function, I end up surronding it with <code>try-catch</code>
@@ -284,7 +283,7 @@
             </p>
         </article>
 
-        <article id="per-component-development">
+        <article id="per-component-development" class="log">
             <time class='log-date' datetime="2025-10-16">16 Oct 2025</time>
             <p>
                 I'll try to rationalize the per-component development of React.js:<br>
@@ -328,7 +327,7 @@
             <p>That's my hypothesis.</p>
         </article>
 
-        <article>
+        <article class="log">
             <time class='log-date' datetime="2025-10-07">10 Oct 2025</time>
             <p>
                 Just to make an example on the concept of <a href="#spa"><abbr>SPA</abbr></a> (Single Page Application),
@@ -348,7 +347,7 @@
             </code>
         </article>
 
-        <article id="interpreter-design-choice">
+        <article id="interpreter-design-choice" class="log">
             <time class='log-date' datetime="2025-09-30">30 Sep 2025</time>
             <p>
                 An interesting interpreter design choice:
@@ -357,7 +356,7 @@
             </p>
         </article>
 
-        <article id="asset-location">
+        <article id="asset-location" class="log">
             <time class='log-date' datetime="2025-09-29">29 Sep 2025</time>
             <p>
                 I remember reading a post of Aaron Swartz of around 2005/6 where he said something on the line of: "Well, Django isn't really well architectured because
@@ -367,7 +366,7 @@
             </p>
         </article>
 
-        <article id="splitting-code-on-the-client-is-expensive">
+        <article id="splitting-code-on-the-client-is-expensive" class="log">
             <time class='log-date' datetime="2025-09-28">28 Sep 2025</time>
             <p>
                 In Postream, I had a separate CSS file per type of component: <code>buttons.css</code>, <code>cards.css</code> and <code>forms.css</code>.
@@ -387,8 +386,8 @@
                 scrolling back and forth.<br>
                 Takeaway: splitting code in different files on the client is expensive!
             </p>
-            <section class="inner-section">
-                <time datetime="2025-10-07">Edit of 7 Oct 2025</time>:
+            <section class="addendum">
+                <time datetime="2025-10-07">Addendum, 7 Oct 2025</time>:
                 <p>
                     Another area where you can save server requests is icons.
                     It's pretty easy to make icons in HTML and CSS. In Postream I made the logo, a sun, a moon and some other minor stuff.
@@ -401,7 +400,7 @@
             </section>
         </article>
 
-        <article>
+        <article class="log">
             <time class='log-date' datetime="2025-09-23">23 Sep 2025</time>
             <p>
                 Template literals are one of my favourite ES6 features, but with a caveat: all the whitespaces and newlines are kept
@@ -430,7 +429,7 @@
             </code>
         </article>
 
-        <article id='packages'>
+        <article id='packages' class="log">
             <time class='log-date' datetime="2025-09-02">2 Sep 2025</time>
             <p>
                 Who needs package managers, build tools, and YAML files?
@@ -451,7 +450,8 @@
                 <a class="my-external-link" href="https://github.com/AlessandroTambellini/matrix-visualizer">matrix-visualizer</a>.
             </p>
         </article>
-        <article id='position-sticky'>
+
+        <article id='position-sticky' class="log">
             <time class='log-date' datetime="2025-08-24">24 Aug 2025</time>
             <p>
                 <code>position: sticky;</code> isn't just about making a good visual effect for a navbar.
@@ -482,18 +482,20 @@
                 Thanks to <code>sticky</code>, I can do it without relying on a container with scrolling properties.
             </p>
         </article>
-        <article>
+
+        <article class="log">
             <time class='log-date' datetime="2025-08-21">21 Aug 2025</time>
             <p>The Overrides feature of the Sources tab of the DevTools drove me crazy.</p>
         </article>
-        <article id='17-span'>
+
+        <article id='17-span' class="log">
             <time class='log-date' datetime="2025-08-08">8 Aug 2025</time>
             <p>
                 Today I took a look at Facebook: the DevTools was lagging so much I wasn't even able to navigate the source code.
                 Btw, the nested <code>&lt;div&gt;</code>s test is passed: 11 divs to reach a button on the front page.
             </p>
-            <section class="inner-section">
-                <time datetime="2025-08-10">Edit of 10 Aug 2025</time>:
+            <section class="addendum">
+                <time datetime="2025-08-10">Addendum, 10 Aug 2025</time>:
                 <div class="img-placeholder display-none"></div>
                 <div class="img-wrapper">
                     <img src="../_assets/logbook/code-snippet.webp" alt="Code Snippet">
@@ -505,7 +507,8 @@
                 </p>
             </section>
         </article>
-        <article id='react-js-pollution'>
+
+        <article id='react-js-pollution' class="log">
             <time class='log-date' datetime="2025-08-03">3 Aug 2025</time>
             <p>
                 Sometimes I like to right click web pages to take a look at the source code.
@@ -545,9 +548,7 @@
             <p>
                 Just to make an example, this is the readability and easiness of analysis of a page of my project in the browser:
             </p>
-            <!-- <a href="assets/logbook/sources-tree.webp">
-                <img src="../assets/logbook/sources-tree.webp" alt="Source Tree">
-            </a> -->
+
             <div class="img-placeholder display-none"></div>
             <div class="img-wrapper">
                 <img src="../_assets/logbook/sources-tree.webp" alt="Source Tree">
@@ -566,7 +567,8 @@
                 even if I structure the code in a really bad way.
             </p>
         </article>
-        <article>
+
+        <article class="log">
             <time class='log-date' datetime="2025-07-21">21 Jul 2025</time>
             <p>
                 Not a Sublime user, but I find its development interesting,
@@ -575,7 +577,7 @@
             </p>
         </article>
         
-        <article>
+        <article class="log">
             <time class='log-date' datetime="2025-06-24">24 Jun 2025</time>
             <p>
                 Read <cite><em>A Programmable Web: An Unfinished Work</em></cite>, by Aaron Swartz.<br>
@@ -583,7 +585,8 @@
                 Digest access authentication built-in HTTP, stateless web, robots & crawlers.
             </p>
         </article>
-        <article>
+
+        <article class="log">
             <time class='log-date' datetime="2025-06-19">19 Jun 2025</time>
             <p>
                 I wouldn't write this today:
@@ -592,7 +595,8 @@
                 </a>
             </p>
         </article>
-        <article>
+
+        <article class="log">
             <time class='log-date' datetime="2025-04-07">7 Apr 2025</time>
             <p>
                 Related to
@@ -604,7 +608,8 @@
                 </a>
             </p>
         </article>
-	  	<article>
+
+	  	<article class="log">
             <time class='log-date' datetime="2025-03-14">14 Mar 2025</time>
             <p>
                 Worked a couple of weeks on ReqLoop. A networking program, but
@@ -612,14 +617,16 @@
                 <code>ResizeObserver()</code>.
             </p>
         </article>
-        <article>
+
+        <article class="log">
             <time class='log-date' datetime="2025-02-25">25 Feb 2025</time>
             <p>
                 Dusted off an old little article about the NAND gate:
                 <a class="internal-link" href="./nand-gate/">./nand-gate</a>
             </p>
         </article>
-        <article id="idiosyncrasies-of-the-html-parser">
+
+        <article id="idiosyncrasies-of-the-html-parser" class="log">
             <time class='log-date' datetime="2025-02-19">19 Feb 2025</time>
             <p>
                 Today I read
@@ -639,14 +646,16 @@
                 Translated: to populate YouTube.
             </p>
         </article>
-        <article>
+
+        <article class="log">
             <time class='log-date' datetime="2025-02-16">16 Feb 2025</time>
             <p>
                 Gemini protocol, browser, Voronoi:
                 <a target='_blank' href="https://www.youtube.com/watch?v=sVG-Werqjlw">Making UI in Jai</a>
             </p>
         </article>
-        <article>
+
+        <article class="log">
             <time class='log-date' datetime="2025-02-15">15 Feb 2025</time>
             <p>
                 While reading the emscripten docs,
@@ -656,7 +665,8 @@
                 </a>
             </p>
         </article>
-        <article>
+
+        <article class="log">
             <time class='log-date' datetime="2025-02-05">5 Feb 2025</time>
             <p>
                 antirez mentioned <strong>VisiCalc</strong>:

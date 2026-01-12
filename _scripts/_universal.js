@@ -56,8 +56,9 @@ document.querySelectorAll('img').forEach(img => {
             // If there isn't a placeholder, simply don't do anything to the image.
             if (!img_placeholder || !img_placeholder.classList.contains('img-placeholder')) return;
 
-            img_placeholder.style.height = `${img.clientHeight}px`;
-            img_placeholder.style.width = `${img.clientWidth}px`;
+            /* For the height is used the img_wrapper height because the img has a bit of margin-block.
+            Therefore the height of the img doesn't reflect the actual space occupied. */
+            img_placeholder.style.height = `${img_wrapper.clientHeight}px`;
             switch_class(img_placeholder, 'display-none', 'display-inline-block');
     
             img_wrapper.classList.add('fullscreen');
