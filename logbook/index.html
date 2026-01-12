@@ -126,6 +126,10 @@
             height: auto;
             display: block;
         }
+
+        main li {
+            margin-left: 1ch;
+        }
     </style>
 </head>
 <body>
@@ -166,6 +170,12 @@
                 Final note: looked at some SVGs made with Inkscape
                 and the SVG code it generates seems overly-complex as well compared to writing it by hand. 
             </p>
+
+            <p>See:</p>
+            <ul class="list">
+                <li><a href="#react-js-pollution">react-js-pollution</a></li>
+                <li><a href="#17-span">17-span</a></li>
+            </ul>
         </article>
 
         <article id="repeated-markup">
@@ -207,7 +217,7 @@
                 Related to <a href="#per-component-development">per-component-development</a>:<br>
                 Technology developed by company &lt;x&gt; is for <b>their</b> needs and probably doesn't fit <b>your</b> needs.
                 Another example: take a look at this comment on Carbon: 
-                <a target="_blank" href="https://youtu.be/EGgJrazDTYw?si=qnUQAAo6TbZIT4ch">
+                <a class="foreign-link" target="_blank" href="https://youtu.be/EGgJrazDTYw?si=qnUQAAo6TbZIT4ch">
                     Carbon Language - Who is it even for?
                 </a>
                 <br>
@@ -249,7 +259,7 @@
                 You just have to know the idiosyncrasis. Same story for the splitting in HTML, CSS and JS that sometimes
                 forces an approach not that handy.<br>
                 <br>
-                Postream is ~4000 loc. Pretty hackable.
+                Postream is ~4000 loc; pretty hackable.
             </p>
         </article>
 
@@ -277,10 +287,10 @@
         <article id="per-component-development">
             <time class='log-date' datetime="2025-10-16">16 Oct 2025</time>
             <p>
-                I'll try to justify the per-component development of React.js:<br>
+                I'll try to rationalize the per-component development of React.js:<br>
                 at Facebook, there are hundreds of thousands of employees, tens of thousands of which are working on a single product I guess.
                 There are a lot of employees coming and going and so you have to think on how to structure a codebase
-                to avoid "loss of knowledge" and make it fast to grab it.<br>
+                to avoid "loss of knowledge" and make it fast to grab.<br>
                 A good choice might be to modularize it as much as possible: each component of the UI developed separately in its own file.<br>
                 This approach has three consequences:
             </p>
@@ -297,7 +307,7 @@
                     You may think about per-page styling (embedded styling) but you realize you don't have this luxury!
                     And so the last resort is to make of everything a class: Tailwind CSS to the rescue :)
                 </li>
-                <li>Probably you end up with redundant logic &#8658; Tools to identify redundancy and fix it</li>
+                <li>Probably you end up with redundant logic and so you also need tools to identify redundancy and fix it</li>
             </ol>
 
             <p>
@@ -469,7 +479,7 @@
 
             <p>
                 In this specific case the goal is to scroll the posts while manteining the title visible.
-                Thanks to <code>sticky</code> I can do it without relying on a container with scrolling properties.
+                Thanks to <code>sticky</code>, I can do it without relying on a container with scrolling properties.
             </p>
         </article>
         <article>
@@ -504,10 +514,10 @@
                 immediately after, watching the 2025 Vercel Conference (The company behind Next.js)
                 where they basically said:
                 "Well, crawlers and agents are not able to scan our websites and so we thought about creating the text-based representation
-                of the content of a page in parallel to the page itself, specific for the crawlers"...
+                of the content of a page in parallel to the page itself, specific for crawlers"...
                 Instead of questioning their JS blob on the frontend, they come up with this solution.
                 Are they really that blind or is it just a question of interests? Or am I just naive?<br>
-                Now, my follow-up question is,
+                Now, my follow-up question is:
                 is it possible for a complex website to be semantic?
                 And perhaps without uploading and downloading gigabytes of JS blob?
                 And perhaps without all the crazy, high-end, ultra-powerfull, magic, astonishing frameworks and libraries?<br>
@@ -529,8 +539,8 @@
                 it's pretty straightforward to implement such a system.<br>
                 But, to make a bit easier to control some UI state,
                 some people decided to adopt a model called <strong>Single Page Application</strong>.
-                A model where the easiness of manipulating data by exploiting the change of page is lost
-                at the cost of what I already said before.
+                A model where the easiness of manipulating data by exploiting the change of page
+                is lost, at the cost of what I already said before.
             </p>
             <p>
                 Just to make an example, this is the readability and easiness of analysis of a page of my project in the browser:
@@ -548,7 +558,7 @@
             </div>
             <div class="img-placeholder display-none"></div>
             <div class="img-wrapper">
-                <img src="../_assets/logbook/network-request-analysis.webp" alt="Network Request Analysis">
+                <img src="../_assets/logbook/request-analysis.webp" alt="Network Request Analysis">
             </div>
             <p>
                 Can you have the same clarity in React.js?<br>
@@ -579,7 +589,7 @@
                 I wouldn't write this today:
                 <a class="my-external-link" href="https://medium.com/@alessandrotambellini03/my-view-of-a-browser-5e7b6122832c">
                     My view of a Browser
-                </a>.
+                </a>
             </p>
         </article>
         <article>
@@ -597,7 +607,7 @@
 	  	<article>
             <time class='log-date' datetime="2025-03-14">14 Mar 2025</time>
             <p>
-                Worked a couple of weeks on ReqLoop. A networking project, but
+                Worked a couple of weeks on ReqLoop. A networking program, but
                 also an occasion to play with <code>&lt;template&gt;</code> and
                 <code>ResizeObserver()</code>.
             </p>
@@ -620,7 +630,8 @@
                 "Hey, don't worry however you write because it's fine and we will never throw you an error!".<br>
                 It remembers me of an interview to Brendan Eich where he says that, from the first draft
                 of JS, the equality operator (<code>==</code>) was the strict equality one, but then people persuaded
-                him to make it loosely equal.<br>
+                him to make it loosely equal. 
+                And so, then there has been the need to introduce again the strict equality (<code>===</code>).<br>
                 Were these decisions made to let people populate the web in the easiest way possible without
                 worrying about the programming barrier?<br>
                 I can draw a parallel with the decision of YouTube to remove the dislike button
