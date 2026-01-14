@@ -10,13 +10,26 @@
     <link rel="icon" type="image/webp" href="../_assets/circular-logo.webp">
     <link rel="stylesheet" href="../_stylesheets/_universal.css">
     <style>
-        article > h2:not(article:nth-of-type(1) h2) {
+        /* I set the margin-inline in this way because I don't want the iframe to have margin-inline */
+        @media (max-width: 750px) {
+            main {
+                margin-inline: 0;
+            }
+    
+            .game-demo > *:not(iframe, .iframe-replacement) {
+                /* Because I want the default .75em for all elements.
+                If '.75em' is used, the margin for the h2 is much bigger */
+                margin-inline: calc(var(--default-fs) * .75);
+            }
+        }
+
+        .game-demo > h2:not(.game-demo:nth-of-type(1) h2) {
             margin-top: .75em;
         }
 
-        article > h2 {
+        .game-demo > h2 {
             font-size: 3rem;
-            line-height: 1.4;
+            line-height: 1.1;
             margin-bottom: .25em;
         }
 
@@ -48,7 +61,7 @@
 
         .iframe-replacement {
             display: block;
-            outline: 2px solid white;
+            border: 2px solid white;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -98,7 +111,7 @@
 </head>
 <body>
     <main>
-        <article>
+        <article class="game-demo">
             <h2>3D Matrix Visualizer</h2>
             <iframe title="3D Matrix Visualizer" src="https://alessandrotambellini.github.io/3d-matrix-visualizer/"></iframe>
             <header class="game-header">
@@ -117,7 +130,7 @@
 
         <hr>
         
-        <article id="draw-algos-article">
+        <article id="draw-algos-article" class="game-demo">
             <h2>Draw Algos</h2>
             <iframe title="Draw Algos" src="https://alessandrotambellini.github.io/draw-algos/"></iframe>
             <header class="game-header">
@@ -139,7 +152,7 @@
 
         <hr>
 
-        <article>
+        <article class="game-demo">
             <h2>Snake</h2>
             <iframe title="Snake" src="https://alessandrotambellini.github.io/snake/"></iframe>
             <header class="game-header">
@@ -168,7 +181,7 @@
         
         <hr>
 
-        <article id="spaceship-survival-article">
+        <article id="spaceship-survival-article" class="game-demo">
             <h2>Spaceship Survival</h2>
             <iframe title="Spaceship Survival" class="page-not-responsive" src="./spaceship-survival.html"></iframe>
             <div class="iframe-replacement">
@@ -191,7 +204,7 @@
 
         <hr>
 
-        <article>
+        <article class="game-demo">
             <h2>Canvas</h2>
             <iframe title="Canvas" src="https://alessandrotambellini.github.io/canvas/"></iframe>
             <header class="game-header">
