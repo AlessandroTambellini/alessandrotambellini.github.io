@@ -183,17 +183,29 @@
                 In the html pages of Postream, there is often hand-written, repeated markup.
                 What do I mean by that? For instance, every form contains a feedback-card;
                 nevertheless, I don't use a "feedback-card-template" that I inject into the form via JS. 
-                Why? Because of two reasons:
+                Why? Two reasons:
             </p>
             <ul>
                 <li>You may think that if I want to change something about the feedback-card, then
                     I have to change each one of them manually. But that's not true because
-                    a search-and-replace has always been enough for me.
+                    a search-and-replace has always been enough for me. 
+                    Sometimes the code-generation seems coming from an unexisting productivity
+                    issue or a fear of not replacing everything correctly
                 </li>
                 <li>Faster. Constructing templates via JS before sending them to the client is slower. So,
                     where I can avoid it, I avoid it.
                 </li>
             </ul>
+
+            <section class="addendum">
+                <time datetime="2025-01-17">Addendum, 17 Jan 2025</time>:
+                <p>
+                    This concept is clear in <a href="/visual/#snake">snake</a> and <a href="/visual/#canvas">canvas</a> 
+                    where there are 400 cells (<code>&lt;span&gt;&lt;/span&gt;</code>) in the html file. 
+                    If what hurts you is scrolling the file, you can collapse them in an editor like VSCode. 
+                    But, in general, I don't even scroll the file; I jump where I need to.
+                </p>
+            </section>
         </article>
 
         <article id="react-usefullness" class="log">
