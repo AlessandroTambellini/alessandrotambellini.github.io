@@ -20,6 +20,7 @@
 <body>
     <canvas id="spaceship-survival-playground" class="emscripten"></canvas>
     <script>
+        /* Using var isn't a choice. See spaceship-survival.js */
         var Module = {
             print: log => {
                 if (!log.includes('INFO:')) console.log(log)
