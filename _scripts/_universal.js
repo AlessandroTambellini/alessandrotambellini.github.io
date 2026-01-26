@@ -50,6 +50,8 @@ document.querySelectorAll('img').forEach(img => {
         if (window.innerWidth >= 1050)
         {
             const img_wrapper = img.parentElement;
+            // If the img is already open, don't do anything
+            if (img_wrapper.classList.contains('fullscreen')) return;
     
             const img_placeholder = img_wrapper.previousElementSibling;
 
@@ -59,7 +61,7 @@ document.querySelectorAll('img').forEach(img => {
             /* For the height is used the img_wrapper height because the img has a bit of margin-block.
             Therefore the height of the img doesn't reflect the actual space occupied. */
             img_placeholder.style.height = `${img_wrapper.clientHeight}px`;
-            switch_class(img_placeholder, 'display-none', 'display-inline-block');
+            switch_class(img_placeholder, 'display-none', 'display-block');
     
             img_wrapper.classList.add('fullscreen');
             
@@ -79,7 +81,7 @@ document.querySelectorAll('.img-wrapper').forEach(img_wrapper => {
             const img_placeholder = img_wrapper.previousElementSibling;
             setTimeout(() => {
                 img_wrapper.classList.remove('fullscreen');
-                switch_class(img_placeholder, 'display-inline-block', 'display-none');
+                switch_class(img_placeholder, 'display-block', 'display-none');
                 img_placeholder.style.height = '';
                 img_placeholder.style.width = '';
             }, 300);
