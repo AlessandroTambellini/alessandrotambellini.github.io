@@ -135,8 +135,22 @@
     <main>
         <a id="rss-feed" href="/rss.xml">RSS</a>
 
+        <article id="semantic-HTML" class="log">
+            <time class="log-date" datetime="2026-02-05">5 Feb 2026</time>
+            <p>
+                Writing semantic HTML isn't just a question of accessibility;
+                It's also about making the code more readable for the programmer
+                and ship less code to the final user
+            </p>
+            <p>See:</p>
+            <ul>
+                <li><a href="#position-sticky">#position-sticky</a></li>
+                <li><a href="#react-js-pollution">#react-js-pollution</a></li>
+            </ul>
+        </article>
+
         <article id="native-code-generation" class="log">
-            <time class="log-date" datetime="2025-01-22">22 Jan 2026</time>
+            <time class="log-date" datetime="2026-01-22">22 Jan 2026</time>
             <p>
                 Look at the difference in design & architecture between
                 Postream and ReqLoop. The first one is better.
@@ -144,7 +158,7 @@
         </article>
 
         <article id="native-code-generation" class="log">
-            <time class="log-date" datetime="2025-01-10">10 Jan 2026</time>
+            <time class="log-date" datetime="2026-01-10">10 Jan 2026</time>
             <p>
                 Over the past year I looked at many web frameworks and 
                 their native code generation (well, native for the web) always outputs a blob of JS and nested <code>&lt;div&gt;</code>s.<br>
@@ -180,8 +194,8 @@
 
             <p>See:</p>
             <ul class="list">
-                <li><a href="#react-js-pollution">react-js-pollution</a></li>
-                <li><a href="#17-span">17-span</a></li>
+                <li><a href="#react-js-pollution">#react-js-pollution</a></li>
+                <li><a href="#17-span">#17-span</a></li>
             </ul>
         </article>
 
@@ -233,7 +247,7 @@
         <article id="postream-conclusions" class="log">
             <time class='log-date' datetime="2025-11-21">21 Nov 2025</time>
             <p>
-                Related to <a href="#per-component-development">per-component-development</a>:<br>
+                Related to <a href="#per-component-development">#per-component-development</a>:<br>
                 Technology developed by company &lt;x&gt; is for <b>their</b> needs and probably doesn't fit <b>your</b> needs.
                 Another example: take a look at this comment on Carbon: 
                 <a class="foreign-link" target="_blank" href="https://youtu.be/EGgJrazDTYw?si=qnUQAAo6TbZIT4ch">
@@ -350,7 +364,7 @@
         <article class="log">
             <time class='log-date' datetime="2025-10-07">10 Oct 2025</time>
             <p>
-                Just to make an example on the concept of <a href="#spa"><abbr>SPA</abbr></a> (Single Page Application),
+                Just to make an example on the concept of <a href="#spa">#<abbr>SPA</abbr></a> (Single Page Application),
                 in Postream you can switch between dark and light mode and once toggled, the UI keeps the choosen "state" while navigating the pages
                 and you don't see any flickering of mode change (e.g. from light to dark) while loading a new page.
                 The important thing to know is when to check the mode (with a tiny script) before the browsers starts the styling:
@@ -474,7 +488,7 @@
             <time class='log-date' datetime="2025-08-24">24 Aug 2025</time>
             <p>
                 <code>position: sticky;</code> isn't just about making a good visual effect for a navbar.
-                It allows to save on containers, allowing the HTML to be more semantic.
+                It allows to save on wrapping tags, allowing the HTML to be more semantic.
             </p>
             <p>Snippet from my project 'Postream':</p>
 
@@ -497,7 +511,7 @@
             </code>
 
             <p>
-                In this specific case the goal is to scroll the posts while manteining the title visible.
+                In this specific case the goal is to scroll the posts while mantaining the title visible.
                 Thanks to <code>sticky</code>, I can do it without relying on a container with scrolling properties.
             </p>
         </article>
@@ -530,8 +544,8 @@
         <article id='react-js-pollution' class="log">
             <time class='log-date' datetime="2025-08-03">3 Aug 2025</time>
             <p>
-                Sometimes I like to right click web pages to take a look at the source code.
-                In most cases it's a miserable blob of nested <code>&lt;div&gt;</code>s without any sense.<br>
+                Sometimes I like to right click web pages to take a look at their source code.
+                In most cases it's a miserable blob of nested <code>&lt;div&gt;</code>s without any meaning.<br>
                 I remember one month ago taking a look at the Porsche website made in Next.js and,
                 immediately after, watching the 2025 Vercel Conference (The company behind Next.js)
                 where they basically said:
@@ -545,7 +559,7 @@
                 And perhaps without all the crazy, high-end, ultra-powerfull, magic, astonishing frameworks and libraries?<br>
                 This is my modest try:
                 <a class="my-external-link" href="https://github.com/AlessandroTambellini/Postream">Postream</a>.<br>
-                Also, a website, more precisely a website of the Web 2.0, performs 4 main actions:
+                Also, a website, more precisely a website of the Web 2.0, performs just 4 main actions:
             </p>
             <ul>
                 <li>Get user data via a form</li>
@@ -583,7 +597,7 @@
             <p>
                 Can you have the same clarity in React.js?<br>
                 Moreover, a possible stack trace of an error is much more readable 
-                even if I structure the code in a really bad way.
+                even if the code is structured in a really bad way.
             </p>
         </article>
 
@@ -592,7 +606,7 @@
             <p>
                 Not a Sublime user, but I find its development interesting,
                 also considering that isn't built using Electron:
-                <a target='_blank' href="https://www.sublimetext.com/blog/articles/anatomy-of-a-next-generation-text-editor">Anatomy of a Next Generation Text Editor</a>.
+                <a class="foreign-link" target='_blank' href="https://www.sublimetext.com/blog/articles/anatomy-of-a-next-generation-text-editor">Anatomy of a Next Generation Text Editor</a>.
             </p>
         </article>
         
@@ -619,8 +633,8 @@
             <time class='log-date' datetime="2025-04-07">7 Apr 2025</time>
             <p>
                 Related to
-                <a class="internal-link" href="#idiosyncrasies-of-the-html-parser">
-                    idiosyncrasies of the HTML parser
+                <a href="#idiosyncrasies-of-the-html-parser">
+                    #idiosyncrasies of the HTML parser
                 </a>:
                 <a class="my-external-link" href="https://gist.github.com/AlessandroTambellini/b11d6ac91115d3a0d485f1fa78865f19">
                     Gist - index.html
@@ -649,7 +663,7 @@
             <time class='log-date' datetime="2025-02-19">19 Feb 2025</time>
             <p>
                 Today I read
-                <a target='_blank' href="https://htmlparser.info/#table-of-contents">Idiosyncrasies of the HTML parser</a>.<br>
+                <a class="foreign-link" target='_blank' href="https://htmlparser.info/#table-of-contents">Idiosyncrasies of the HTML parser</a>.<br>
                 To be precise, I read the first two chapters and skimmed the third one.<br>
                 What I understood is that the HTML parser of browsers is built to handle any type of
                 "writing style" without ever throwing an error. In the style of:
@@ -670,7 +684,7 @@
             <time class='log-date' datetime="2025-02-16">16 Feb 2025</time>
             <p>
                 Gemini protocol, browser, Voronoi:
-                <a target='_blank' href="https://www.youtube.com/watch?v=sVG-Werqjlw">Making UI in Jai</a>
+                <a class="foreign-link" target='_blank' href="https://www.youtube.com/watch?v=sVG-Werqjlw">Making UI in Jai</a>
             </p>
         </article>
 
@@ -679,7 +693,7 @@
             <p>
                 While reading the emscripten docs,
                 I came across this interesting article:
-                <a target='_blank' href="https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install#where-do-these-unix-scripts-come-from">
+                <a class="foreign-link" target='_blank' href="https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install#where-do-these-unix-scripts-come-from">
                     The magic behind configure, make, and make install
                 </a>
             </p>
@@ -689,7 +703,7 @@
             <time class='log-date' datetime="2025-02-05">5 Feb 2025</time>
             <p>
                 antirez mentioned <strong>VisiCalc</strong>:
-                <a target='_blank' href="http://www.bricklin.com/firstspreadsheetquestion.htm">
+                <a class="foreign-link" target='_blank' href="http://www.bricklin.com/firstspreadsheetquestion.htm">
                     Was VisiCalc the "first" spreadsheet?
                 </a>
             </p>

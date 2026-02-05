@@ -4,14 +4,21 @@
         <title>Logbook | Alessandro Tambellini</title>
         <link>https://alessandrotambellini.github.io/logbook/</link>
         <atom:link href="https://alessandrotambellini.github.io/rss.xml" rel="self" type="application/rss+xml" />
-        <description>My logbook</description>
+        <description>My Logbook</description>
         <language>en</language>
-        <lastBuildDate>Thu, 10 Jan 2025 11:00:00 CEST</lastBuildDate>
+        <lastBuildDate>Thu, 5 Feb 2026 11:00:00 CEST</lastBuildDate>
+
+        <item>
+            <title>Semantic HTML</title>
+            <link>https://alessandrotambellini.github.io/logbook/#semantic-HTML</link>
+            <pubDate>Thu, 5 Feb 2026 11:00:00 CEST</pubDate>
+            <guid>https://alessandrotambellini.github.io/logbook/#semantic-HTML</guid>
+        </item>
 
         <item>
             <title>Native Code Generation</title>
             <link>https://alessandrotambellini.github.io/logbook/#native-code-generation</link>
-            <pubDate>Thu, 10 Jan 2025 11:00:00 CEST</pubDate>
+            <pubDate>Thu, 10 Jan 2026 11:00:00 CEST</pubDate>
             <guid>https://alessandrotambellini.github.io/logbook/#native-code-generation</guid>
         </item>
 
