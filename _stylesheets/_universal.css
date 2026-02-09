@@ -55,6 +55,7 @@ code {
     border-radius: var(--border-radius);
     border: 1px solid #454545;
     padding: 1em;
+    margin-block: .5em;
     width: 100%;
     /* word-break: break-word; */
 }
