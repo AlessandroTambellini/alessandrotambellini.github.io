@@ -7,7 +7,7 @@
 
 :root 
 {
-    --fs-default: 1.15rem;
+    --fs-default: 1.25rem;
 
     --openSideNavBtn-size: 3rem;
     --openSideNavBtn-margin: 2rem;
@@ -23,9 +23,12 @@
     --border-radius: 8px;
 }
 
-@media (min-width: 850px) {
+@media (hover: none) and (pointer: coarse) and (max-width: 850px) {
     :root {
-        --fs-default: 1.25rem;
+        --fs-default: 1.15rem;
+    }
+    code {
+        font-size: 1rem;
     }
 }
 
@@ -48,7 +51,6 @@ code {
 }
 
 .code-block {
-    font-size: 1rem;
     line-height: 1.4;
     display: block; 
     background-color: #272727;
@@ -57,7 +59,6 @@ code {
     padding: 1em;
     margin-block: .5em;
     width: 100%;
-    /* word-break: break-word; */
 }
 
 time {

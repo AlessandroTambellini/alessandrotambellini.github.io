@@ -6,7 +6,14 @@
         <atom:link href="https://alessandrotambellini.github.io/rss.xml" rel="self" type="application/rss+xml" />
         <description>My Logbook</description>
         <language>en</language>
-        <lastBuildDate>Thu, 9 Feb 2026 11:00:00 CEST</lastBuildDate>
+        <lastBuildDate>Thu, 14 Feb 2026 11:00:00 CEST</lastBuildDate>
+
+        <item>
+            <title>Mobile Style</title>
+            <link>https://alessandrotambellini.github.io/logbook/#mobile-style</link>
+            <pubDate>Thu, 14 Feb 2026 11:00:00 CEST</pubDate>
+            <guid>https://alessandrotambellini.github.io/logbook/#mobile-style</guid>
+        </item>
 
         <item>
             <title>Save on the div!</title>
