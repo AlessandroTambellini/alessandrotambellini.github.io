@@ -52,12 +52,12 @@ code {
 
 .code-block {
     line-height: 1.4;
-    display: block; 
+    display: block;
     background-color: #272727;
     border-radius: var(--border-radius);
-    border: 1px solid #454545;
-    padding: 1em;
-    margin-block: .5em;
+    border-bottom: 2px solid #454545;
+    padding: 1ch 1em;
+    margin-block: 1ch;
     width: 100%;
 }
 
