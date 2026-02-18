@@ -118,6 +118,10 @@ q {
     color: var(--quote-color);
 }
 
+strong {
+    font-style: italic;
+}
+
 /* p, ul, ol {
     max-width: 80ch;
 } */
