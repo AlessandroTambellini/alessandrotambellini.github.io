@@ -16,7 +16,7 @@
         }
 
         @media (min-width: 950px) {
-            main > *:not(header) {
+            main > *:not(.time-header) {
                 margin-left: .5rem;
             }
         }
@@ -26,7 +26,7 @@
 </head>
 <body>
     <main>
-        <header>
+        <header class='time-header'>
             <time datetime="2017-09">Sep 2017</time> - <time datetime="2022-07">Jul 2022</time>
         </header>
         <p>
@@ -59,7 +59,7 @@
             University of Trento to study computer science.
         </p>
         
-        <header>
+        <header class='time-header'>
             <time datetime="2022-09">Sep 2022</time> - <time datetime="2023-07">Jul 2023</time>
         </header>
         <p>
@@ -86,7 +86,7 @@
             </li>
         </ul>
 
-        <header>
+        <header class='time-header'>
             <time datetime="2023-08">Aug 2023</time> - <time datetime="2024-01">Jan 2024</time>
         </header>
         <p>
@@ -95,8 +95,8 @@
             as an <a class="foreign-link" target='_blank' href="https://erasmus-plus.ec.europa.eu/">Erasmus+</a> Student.<br>
             There, I was also in a different cultural environment
             and in a land with a different weather to which I never got used to :).
-            The university was structured in a different way compared to what I was used to in Italy, but
-            I will not talk about it. There, I learned two things in particular:
+            The university was structured in a different way compared to what I was used to in Italy.
+            There, I learned two things in particular:
         </p>
         <ul>
             <li>
@@ -108,7 +108,7 @@
             </li>
         </ul>
 
-        <header>
+        <header class='time-header'>
             <time datetime="2024-03">Mar 2024</time> - <time datetime="2024-07">Jul 2024</time>
         </header>
         <p>
@@ -125,11 +125,11 @@
             and understand that wasn't the right environment for me.
         </p>
 
-        <header>  
-            <time datetime="2024-08">Aug 2024</time> - <time datetime="2024-10">Oct 2024</time>
+        <header class="time-header">  
+            <time datetime="2024-08">Oct 2024</time>
         </header>
         <p>
-            After this experience I wanted to start working for a company.
+            After the previous experience, I wanted to start working for a company.
             I had little motivation to continue uni. I didn't start it for the studies themselves
             but for the experiences and to meet people and, after a couple of years, I felt I was ready to leave it.
             Sadly, after a couple of months of research I didn't find the job I wanted.
@@ -137,30 +137,30 @@
             even though in practice I already dropped uni: a waste of time and money. 
         </p>
 
-        <header>  
+        <header class="time-header">  
             <time datetime="2024-10">Oct 2024</time> - <time datetime="2025-03">Mar 2025</time>
         </header>
         <p>
             Joined <a class="foreign-link" target="_blank" href="https://www.jetn.it/">JETN</a>,
             a students association that should offer services to external entities, in the newly created IT department.
             I said "should" because in practice it resembles the typical Italian environment: slow,
-            with no clear purpose, bureaucratic, with bad management and of services just the shadow.
-            Indeed, after few months, I, and others of the IT area, left.
+            with no clear purpose, bureaucratic, with bad management, and of services just the shadow.
+            Indeed, after a few months, I left it.
         </p>
 
-        <header>
+        <header class='time-header'>
             <time datetime="2025-03">Mar 2025</time> - <time datetime="2025-09">Sep 2025</time>
         </header>
         <p>
             Actively seeking a job again and at the same time developing side projects.<br>
             Goal: find a company focused on a product, composed of a small team, located in EU.<br>
             Conclusion: didn't find it. Some email here and there with shy replies and 
-            I concluded that websites like LinkedIn and Indeed are the most miserable and useless websites out there.<br>
+            I concluded that websites like LinkedIn and Indeed don't serve the function for which they were created.<br>
             Anyway, about the side-projects instead, I think the most interesting to develop has been
             <a href="https://github.com/AlessandroTambellini/postream">Postream</a>.            
         </p>
 
-        <header>
+        <header class='time-header'>
             <time datetime="2025-10">Oct 2025</time> - <time datetime="2025-12">Dec 2025</time>
         </header>
         <p>
@@ -168,8 +168,7 @@
             I first tried to scratch an idea with a friend of mine and then 
             tried a crowd-funding to develop a software product. But, both of them didn't go well.
         </p>            
-
-    </main>
+    </main> 
 
     <nav id="side-nav" class="display-none">
         <menu>

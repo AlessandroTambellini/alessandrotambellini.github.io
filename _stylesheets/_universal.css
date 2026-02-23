@@ -118,6 +118,7 @@ q {
     color: var(--quote-color);
 }
 
+/* Just by being bold, it doesn't get the attention of my eye */
 strong {
     font-style: italic;
 }
