@@ -2,7 +2,10 @@
     src:
         local('Source Code Pro'), 
         url('../_assets/SourceCodePro-Regular.ttf') format('truetype');
-    font-family: 'Source Code Pro';
+    font-family: SourceCodePro;
+    /* In case of slow network, 
+    let the browser decide if it's worth or not trying to load the font */
+    font-display: auto;
 }
 
 :root 
@@ -46,7 +49,7 @@ body {
 }
 
 code {
-    font-family: "Source Code Pro", monospace;
+    font-family: SourceCodePro, monospace;
     color: rgb(255, 132, 132);
 }
 
@@ -56,8 +59,10 @@ code {
     background-color: #272727;
     border-radius: var(--border-radius);
     border-bottom: 2px solid #454545;
-    padding: 1ch 1em;
-    margin-block: 1ch;
+    padding: .75em 1em;
+    /* margin-block: 1ch; */
+    margin-top: .75em;
+    margin-bottom: 1ch;
     width: 100%;
 }
 
