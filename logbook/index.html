@@ -224,6 +224,7 @@
 
         <article id="native-code-generation" class="log">
             <time class="log-date" datetime="2026-01-22">22 Jan 2026</time>
+            <!-- Hyperpost > Postream > ReqLoop -->
             <p>
                 Look at the difference in design & architecture between
                 Postream and ReqLoop. The first one is better.
@@ -490,35 +491,6 @@
                     &lt;span role='img' alt='&lt;Icon Description&gt;'&gt;...&lt;/span&gt;
                 </code>
             </section>
-        </article>
-
-        <article class="log">
-            <time class='log-date' datetime="2025-09-23">23 Sep 2025</time>
-            <p>
-                Template literals are one of my favourite ES6 features, but with a caveat: all the whitespaces and newlines are kept
-                and, while constructing the HTML templates, many extra bytes are piled in the final file sent to the client.
-                Therefore, I have two options: either using <code>replaceAll()</code> or concatenating single lines with the '<code>+</code>' sign.
-                I opted for the 2nd option for a couple of reasons:
-            </p>
-            <ol>
-                <li>The performance is a bit better and it's not a problem for me to automatically add a plus sign at the end of
-                each line</li>
-                <li>I can insert comments among the template lines :-)</li>
-            </ol>
-            <code class="code-block">
-                DOMElements['.reply-card'] = function(reply)<br>
-                {<br>
-                &emsp;const { id, content, created_at } = reply;<br>
-                <br>
-                &emsp;return (<br>
-                &emsp;&emsp;`&lt;article id='reply-${id}' class='card reply-card'&gt;` +<br>
-                &emsp;&emsp;&emsp;`&lt;p&gt;${content}&lt;/p&gt;` +<br>
-                &emsp;&emsp;&emsp;// The quick brown fox jumps over the lazy dog<br>
-                &emsp;&emsp;&emsp;`&lt;time datetime="${created_at}"&gt;&lt;/time&gt;` +<br>
-                &emsp;&emsp;'&lt;/article&gt;'<br>
-                &emsp;);<br>
-                }
-            </code>
         </article>
 
         <article id='packages' class="log">
