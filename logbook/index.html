@@ -127,7 +127,7 @@
 </head>
 <body>
     <main>
-        <!-- Log: Hyperpost, Postream, ReqLoop -->
+        <!-- Log: Hyperpost > Postream > ReqLoop -->
 
         <article id="form-methods" class="log">
             <time class="log-date" datetime="2026-03-24">24 Mar 2026</time>
@@ -145,9 +145,11 @@
                 </p>
                 <p>
                     Note about Node.js: I noticed that if I make a request with a garbage method (e.g. 'dammi'),
-                    the request doesn't reach at all the application level. Node.js discards it before I can handle it.
-                    I'm pretty sure that's the behaviour because I verified that the browser makes the request and, 
-                    on the server-side, I implement everything from scratch (no library that hides logic).
+                    the request doesn't reach at all the application level. Node.js discards it before I can handle it.<br>
+                    I'm pretty sure that's the behaviour, because I implement everything from scratch (no library that hides logic)
+                    and I verified that the browser makes the request.
+
+                    Note that even <code>dialog</code> is trashed. So, dialog can be considered a client-side method.
                 </p>
             </section>
         </article>
