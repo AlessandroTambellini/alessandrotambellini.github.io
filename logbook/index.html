@@ -127,7 +127,7 @@
 </head>
 <body>
     <main>
-        <!-- Log: Hyperpost > Postream > ReqLoop -->
+        <!-- Log: Hyperpost > Postream > ReqLoop e cancella il log del 22 gennaio: piuttosto ridicolo -->
 
         <article id="form-methods" class="log">
             <time class="log-date" datetime="2026-03-24">24 Mar 2026</time>
@@ -343,29 +343,33 @@
             <p>
                 Made Postream to see how handy it is to develop an app only using the native Web API.
                 But, the more I was developing the app, the more I was shifting the rendering towards the server
-                and then the project moved also to be: "Is developing a server using plain Nodejs practical?"<br>
-                My conclusion is that it <b>is</b> practical. My fear was that the Nodejs API was too "low level"
-                in the sense that doesn't give abstractions to quickly setup a server, 
-                but I didn't encounter this problem.<br>
+                and then the project moved also to be: 
+                <br>
+                "Is developing a server using plain Node.js practical?"<br>
+                {<br>
+                    My conclusion is that it <i>is</i> practical. My hypothesis to justify the usage of libraries like Express.js
+                    was that the Node.js API was too "low level"
+                    in the sense that doesn't give the right abstractions to quickly setup a server, 
+                    but I didn't encounter this problem.
+                    <br>
+                    Still, I <i>do</i> think Node has limitations, but thery are related to the language: JavaScript.
+                    The hackish stuff derive from the nature of js, not Node per se.<br>
 
-                Still, I do think Node has limitations, but thery are related to the language: JavaScript.
-                The hackish stuff derive from the nature of js, not Node per se.<br>
+                    So, the conclusive take on Node is that it is suitable to make an app server but, 
+                    given the existance of Go, there is little point in using Node.
+                    I find Node more useful for network-related scripts like 
+                    <a href="https://github.com/AlessandroTambellini/Href-Crawler" class="my-external-link">Href-Crawler</a>.
+                    <br>
 
-                So, the conclusive take on Node is that it is suitable to make an app server but, 
-                given the existance of Go, there is little point in using Node.
-                I find Node useful for network-related scripts like 
-                <a href="https://github.com/AlessandroTambellini/Href-Crawler" class="my-external-link">Href-Crawler</a>. 
-                That's it.<br>
-                
-                The Node and Deno environments come from the ideology of using JS 
-                both on the client and on the server-side
-                and to merge them into an unique developing experience. 
-                This ideology took hold from the massive usage of JS on the client-side.<br>
-                
-                Another thing that annoys me a bit (but I don't know how rationale it is)
-                is that, to make apps, it's a spam of Chromium everywhere and 
-                I don't wanna see the same spam of V8 to make servers.<br>
-
+                    The Node and Deno environments come from the ideology of using JS 
+                    both on the client and on the server-side
+                    and to merge them into an unique developing experience. 
+                    This ideology took hold from the massive usage of JS on the client-side.<br>
+                    
+                    Another thing that annoys me a bit (but I don't know how rationale it is)
+                    is that, to make apps, it's a spam of Chromium everywhere and 
+                    I don't wanna see the same spam of V8 to make servers.<br>
+                }<br>
                 Maybe the only negative take out of this project is that the Web API is huge and with bad naming. 
                 But it is what it is, 
                 it derives from an evolutionary process of 30 years and you cannot do much about it.
@@ -379,7 +383,7 @@
         <article class="log">
             <time class='log-date' datetime="2025-11-12">12 Nov 2025</time>
             <p>
-                Every time I use a Nodejs API function, I end up surronding it with <code>try-catch</code>
+                Every time I use a Node.js API function, I end up surronding it with <code>try-catch</code>
                 and returning two states:
             </p>
             <code class="code-block">
