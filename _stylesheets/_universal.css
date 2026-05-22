@@ -190,6 +190,17 @@ img {
     /* text-align: right; */
 }
 
+#side-nav menu > li > a {
+    text-decoration: none;
+    /* display: inline-block;
+    width: 100%; */
+}
+
+#side-nav menu > li > a:hover {
+    /* background-color: #b5bbc621; */
+    text-decoration: underline;
+}
+
 #side-nav > button {
     /* only for desktop */
     display: none;
