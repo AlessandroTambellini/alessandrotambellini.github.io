@@ -1,7 +1,7 @@
 @font-face { 
     src:
-        local('Source Code Pro'), 
-        url('../_assets/SourceCodePro-Regular.ttf') format('truetype');
+        url('fonts/SourceCodePro-Regular.ttf') 
+        format('truetype');
     font-family: SourceCodePro;
     /* In case of slow network, 
     let the browser decide if it's worth or not trying to load the font */
@@ -192,8 +192,8 @@ img {
 
 #side-nav menu > li > a {
     text-decoration: none;
-    /* display: inline-block;
-    width: 100%; */
+    display: inline-block;
+    width: 100%;
 }
 
 #side-nav menu > li > a:hover {
