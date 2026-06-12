@@ -123,10 +123,36 @@
             height: auto;
             display: block;
         }
+
+        main > footer {
+            text-align: center;
+            margin-top: 6ch;
+        }
     </style>
 </head>
 <body>
     <main>
+        <article class="log">
+            <time class="log-date" datetime="2026-06-08">8 Jun 2026</time>
+            <p>How to setup the light/dark mode in a website:</p>
+            <ul>
+                <li>
+                    <code>color-scheme</code> in <code>:root</code> for the color-scheme switch
+                    and follow the user's default preferences
+                </li>
+                <li>
+                    <code>localStorage</code> to save the user's preferred color-scheme
+                </li>
+                <li><strong>Broadcast Channel API</strong>
+                    to signal the other tabs of the same website in case of color-scheme switch
+                </li> 
+            </ul>
+
+            <p>
+                In this way, all the scenarios are covered: default preferences, on the way preferences, syncing of the preferences.
+            </p>
+        </article>
+
         <article class="log">
             <time class="log-date" datetime="2026-05-18">18 May 2026</time>
             <p>
@@ -781,6 +807,8 @@
                 </a>
             </p>
         </article>
+
+        <footer>EOL</footer>
     </main>
 
     <nav id="side-nav" class="display-none">
